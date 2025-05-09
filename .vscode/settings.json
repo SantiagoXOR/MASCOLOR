@@ -1,0 +1,61 @@
+{
+  "cSpell.language": "en,es",
+  "cSpell.words": [
+    "Variantes",
+    "degradado",
+    "animado",
+    "Animación",
+    "imagen",
+    "fondo",
+    "Mapeo",
+    "marcas",
+    "imágenes",
+    "productos",
+    "fondos",
+    "SUPERLAVABLE",
+    "Transformá",
+    "espacios",
+    "facilfix",
+    "FACIL",
+    "BLANCO",
+    "FACILFIX",
+    "Reparación",
+    "construcción",
+    "ecopainting",
+    "ECOPAINTINGMEMBRANA",
+    "ECOPAINTING",
+    "Pinturas",
+    "ecológicas",
+    "newhouse",
+    "BARNIZ",
+    "MARINO",
+    "NEWHOUSE",
+    "Protección",
+    "mascolor",
+    "pinturas",
+    "revestimientos",
+    "colores",
+    "decoración",
+    "construcción",
+    "látex",
+    "esmaltes",
+    "microcemento",
+    "impermeabilizantes",
+    "ecológicas"
+  ],
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "tailwindCSS.includeLanguages": {
+    "typescript": "javascript",
+    "typescriptreact": "javascript"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+  ]
+}

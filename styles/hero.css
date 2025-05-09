@@ -1,0 +1,108 @@
+/* Estilos para la sección Hero */
+
+/* Transiciones suaves para imágenes */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+/* Evitar parpadeos en las imágenes */
+.no-flicker {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-font-smoothing: subpixel-antialiased;
+  will-change: transform, opacity;
+}
+
+/* Transiciones para logos de marcas */
+.brand-logo {
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.brand-logo-active {
+  opacity: 1;
+  transform: scale(1.15);
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.brand-logo-inactive {
+  opacity: 0.6;
+  transform: scale(1);
+}
+
+/* Transiciones para textos */
+.brand-transition {
+  transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Animación para el contenedor de productos */
+.product-container {
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.product-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 25px 50px -12px rgba(176, 80, 150, 0.25);
+}
+
+/* Animación para la imagen del producto */
+.product-image {
+  transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transform-origin: center bottom;
+}
+
+.product-image:hover {
+  transform: scale(1.05) translateY(-5px);
+}
+
+/* Animación para el fondo */
+.background-image {
+  transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+/* Sombra de texto para mejor legibilidad */
+.text-shadow-lg {
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Animación de resplandor para elementos destacados */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 15px 0 rgba(176, 80, 150, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px 5px rgba(176, 80, 150, 0.5);
+  }
+}
+
+.glow-effect {
+  animation: glow 3s infinite ease-in-out;
+}
+
+/* Mejora de la experiencia móvil */
+@media (max-width: 768px) {
+  .fade-in {
+    animation-duration: 0.5s;
+  }
+
+  .product-image {
+    transition-duration: 0.5s;
+  }
+}
