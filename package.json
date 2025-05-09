@@ -17,6 +17,7 @@
     "build-storybook": "storybook build",
     "prepare-deploy": "node scripts/prepare-deploy.js",
     "optimize-images": "node scripts/optimize-all-images.js",
+    "optimize-images-advanced": "node scripts/optimize-images-advanced.js",
     "optimize-backgrounds": "node scripts/optimize-backgrounds.js",
     "optimize-icons": "node scripts/optimize-icons.js",
     "optimize-logos": "node scripts/optimize-logos.js",
