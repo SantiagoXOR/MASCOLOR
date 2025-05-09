@@ -19,6 +19,19 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/spec/v2.0.0.h
 
 -
 
+## [0.2.1] - 2025-06-05
+
+### Añadido
+
+- Pruebas unitarias para el componente OptimizedImage
+- Documentación de Storybook para el componente OptimizedImage
+- Guía de configuración para GitHub Actions y Vercel
+- Documentación para la configuración del repositorio remoto
+
+### Corregido
+
+- Conflicto de plugins en la configuración de ESLint
+
 ## [0.2.0] - 2025-06-05
 
 ### Añadido
@@ -51,6 +64,7 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/spec/v2.0.0.h
 - Favicon y metadatos básicos
 - Configuración de pruebas con Jest y Cypress
 
-[Unreleased]: https://github.com/usuario/+color/compare/v0.2.0...HEAD
-[0.2.0]: https://github.com/usuario/+color/compare/v0.1.0...v0.2.0
-[0.1.0]: https://github.com/usuario/+color/releases/tag/v0.1.0
+[Unreleased]: https://github.com/SantiagoXOR/mas-color/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/SantiagoXOR/mas-color/compare/v0.2.0...v0.2.1
+[0.2.0]: https://github.com/SantiagoXOR/mas-color/compare/v0.1.0...v0.2.0
+[0.1.0]: https://github.com/SantiagoXOR/mas-color/releases/tag/v0.1.0
