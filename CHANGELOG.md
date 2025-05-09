@@ -8,14 +8,38 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/spec/v2.0.0.h
 ## [Unreleased]
 
 ### Añadido
-- Implementación del sistema de control de versiones con Git
-- Creación de CHANGELOG.md para seguimiento de cambios
-- Configuración de flujo de trabajo Git con ramas principales
-- Documentación sobre el proceso de desarrollo y despliegue
+
+-
+
+### Cambiado
+
+-
+
+### Corregido
+
+-
+
+## [0.2.0] - 2025-06-05
+
+### Añadido
+
+- Sistema avanzado de optimización de imágenes
+- Componente OptimizedImage para mejorar la carga de imágenes
+- Soporte para formatos modernos (WebP, AVIF)
+- Generación de imágenes responsive
+- Documentación detallada sobre optimización de imágenes
+- Plantillas para Issues y Pull Requests
+- Código de conducta para contribuidores
+- Guía para contribuidores
+
+### Cambiado
+
+- Mejora en la configuración de Husky para Git Hooks
 
 ## [0.1.0] - 2025-06-05
 
 ### Añadido
+
 - Estructura inicial del proyecto con Next.js 15
 - Componentes de UI principales (Header, Footer, Hero, etc.)
 - Secciones de la landing page (Productos, Beneficios, Calculadora, etc.)
@@ -27,5 +51,6 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/spec/v2.0.0.h
 - Favicon y metadatos básicos
 - Configuración de pruebas con Jest y Cypress
 
-[Unreleased]: https://github.com/usuario/+color/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/usuario/+color/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/usuario/+color/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/usuario/+color/releases/tag/v0.1.0
