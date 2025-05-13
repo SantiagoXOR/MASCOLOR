@@ -26,12 +26,11 @@ export function generateMetadata({
  * @param props Propiedades de la página
  * @returns Componente de página
  */
-interface SearchPageProps {
-  params: {};
+export default function SearchPage({
+  searchParams,
+}: {
   searchParams: { q?: string };
-}
-
-export default function SearchPage({ searchParams }: SearchPageProps) {
+}) {
   const query = searchParams.q || "";
 
   return <SearchResultsPage query={query} />;
