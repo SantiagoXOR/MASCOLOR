@@ -3,10 +3,10 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, HTMLMotionProps } from "framer-motion";
 
-interface AnimatedButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+// Crear una interfaz que extienda las props de motion.button
+interface AnimatedButtonProps extends Omit<HTMLMotionProps<"button">, "style"> {
   children: React.ReactNode;
   className?: string;
   variant?: "default" | "outline" | "secondary";
