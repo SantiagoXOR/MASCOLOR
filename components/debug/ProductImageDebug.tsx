@@ -156,7 +156,15 @@ export function ProductImageDebug() {
     if (productsArray.length > 0) {
       logger.info(
         "ProductImageDebug",
-        "Estadísticas de imágenes de productos",
+        "Estadísticas de imágenes de productos: " +
+          `Total: ${productsArray.length}, ` +
+          `Con imágenes: ${
+            productsArray.filter((p) => !!p.image_url).length
+          }, ` +
+          `Sin imágenes: ${
+            productsArray.filter((p) => !p.image_url).length
+          }, ` +
+          `Con asset_id: ${productsArray.filter((p) => !!p.asset_id).length}`,
         {
           total: productsArray.length,
           withImages: productsArray.filter((p) => !!p.image_url).length,
