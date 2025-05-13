@@ -57,7 +57,6 @@ const nextConfig = {
 
   // Optimizaciones de producción
   productionBrowserSourceMaps: false, // Deshabilitar source maps en producción
-  swcMinify: true, // Usar SWC para minificación
   poweredByHeader: false, // Eliminar header X-Powered-By
 };
 
