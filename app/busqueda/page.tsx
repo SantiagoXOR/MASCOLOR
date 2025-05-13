@@ -1,17 +1,11 @@
+"use client";
+
+import { useSearchParams } from "next/navigation";
 import SearchResultsPage from "./page-client";
 
-export const metadata = {
-  title: "Búsqueda | +COLOR",
-  description:
-    "Busca productos de +COLOR por nombre, categoría o características.",
-};
-
-export default function SearchPage({
-  searchParams,
-}: {
-  searchParams: { q?: string };
-}) {
-  const query = searchParams.q || "";
+export default function SearchPage() {
+  const searchParams = useSearchParams();
+  const query = searchParams.get("q") || "";
 
   return <SearchResultsPage query={query} />;
 }
