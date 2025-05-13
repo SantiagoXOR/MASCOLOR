@@ -84,7 +84,7 @@ export function ProductImageDebugger() {
   // Función para probar si una imagen se carga correctamente
   const testImage = (src: string): Promise<boolean> => {
     return new Promise((resolve) => {
-      const img = new Image();
+      const img = new window.Image();
       img.onload = () => resolve(true);
       img.onerror = () => resolve(false);
       img.src = src;
