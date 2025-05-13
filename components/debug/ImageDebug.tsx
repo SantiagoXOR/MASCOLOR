@@ -49,7 +49,9 @@ export function ImageDebug({ imagePaths = [] }: ImageDebugProps) {
 
   // Combinar rutas predefinidas con las proporcionadas usando useMemo
   const allImagePaths = useMemo(() => {
-    return [...new Set([...defaultImagePaths, ...imagePaths])];
+    // Crear un array combinado y eliminar duplicados con Array.from en lugar de usar el operador spread con Set
+    const combinedPaths = [...defaultImagePaths, ...imagePaths];
+    return Array.from(new Set(combinedPaths));
   }, [defaultImagePaths, imagePaths]);
 
   // Referencia para controlar si el componente está montado
