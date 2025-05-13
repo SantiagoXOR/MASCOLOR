@@ -4,10 +4,9 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { Plus } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, HTMLMotionProps } from "framer-motion";
 
-interface SubtleButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface SubtleButtonProps extends Omit<HTMLMotionProps<"button">, "style"> {
   children: React.ReactNode;
   className?: string;
   href?: string;
@@ -23,19 +22,22 @@ export function SubtleButton({
   disableLink = false, // Valor por defecto: false
   ...props
 }: SubtleButtonProps) {
+  // Separar las props de motion de las props de button
+  const motionProps = {
+    whileHover: {
+      backgroundColor: "rgba(135, 0, 100, 0.05)",
+      scale: 1.02,
+    },
+    whileTap: { scale: 0.98 },
+  };
+
   const buttonContent = (
     <motion.button
       className={cn(
         "subtle-button relative flex items-center justify-center gap-1.5 text-xs font-medium text-mascolor-primary hover:text-mascolor-secondary transition-colors rounded-md py-1.5 px-3 border border-transparent hover:border-mascolor-primary/20",
         className
       )}
-      whileHover={
-        {
-          backgroundColor: "rgba(135, 0, 100, 0.05)",
-          scale: 1.02,
-        } as any
-      }
-      whileTap={{ scale: 0.98 } as any}
+      {...motionProps}
       {...props}
     >
       <span>{children}</span>
