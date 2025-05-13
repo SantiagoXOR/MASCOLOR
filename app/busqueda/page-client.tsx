@@ -32,7 +32,14 @@ export default function SearchResultsPage({ query }: SearchResultsPageProps) {
       try {
         setLoading(true);
         const results = await getProducts({ search: query });
-        setProducts(results);
+        // Manejar tanto el formato de array como el formato de objeto con data y total
+        if (Array.isArray(results)) {
+          setProducts(results);
+        } else if (results && "data" in results) {
+          setProducts(results.data);
+        } else {
+          setProducts([]);
+        }
         setError(null);
       } catch (err) {
         setError(
