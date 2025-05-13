@@ -17,18 +17,8 @@ const queryClient = new QueryClient({
       refetchOnReconnect: true,
     },
   },
-  // Manejador global de errores
-  logger: {
-    log: (message) => {
-      logger.info("ReactQuery", message);
-    },
-    warn: (message) => {
-      logger.warn("ReactQuery", message);
-    },
-    error: (message) => {
-      logger.error("ReactQuery", message);
-    },
-  },
+  // La propiedad logger no es parte de QueryClientConfig en versiones recientes
+  // Configuramos los eventos manualmente
 });
 
 /**
@@ -38,9 +28,7 @@ const queryClient = new QueryClient({
  */
 export function QueryProvider({ children }: { children: ReactNode }) {
   return (
-    <QueryClientProvider client={queryClient}>
-      {children}
-    </QueryClientProvider>
+    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
 }
 
