@@ -146,13 +146,24 @@ export function ProductImageDebug() {
 
   // Registrar estadísticas cuando cambian los productos
   const logProductStats = useCallback(() => {
-    if (products.length > 0) {
-      logger.info("Estadísticas de imágenes de productos", {
-        total: products.length,
-        withImages: products.filter((p) => !!p.image_url).length,
-        withoutImages: products.filter((p) => !p.image_url).length,
-        withAssetId: products.filter((p) => !!p.asset_id).length,
-      });
+    // Asegurarse de que products es un array
+    const productsArray = Array.isArray(products)
+      ? products
+      : products && "data" in products
+      ? products.data
+      : [];
+
+    if (productsArray.length > 0) {
+      logger.info(
+        "ProductImageDebug",
+        "Estadísticas de imágenes de productos",
+        {
+          total: productsArray.length,
+          withImages: productsArray.filter((p) => !!p.image_url).length,
+          withoutImages: productsArray.filter((p) => !p.image_url).length,
+          withAssetId: productsArray.filter((p) => !!p.asset_id).length,
+        }
+      );
     }
   }, [products, logger]);
 
@@ -179,7 +190,12 @@ export function ProductImageDebug() {
           <div className="flex justify-between items-center mb-2">
             <h3 className="text-lg font-bold">Imágenes de Productos</h3>
             <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
-              {products.length} productos
+              {Array.isArray(products)
+                ? products.length
+                : products && "data" in products
+                ? products.data.length
+                : 0}{" "}
+              productos
             </span>
           </div>
 
@@ -246,7 +262,12 @@ export function ProductImageDebug() {
                       d="M5 13l4 4L19 7"
                     ></path>
                   </svg>
-                  Productos cargados: {products.length}
+                  Productos cargados:{" "}
+                  {Array.isArray(products)
+                    ? products.length
+                    : products && "data" in products
+                    ? products.data.length
+                    : 0}
                 </div>
               )}
             </div>
@@ -268,14 +289,24 @@ export function ProductImageDebug() {
                   className="w-full p-2 border border-gray-300 rounded focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
                   value={selectedProduct?.id || ""}
                   onChange={(e) => {
-                    const selected = products.find(
+                    const productsArray = Array.isArray(products)
+                      ? products
+                      : products && "data" in products
+                      ? products.data
+                      : [];
+                    const selected = productsArray.find(
                       (p) => p.id === e.target.value
                     );
                     setSelectedProduct(selected || null);
                   }}
                 >
                   <option value="">-- Seleccionar producto --</option>
-                  {products.map((product) => (
+                  {(Array.isArray(products)
+                    ? products
+                    : products && "data" in products
+                    ? products.data
+                    : []
+                  ).map((product) => (
                     <option key={product.id} value={product.id}>
                       {product.name} ({product.brand?.name})
                     </option>
