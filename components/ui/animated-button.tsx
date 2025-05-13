@@ -71,6 +71,18 @@ export function AnimatedButton({
     lg: "px-8 py-4 text-lg",
   };
 
+  // Separar las props de motion de las props de button
+  const motionProps = {
+    whileHover: {
+      backgroundColor: buttonStyles.hoverBackground,
+      color: buttonStyles.hoverTextColor,
+      borderRadius: "12px",
+      scale: 1.02,
+      transition: { duration: 0.3 },
+    },
+    whileTap: { scale: 0.98 },
+  };
+
   const buttonContent = (
     <motion.button
       className={cn(
@@ -87,16 +99,7 @@ export function AnimatedButton({
           borderColor: buttonStyles.borderColor,
         } as React.CSSProperties
       }
-      whileHover={
-        {
-          backgroundColor: buttonStyles.hoverBackground,
-          color: buttonStyles.hoverTextColor,
-          borderRadius: "12px",
-          scale: 1.02,
-          transition: { duration: 0.3 },
-        } as any
-      }
-      whileTap={{ scale: 0.98 } as any}
+      {...motionProps}
       {...props}
     >
       <motion.span
