@@ -141,9 +141,13 @@ export function DebugControls() {
                   <button
                     className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded hover:bg-blue-200 transition-colors"
                     onClick={() => {
-                      logger.info("Logs limpiados manualmente", {
-                        action: "clear_logs",
-                      });
+                      logger.info(
+                        "DebugControls",
+                        "Logs limpiados manualmente",
+                        {
+                          action: "clear_logs",
+                        }
+                      );
                       logger.clearLogs();
                     }}
                   >
@@ -152,7 +156,10 @@ export function DebugControls() {
                   <button
                     className="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded hover:bg-purple-200 transition-colors"
                     onClick={() => {
-                      logger.info("Test log", { test: true, time: Date.now() });
+                      logger.info("DebugControls", "Test log", {
+                        test: true,
+                        time: Date.now(),
+                      });
                     }}
                   >
                     Log de prueba
