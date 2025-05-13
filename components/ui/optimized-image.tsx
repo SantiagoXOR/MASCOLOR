@@ -223,15 +223,15 @@ export function OptimizedImage({
               }
               tryLoadImage(placeholderSrc, 3);
             } else {
-              useDefaultFallback();
+              handleDefaultFallback();
             }
           } else {
-            useDefaultFallback();
+            handleDefaultFallback();
           }
         };
 
         // Función para usar el fallback por defecto
-        const useDefaultFallback = () => {
+        const handleDefaultFallback = () => {
           logImageDebug(`⚠️ Todos los intentos fallaron, usando fallback`, {
             fallbackSrc,
           });

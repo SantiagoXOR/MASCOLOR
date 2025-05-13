@@ -118,6 +118,7 @@ export function ProductGrid({ products, onProductClick }: ProductGridProps) {
   // Detectar si es un dispositivo móvil o de bajo rendimiento
   const [isLowPerformanceDevice, setIsLowPerformanceDevice] = useState(false);
 
+  // Efecto para detectar dispositivos de bajo rendimiento
   useEffect(() => {
     // Detectar dispositivos móviles o de bajo rendimiento
     const isMobile = window.innerWidth < 768;
