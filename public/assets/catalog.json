@@ -1,0 +1,3346 @@
+{
+  "e766d86abd6df84d070839dc76086c79": {
+    "id": "e766d86abd6df84d070839dc76086c79",
+    "name": "látex-interior-expression",
+    "category": "products",
+    "originalFormat": "png",
+    "originalWidth": 600,
+    "originalHeight": 600,
+    "originalSize": 224511,
+    "dateAdded": "2025-05-11T16:43:35.376Z",
+    "versions": {
+      "webp": {
+        "original": {
+          "path": "assets\\images\\products\\e766d86abd6df84d070839dc76086c79\\original.webp",
+          "size": 34764
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\e766d86abd6df84d070839dc76086c79\\placeholder.webp",
+          "size": 270
+        }
+      },
+      "avif": {
+        "original": {
+          "path": "assets\\images\\products\\e766d86abd6df84d070839dc76086c79\\original.avif",
+          "size": 535
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\e766d86abd6df84d070839dc76086c79\\placeholder.avif",
+          "size": 531
+        }
+      },
+      "jpg": {
+        "original": {
+          "path": "assets\\images\\products\\e766d86abd6df84d070839dc76086c79\\original.jpg",
+          "size": 381
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\e766d86abd6df84d070839dc76086c79\\placeholder.jpg",
+          "size": 379
+        }
+      },
+      "png": {
+        "original": {
+          "path": "assets\\images\\products\\e766d86abd6df84d070839dc76086c79\\original.png",
+          "size": 658
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\e766d86abd6df84d070839dc76086c79\\placeholder.png",
+          "size": 490
+        }
+      }
+    }
+  },
+  "c323bdbab05d7c2db5e0517bea8a94be": {
+    "id": "c323bdbab05d7c2db5e0517bea8a94be",
+    "name": "microcemento-facilfix",
+    "category": "products",
+    "originalFormat": "png",
+    "originalWidth": 900,
+    "originalHeight": 900,
+    "originalSize": 417754,
+    "dateAdded": "2025-05-11T16:43:35.761Z",
+    "versions": {
+      "webp": {
+        "640": {
+          "path": "assets\\images\\products\\c323bdbab05d7c2db5e0517bea8a94be\\640.webp",
+          "size": 32768
+        },
+        "768": {
+          "path": "assets\\images\\products\\c323bdbab05d7c2db5e0517bea8a94be\\768.webp",
+          "size": 40880
+        },
+        "original": {
+          "path": "assets\\images\\products\\c323bdbab05d7c2db5e0517bea8a94be\\original.webp",
+          "size": 42100
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\c323bdbab05d7c2db5e0517bea8a94be\\placeholder.webp",
+          "size": 292
+        }
+      },
+      "avif": {
+        "640": {
+          "path": "assets\\images\\products\\c323bdbab05d7c2db5e0517bea8a94be\\640.avif",
+          "size": 9111
+        },
+        "768": {
+          "path": "assets\\images\\products\\c323bdbab05d7c2db5e0517bea8a94be\\768.avif",
+          "size": 11273
+        },
+        "original": {
+          "path": "assets\\images\\products\\c323bdbab05d7c2db5e0517bea8a94be\\original.avif",
+          "size": 543
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\c323bdbab05d7c2db5e0517bea8a94be\\placeholder.avif",
+          "size": 538
+        }
+      },
+      "jpg": {
+        "640": {
+          "path": "assets\\images\\products\\c323bdbab05d7c2db5e0517bea8a94be\\640.jpg",
+          "size": 21249
+        },
+        "768": {
+          "path": "assets\\images\\products\\c323bdbab05d7c2db5e0517bea8a94be\\768.jpg",
+          "size": 28336
+        },
+        "original": {
+          "path": "assets\\images\\products\\c323bdbab05d7c2db5e0517bea8a94be\\original.jpg",
+          "size": 377
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\c323bdbab05d7c2db5e0517bea8a94be\\placeholder.jpg",
+          "size": 377
+        }
+      },
+      "png": {
+        "640": {
+          "path": "assets\\images\\products\\c323bdbab05d7c2db5e0517bea8a94be\\640.png",
+          "size": 43822
+        },
+        "768": {
+          "path": "assets\\images\\products\\c323bdbab05d7c2db5e0517bea8a94be\\768.png",
+          "size": 56877
+        },
+        "original": {
+          "path": "assets\\images\\products\\c323bdbab05d7c2db5e0517bea8a94be\\original.png",
+          "size": 979
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\c323bdbab05d7c2db5e0517bea8a94be\\placeholder.png",
+          "size": 763
+        }
+      }
+    }
+  },
+  "f3c5a1a4ba55fb4e5c0d6a08d821d3da": {
+    "id": "f3c5a1a4ba55fb4e5c0d6a08d821d3da",
+    "name": "barniz-marino-newhouse",
+    "category": "products",
+    "originalFormat": "png",
+    "originalWidth": 2500,
+    "originalHeight": 2500,
+    "originalSize": 2389091,
+    "dateAdded": "2025-05-11T16:43:37.565Z",
+    "versions": {
+      "webp": {
+        "640": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\640.webp",
+          "size": 37294
+        },
+        "768": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\768.webp",
+          "size": 48106
+        },
+        "1024": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\1024.webp",
+          "size": 70774
+        },
+        "1280": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\1280.webp",
+          "size": 95232
+        },
+        "1536": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\1536.webp",
+          "size": 121594
+        },
+        "original": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\original.webp",
+          "size": 223992
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\placeholder.webp",
+          "size": 288
+        }
+      },
+      "avif": {
+        "640": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\640.avif",
+          "size": 8667
+        },
+        "768": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\768.avif",
+          "size": 10850
+        },
+        "1024": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\1024.avif",
+          "size": 16145
+        },
+        "1280": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\1280.avif",
+          "size": 21643
+        },
+        "1536": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\1536.avif",
+          "size": 27449
+        },
+        "original": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\original.avif",
+          "size": 567
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\placeholder.avif",
+          "size": 552
+        }
+      },
+      "jpg": {
+        "640": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\640.jpg",
+          "size": 18637
+        },
+        "768": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\768.jpg",
+          "size": 25701
+        },
+        "1024": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\1024.jpg",
+          "size": 42824
+        },
+        "1280": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\1280.jpg",
+          "size": 63603
+        },
+        "1536": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\1536.jpg",
+          "size": 87184
+        },
+        "original": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\original.jpg",
+          "size": 375
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\placeholder.jpg",
+          "size": 376
+        }
+      },
+      "png": {
+        "640": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\640.png",
+          "size": 50414
+        },
+        "768": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\768.png",
+          "size": 69396
+        },
+        "1024": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\1024.png",
+          "size": 116644
+        },
+        "1280": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\1280.png",
+          "size": 170492
+        },
+        "1536": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\1536.png",
+          "size": 240507
+        },
+        "original": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\original.png",
+          "size": 547
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\f3c5a1a4ba55fb4e5c0d6a08d821d3da\\placeholder.png",
+          "size": 411
+        }
+      }
+    }
+  },
+  "2b4c3d160c1fd76a5588f407f0571895": {
+    "id": "2b4c3d160c1fd76a5588f407f0571895",
+    "name": "látex-exterior-premium",
+    "category": "products",
+    "originalFormat": "png",
+    "originalWidth": 2501,
+    "originalHeight": 2501,
+    "originalSize": 1944279,
+    "dateAdded": "2025-05-11T16:43:48.486Z",
+    "versions": {
+      "webp": {
+        "640": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\640.webp",
+          "size": 33568
+        },
+        "768": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\768.webp",
+          "size": 43396
+        },
+        "1024": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\1024.webp",
+          "size": 60772
+        },
+        "1280": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\1280.webp",
+          "size": 81822
+        },
+        "1536": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\1536.webp",
+          "size": 103256
+        },
+        "original": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\original.webp",
+          "size": 228398
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\placeholder.webp",
+          "size": 276
+        }
+      },
+      "avif": {
+        "640": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\640.avif",
+          "size": 10375
+        },
+        "768": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\768.avif",
+          "size": 11749
+        },
+        "1024": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\1024.avif",
+          "size": 16374
+        },
+        "1280": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\1280.avif",
+          "size": 21645
+        },
+        "1536": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\1536.avif",
+          "size": 26890
+        },
+        "original": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\original.avif",
+          "size": 549
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\placeholder.avif",
+          "size": 550
+        }
+      },
+      "jpg": {
+        "640": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\640.jpg",
+          "size": 21683
+        },
+        "768": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\768.jpg",
+          "size": 28835
+        },
+        "1024": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\1024.jpg",
+          "size": 45079
+        },
+        "1280": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\1280.jpg",
+          "size": 64368
+        },
+        "1536": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\1536.jpg",
+          "size": 85781
+        },
+        "original": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\original.jpg",
+          "size": 370
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\placeholder.jpg",
+          "size": 371
+        }
+      },
+      "png": {
+        "640": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\640.png",
+          "size": 47016
+        },
+        "768": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\768.png",
+          "size": 61810
+        },
+        "1024": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\1024.png",
+          "size": 100528
+        },
+        "1280": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\1280.png",
+          "size": 140661
+        },
+        "1536": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\1536.png",
+          "size": 202968
+        },
+        "original": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\original.png",
+          "size": 1164
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\2b4c3d160c1fd76a5588f407f0571895\\placeholder.png",
+          "size": 886
+        }
+      }
+    }
+  },
+  "3159212b305552f1a4c99cc4f7ce3b02": {
+    "id": "3159212b305552f1a4c99cc4f7ce3b02",
+    "name": "latex-latex",
+    "category": "products",
+    "originalFormat": "heif",
+    "originalWidth": 2501,
+    "originalHeight": 2501,
+    "originalSize": 182981,
+    "dateAdded": "2025-05-11T17:02:42.907Z",
+    "versions": {
+      "webp": {
+        "640": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\640.webp",
+          "size": 35208
+        },
+        "768": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\768.webp",
+          "size": 44808
+        },
+        "1024": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\1024.webp",
+          "size": 63282
+        },
+        "1280": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\1280.webp",
+          "size": 84728
+        },
+        "1536": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\1536.webp",
+          "size": 108732
+        },
+        "original": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\original.webp",
+          "size": 223992
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\placeholder.webp",
+          "size": 274
+        }
+      },
+      "avif": {
+        "640": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\640.avif",
+          "size": 11606
+        },
+        "768": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\768.avif",
+          "size": 13050
+        },
+        "1024": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\1024.avif",
+          "size": 17920
+        },
+        "1280": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\1280.avif",
+          "size": 23309
+        },
+        "1536": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\1536.avif",
+          "size": 28982
+        },
+        "original": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\original.avif",
+          "size": 545
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\placeholder.avif",
+          "size": 542
+        }
+      },
+      "jpg": {
+        "640": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\640.jpg",
+          "size": 24134
+        },
+        "768": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\768.jpg",
+          "size": 32055
+        },
+        "1024": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\1024.jpg",
+          "size": 50457
+        },
+        "1280": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\1280.jpg",
+          "size": 71659
+        },
+        "1536": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\1536.jpg",
+          "size": 95218
+        },
+        "original": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\original.jpg",
+          "size": 365
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\placeholder.jpg",
+          "size": 368
+        }
+      },
+      "png": {
+        "640": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\640.png",
+          "size": 50694
+        },
+        "768": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\768.png",
+          "size": 66341
+        },
+        "1024": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\1024.png",
+          "size": 103193
+        },
+        "1280": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\1280.png",
+          "size": 150606
+        },
+        "1536": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\1536.png",
+          "size": 204223
+        },
+        "original": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\original.png",
+          "size": 1149
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\3159212b305552f1a4c99cc4f7ce3b02\\placeholder.png",
+          "size": 885
+        }
+      }
+    }
+  },
+  "a2cdbcac473720d80eb0915480a8ef47": {
+    "id": "a2cdbcac473720d80eb0915480a8ef47",
+    "name": "impregnante",
+    "category": "products",
+    "originalFormat": "heif",
+    "originalWidth": 2500,
+    "originalHeight": 2500,
+    "originalSize": 168478,
+    "dateAdded": "2025-05-11T17:02:58.687Z",
+    "versions": {
+      "webp": {
+        "640": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\640.webp",
+          "size": 39966
+        },
+        "768": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\768.webp",
+          "size": 51852
+        },
+        "1024": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\1024.webp",
+          "size": 76008
+        },
+        "1280": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\1280.webp",
+          "size": 102960
+        },
+        "1536": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\1536.webp",
+          "size": 132044
+        },
+        "original": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\original.webp",
+          "size": 247248
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\placeholder.webp",
+          "size": 288
+        }
+      },
+      "avif": {
+        "640": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\640.avif",
+          "size": 9230
+        },
+        "768": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\768.avif",
+          "size": 11754
+        },
+        "1024": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\1024.avif",
+          "size": 17357
+        },
+        "1280": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\1280.avif",
+          "size": 23129
+        },
+        "1536": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\1536.avif",
+          "size": 30472
+        },
+        "original": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\original.avif",
+          "size": 554
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\placeholder.avif",
+          "size": 550
+        }
+      },
+      "jpg": {
+        "640": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\640.jpg",
+          "size": 19234
+        },
+        "768": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\768.jpg",
+          "size": 26682
+        },
+        "1024": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\1024.jpg",
+          "size": 45047
+        },
+        "1280": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\1280.jpg",
+          "size": 66964
+        },
+        "1536": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\1536.jpg",
+          "size": 92287
+        },
+        "original": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\original.jpg",
+          "size": 371
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\placeholder.jpg",
+          "size": 372
+        }
+      },
+      "png": {
+        "640": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\640.png",
+          "size": 51153
+        },
+        "768": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\768.png",
+          "size": 70383
+        },
+        "1024": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\1024.png",
+          "size": 121539
+        },
+        "1280": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\1280.png",
+          "size": 174243
+        },
+        "1536": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\1536.png",
+          "size": 244208
+        },
+        "original": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\original.png",
+          "size": 547
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\a2cdbcac473720d80eb0915480a8ef47\\placeholder.png",
+          "size": 449
+        }
+      }
+    }
+  },
+  "b14b2f8c8122ee84089f5d399f7b302a": {
+    "id": "b14b2f8c8122ee84089f5d399f7b302a",
+    "name": "membrana",
+    "category": "products",
+    "originalFormat": "heif",
+    "originalWidth": 2501,
+    "originalHeight": 2501,
+    "originalSize": 187494,
+    "dateAdded": "2025-05-11T17:08:06.637Z",
+    "versions": {
+      "webp": {
+        "640": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\640.webp",
+          "size": 35558
+        },
+        "768": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\768.webp",
+          "size": 45418
+        },
+        "1024": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\1024.webp",
+          "size": 63682
+        },
+        "1280": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\1280.webp",
+          "size": 84994
+        },
+        "1536": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\1536.webp",
+          "size": 108818
+        },
+        "original": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\original.webp",
+          "size": 224256
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\placeholder.webp",
+          "size": 278
+        }
+      },
+      "avif": {
+        "640": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\640.avif",
+          "size": 11724
+        },
+        "768": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\768.avif",
+          "size": 13375
+        },
+        "1024": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\1024.avif",
+          "size": 18402
+        },
+        "1280": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\1280.avif",
+          "size": 24024
+        },
+        "1536": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\1536.avif",
+          "size": 29268
+        },
+        "original": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\original.avif",
+          "size": 549
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\placeholder.avif",
+          "size": 545
+        }
+      },
+      "jpg": {
+        "640": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\640.jpg",
+          "size": 24369
+        },
+        "768": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\768.jpg",
+          "size": 32604
+        },
+        "1024": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\1024.jpg",
+          "size": 51308
+        },
+        "1280": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\1280.jpg",
+          "size": 72877
+        },
+        "1536": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\1536.jpg",
+          "size": 96334
+        },
+        "original": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\original.jpg",
+          "size": 368
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\placeholder.jpg",
+          "size": 370
+        }
+      },
+      "png": {
+        "640": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\640.png",
+          "size": 49654
+        },
+        "768": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\768.png",
+          "size": 66129
+        },
+        "1024": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\1024.png",
+          "size": 104127
+        },
+        "1280": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\1280.png",
+          "size": 145950
+        },
+        "1536": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\1536.png",
+          "size": 199588
+        },
+        "original": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\original.png",
+          "size": 1174
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\b14b2f8c8122ee84089f5d399f7b302a\\placeholder.png",
+          "size": 911
+        }
+      }
+    }
+  },
+  "5221d44fec224dcb535ad8bba57ae1c7": {
+    "id": "5221d44fec224dcb535ad8bba57ae1c7",
+    "name": "cielorraso",
+    "category": "products",
+    "originalFormat": "heif",
+    "originalWidth": 600,
+    "originalHeight": 600,
+    "originalSize": 23987,
+    "dateAdded": "2025-05-11T17:03:33.208Z",
+    "versions": {
+      "webp": {
+        "original": {
+          "path": "assets\\images\\products\\5221d44fec224dcb535ad8bba57ae1c7\\original.webp",
+          "size": 36582
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\5221d44fec224dcb535ad8bba57ae1c7\\placeholder.webp",
+          "size": 300
+        }
+      },
+      "avif": {
+        "original": {
+          "path": "assets\\images\\products\\5221d44fec224dcb535ad8bba57ae1c7\\original.avif",
+          "size": 538
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\5221d44fec224dcb535ad8bba57ae1c7\\placeholder.avif",
+          "size": 535
+        }
+      },
+      "jpg": {
+        "original": {
+          "path": "assets\\images\\products\\5221d44fec224dcb535ad8bba57ae1c7\\original.jpg",
+          "size": 373
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\5221d44fec224dcb535ad8bba57ae1c7\\placeholder.jpg",
+          "size": 372
+        }
+      },
+      "png": {
+        "original": {
+          "path": "assets\\images\\products\\5221d44fec224dcb535ad8bba57ae1c7\\original.png",
+          "size": 758
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\5221d44fec224dcb535ad8bba57ae1c7\\placeholder.png",
+          "size": 546
+        }
+      }
+    }
+  },
+  "47e280f6fc41087c605040d90a87c9b0": {
+    "id": "47e280f6fc41087c605040d90a87c9b0",
+    "name": "enduido",
+    "category": "products",
+    "originalFormat": "heif",
+    "originalWidth": 600,
+    "originalHeight": 600,
+    "originalSize": 23490,
+    "dateAdded": "2025-05-11T17:03:33.786Z",
+    "versions": {
+      "webp": {
+        "original": {
+          "path": "assets\\images\\products\\47e280f6fc41087c605040d90a87c9b0\\original.webp",
+          "size": 36550
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\47e280f6fc41087c605040d90a87c9b0\\placeholder.webp",
+          "size": 304
+        }
+      },
+      "avif": {
+        "original": {
+          "path": "assets\\images\\products\\47e280f6fc41087c605040d90a87c9b0\\original.avif",
+          "size": 538
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\47e280f6fc41087c605040d90a87c9b0\\placeholder.avif",
+          "size": 536
+        }
+      },
+      "jpg": {
+        "original": {
+          "path": "assets\\images\\products\\47e280f6fc41087c605040d90a87c9b0\\original.jpg",
+          "size": 383
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\47e280f6fc41087c605040d90a87c9b0\\placeholder.jpg",
+          "size": 383
+        }
+      },
+      "png": {
+        "original": {
+          "path": "assets\\images\\products\\47e280f6fc41087c605040d90a87c9b0\\original.png",
+          "size": 772
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\47e280f6fc41087c605040d90a87c9b0\\placeholder.png",
+          "size": 571
+        }
+      }
+    }
+  },
+  "8ddb2121e915f0a9237d5fbf41c59b35": {
+    "id": "8ddb2121e915f0a9237d5fbf41c59b35",
+    "name": "fibrado",
+    "category": "products",
+    "originalFormat": "heif",
+    "originalWidth": 600,
+    "originalHeight": 600,
+    "originalSize": 22758,
+    "dateAdded": "2025-05-11T17:03:34.373Z",
+    "versions": {
+      "webp": {
+        "original": {
+          "path": "assets\\images\\products\\8ddb2121e915f0a9237d5fbf41c59b35\\original.webp",
+          "size": 35762
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\8ddb2121e915f0a9237d5fbf41c59b35\\placeholder.webp",
+          "size": 302
+        }
+      },
+      "avif": {
+        "original": {
+          "path": "assets\\images\\products\\8ddb2121e915f0a9237d5fbf41c59b35\\original.avif",
+          "size": 539
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\8ddb2121e915f0a9237d5fbf41c59b35\\placeholder.avif",
+          "size": 539
+        }
+      },
+      "jpg": {
+        "original": {
+          "path": "assets\\images\\products\\8ddb2121e915f0a9237d5fbf41c59b35\\original.jpg",
+          "size": 378
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\8ddb2121e915f0a9237d5fbf41c59b35\\placeholder.jpg",
+          "size": 379
+        }
+      },
+      "png": {
+        "original": {
+          "path": "assets\\images\\products\\8ddb2121e915f0a9237d5fbf41c59b35\\original.png",
+          "size": 787
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\8ddb2121e915f0a9237d5fbf41c59b35\\placeholder.png",
+          "size": 567
+        }
+      }
+    }
+  },
+  "75c8e2e0d5d61e16a2749d2dd3e0610e": {
+    "id": "75c8e2e0d5d61e16a2749d2dd3e0610e",
+    "name": "fijador",
+    "category": "products",
+    "originalFormat": "heif",
+    "originalWidth": 600,
+    "originalHeight": 600,
+    "originalSize": 23343,
+    "dateAdded": "2025-05-11T17:03:34.979Z",
+    "versions": {
+      "webp": {
+        "original": {
+          "path": "assets\\images\\products\\75c8e2e0d5d61e16a2749d2dd3e0610e\\original.webp",
+          "size": 36458
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\75c8e2e0d5d61e16a2749d2dd3e0610e\\placeholder.webp",
+          "size": 298
+        }
+      },
+      "avif": {
+        "original": {
+          "path": "assets\\images\\products\\75c8e2e0d5d61e16a2749d2dd3e0610e\\original.avif",
+          "size": 534
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\75c8e2e0d5d61e16a2749d2dd3e0610e\\placeholder.avif",
+          "size": 533
+        }
+      },
+      "jpg": {
+        "original": {
+          "path": "assets\\images\\products\\75c8e2e0d5d61e16a2749d2dd3e0610e\\original.jpg",
+          "size": 380
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\75c8e2e0d5d61e16a2749d2dd3e0610e\\placeholder.jpg",
+          "size": 380
+        }
+      },
+      "png": {
+        "original": {
+          "path": "assets\\images\\products\\75c8e2e0d5d61e16a2749d2dd3e0610e\\original.png",
+          "size": 714
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\75c8e2e0d5d61e16a2749d2dd3e0610e\\placeholder.png",
+          "size": 535
+        }
+      }
+    }
+  },
+  "ea0476ddc5da2ab50052406d834a1fd8": {
+    "id": "ea0476ddc5da2ab50052406d834a1fd8",
+    "name": "imprimacion",
+    "category": "products",
+    "originalFormat": "heif",
+    "originalWidth": 600,
+    "originalHeight": 600,
+    "originalSize": 23187,
+    "dateAdded": "2025-05-11T17:03:35.487Z",
+    "versions": {
+      "webp": {
+        "original": {
+          "path": "assets\\images\\products\\ea0476ddc5da2ab50052406d834a1fd8\\original.webp",
+          "size": 36198
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\ea0476ddc5da2ab50052406d834a1fd8\\placeholder.webp",
+          "size": 298
+        }
+      },
+      "avif": {
+        "original": {
+          "path": "assets\\images\\products\\ea0476ddc5da2ab50052406d834a1fd8\\original.avif",
+          "size": 535
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\ea0476ddc5da2ab50052406d834a1fd8\\placeholder.avif",
+          "size": 532
+        }
+      },
+      "jpg": {
+        "original": {
+          "path": "assets\\images\\products\\ea0476ddc5da2ab50052406d834a1fd8\\original.jpg",
+          "size": 376
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\ea0476ddc5da2ab50052406d834a1fd8\\placeholder.jpg",
+          "size": 376
+        }
+      },
+      "png": {
+        "original": {
+          "path": "assets\\images\\products\\ea0476ddc5da2ab50052406d834a1fd8\\original.png",
+          "size": 701
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\ea0476ddc5da2ab50052406d834a1fd8\\placeholder.png",
+          "size": 519
+        }
+      }
+    }
+  },
+  "c1de8dcedbad448c4de8a94b618622bf": {
+    "id": "c1de8dcedbad448c4de8a94b618622bf",
+    "name": "ladrillo-visto",
+    "category": "products",
+    "originalFormat": "heif",
+    "originalWidth": 600,
+    "originalHeight": 600,
+    "originalSize": 23634,
+    "dateAdded": "2025-05-11T17:03:35.980Z",
+    "versions": {
+      "webp": {
+        "original": {
+          "path": "assets\\images\\products\\c1de8dcedbad448c4de8a94b618622bf\\original.webp",
+          "size": 36708
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\c1de8dcedbad448c4de8a94b618622bf\\placeholder.webp",
+          "size": 294
+        }
+      },
+      "avif": {
+        "original": {
+          "path": "assets\\images\\products\\c1de8dcedbad448c4de8a94b618622bf\\original.avif",
+          "size": 535
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\c1de8dcedbad448c4de8a94b618622bf\\placeholder.avif",
+          "size": 533
+        }
+      },
+      "jpg": {
+        "original": {
+          "path": "assets\\images\\products\\c1de8dcedbad448c4de8a94b618622bf\\original.jpg",
+          "size": 380
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\c1de8dcedbad448c4de8a94b618622bf\\placeholder.jpg",
+          "size": 379
+        }
+      },
+      "png": {
+        "original": {
+          "path": "assets\\images\\products\\c1de8dcedbad448c4de8a94b618622bf\\original.png",
+          "size": 750
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\c1de8dcedbad448c4de8a94b618622bf\\placeholder.png",
+          "size": 538
+        }
+      }
+    }
+  },
+  "b1abc83f6bf67268e19f97eff47a3064": {
+    "id": "b1abc83f6bf67268e19f97eff47a3064",
+    "name": "latex-exterior",
+    "category": "products",
+    "originalFormat": "heif",
+    "originalWidth": 600,
+    "originalHeight": 600,
+    "originalSize": 24252,
+    "dateAdded": "2025-05-11T17:03:36.503Z",
+    "versions": {
+      "webp": {
+        "original": {
+          "path": "assets\\images\\products\\b1abc83f6bf67268e19f97eff47a3064\\original.webp",
+          "size": 36632
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\b1abc83f6bf67268e19f97eff47a3064\\placeholder.webp",
+          "size": 294
+        }
+      },
+      "avif": {
+        "original": {
+          "path": "assets\\images\\products\\b1abc83f6bf67268e19f97eff47a3064\\original.avif",
+          "size": 538
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\b1abc83f6bf67268e19f97eff47a3064\\placeholder.avif",
+          "size": 536
+        }
+      },
+      "jpg": {
+        "original": {
+          "path": "assets\\images\\products\\b1abc83f6bf67268e19f97eff47a3064\\original.jpg",
+          "size": 381
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\b1abc83f6bf67268e19f97eff47a3064\\placeholder.jpg",
+          "size": 383
+        }
+      },
+      "png": {
+        "original": {
+          "path": "assets\\images\\products\\b1abc83f6bf67268e19f97eff47a3064\\original.png",
+          "size": 686
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\b1abc83f6bf67268e19f97eff47a3064\\placeholder.png",
+          "size": 485
+        }
+      }
+    }
+  },
+  "7c1da0baeb7436edc9b036ad20633a7a": {
+    "id": "7c1da0baeb7436edc9b036ad20633a7a",
+    "name": "masilla-yeso",
+    "category": "products",
+    "originalFormat": "heif",
+    "originalWidth": 600,
+    "originalHeight": 600,
+    "originalSize": 23058,
+    "dateAdded": "2025-05-11T17:03:37.093Z",
+    "versions": {
+      "webp": {
+        "original": {
+          "path": "assets\\images\\products\\7c1da0baeb7436edc9b036ad20633a7a\\original.webp",
+          "size": 36006
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\7c1da0baeb7436edc9b036ad20633a7a\\placeholder.webp",
+          "size": 298
+        }
+      },
+      "avif": {
+        "original": {
+          "path": "assets\\images\\products\\7c1da0baeb7436edc9b036ad20633a7a\\original.avif",
+          "size": 539
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\7c1da0baeb7436edc9b036ad20633a7a\\placeholder.avif",
+          "size": 534
+        }
+      },
+      "jpg": {
+        "original": {
+          "path": "assets\\images\\products\\7c1da0baeb7436edc9b036ad20633a7a\\original.jpg",
+          "size": 379
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\7c1da0baeb7436edc9b036ad20633a7a\\placeholder.jpg",
+          "size": 378
+        }
+      },
+      "png": {
+        "original": {
+          "path": "assets\\images\\products\\7c1da0baeb7436edc9b036ad20633a7a\\original.png",
+          "size": 673
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\7c1da0baeb7436edc9b036ad20633a7a\\placeholder.png",
+          "size": 496
+        }
+      }
+    }
+  },
+  "1505e3ea4af702caafe55d6c80296e08": {
+    "id": "1505e3ea4af702caafe55d6c80296e08",
+    "name": "exterior-blanco-bolsa",
+    "category": "products",
+    "originalFormat": "heif",
+    "originalWidth": 2501,
+    "originalHeight": 2500,
+    "originalSize": 80975,
+    "dateAdded": "2025-05-11T17:03:54.896Z",
+    "versions": {
+      "webp": {
+        "640": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\640.webp",
+          "size": 19076
+        },
+        "768": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\768.webp",
+          "size": 24160
+        },
+        "1024": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\1024.webp",
+          "size": 35022
+        },
+        "1280": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\1280.webp",
+          "size": 47690
+        },
+        "1536": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\1536.webp",
+          "size": 61620
+        },
+        "original": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\original.webp",
+          "size": 120210
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\placeholder.webp",
+          "size": 290
+        }
+      },
+      "avif": {
+        "640": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\640.avif",
+          "size": 5022
+        },
+        "768": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\768.avif",
+          "size": 6272
+        },
+        "1024": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\1024.avif",
+          "size": 8558
+        },
+        "1280": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\1280.avif",
+          "size": 11094
+        },
+        "1536": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\1536.avif",
+          "size": 13930
+        },
+        "original": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\original.avif",
+          "size": 596
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\placeholder.avif",
+          "size": 584
+        }
+      },
+      "jpg": {
+        "640": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\640.jpg",
+          "size": 13664
+        },
+        "768": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\768.jpg",
+          "size": 18208
+        },
+        "1024": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\1024.jpg",
+          "size": 29047
+        },
+        "1280": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\1280.jpg",
+          "size": 41662
+        },
+        "1536": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\1536.jpg",
+          "size": 56096
+        },
+        "original": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\original.jpg",
+          "size": 368
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\placeholder.jpg",
+          "size": 367
+        }
+      },
+      "png": {
+        "640": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\640.png",
+          "size": 27376
+        },
+        "768": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\768.png",
+          "size": 35561
+        },
+        "1024": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\1024.png",
+          "size": 57657
+        },
+        "1280": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\1280.png",
+          "size": 75754
+        },
+        "1536": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\1536.png",
+          "size": 106594
+        },
+        "original": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\original.png",
+          "size": 673
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\1505e3ea4af702caafe55d6c80296e08\\placeholder.png",
+          "size": 535
+        }
+      }
+    }
+  },
+  "8b8b53ee442814f365e3dd8793b2924e": {
+    "id": "8b8b53ee442814f365e3dd8793b2924e",
+    "name": "exterior-blanco",
+    "category": "products",
+    "originalFormat": "heif",
+    "originalWidth": 4285,
+    "originalHeight": 4500,
+    "originalSize": 123630,
+    "dateAdded": "2025-05-11T17:04:07.912Z",
+    "versions": {
+      "webp": {
+        "640": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\640.webp",
+          "size": 26548
+        },
+        "768": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\768.webp",
+          "size": 34904
+        },
+        "1024": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\1024.webp",
+          "size": 49936
+        },
+        "1280": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\1280.webp",
+          "size": 64914
+        },
+        "1536": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\1536.webp",
+          "size": 81234
+        },
+        "original": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\original.webp",
+          "size": 284056
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\placeholder.webp",
+          "size": 292
+        }
+      },
+      "avif": {
+        "640": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\640.avif",
+          "size": 5755
+        },
+        "768": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\768.avif",
+          "size": 6695
+        },
+        "1024": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\1024.avif",
+          "size": 9234
+        },
+        "1280": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\1280.avif",
+          "size": 12293
+        },
+        "1536": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\1536.avif",
+          "size": 15201
+        },
+        "original": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\original.avif",
+          "size": 575
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\placeholder.avif",
+          "size": 562
+        }
+      },
+      "jpg": {
+        "640": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\640.jpg",
+          "size": 18917
+        },
+        "768": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\768.jpg",
+          "size": 25691
+        },
+        "1024": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\1024.jpg",
+          "size": 40436
+        },
+        "1280": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\1280.jpg",
+          "size": 58234
+        },
+        "1536": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\1536.jpg",
+          "size": 78134
+        },
+        "original": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\original.jpg",
+          "size": 386
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\placeholder.jpg",
+          "size": 384
+        }
+      },
+      "png": {
+        "640": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\640.png",
+          "size": 34120
+        },
+        "768": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\768.png",
+          "size": 45349
+        },
+        "1024": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\1024.png",
+          "size": 66237
+        },
+        "1280": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\1280.png",
+          "size": 94584
+        },
+        "1536": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\1536.png",
+          "size": 122670
+        },
+        "original": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\original.png",
+          "size": 973
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\8b8b53ee442814f365e3dd8793b2924e\\placeholder.png",
+          "size": 695
+        }
+      }
+    }
+  },
+  "c104afcd77b1599fc1a366454aeb8bff": {
+    "id": "c104afcd77b1599fc1a366454aeb8bff",
+    "name": "exterior-gris-bolsa",
+    "category": "products",
+    "originalFormat": "heif",
+    "originalWidth": 2501,
+    "originalHeight": 2500,
+    "originalSize": 79621,
+    "dateAdded": "2025-05-11T17:04:33.860Z",
+    "versions": {
+      "webp": {
+        "640": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\640.webp",
+          "size": 19616
+        },
+        "768": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\768.webp",
+          "size": 25398
+        },
+        "1024": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\1024.webp",
+          "size": 35976
+        },
+        "1280": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\1280.webp",
+          "size": 48996
+        },
+        "1536": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\1536.webp",
+          "size": 63674
+        },
+        "original": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\original.webp",
+          "size": 119346
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\placeholder.webp",
+          "size": 306
+        }
+      },
+      "avif": {
+        "640": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\640.avif",
+          "size": 6498
+        },
+        "768": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\768.avif",
+          "size": 8210
+        },
+        "1024": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\1024.avif",
+          "size": 11095
+        },
+        "1280": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\1280.avif",
+          "size": 14261
+        },
+        "1536": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\1536.avif",
+          "size": 17860
+        },
+        "original": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\original.avif",
+          "size": 588
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\placeholder.avif",
+          "size": 579
+        }
+      },
+      "jpg": {
+        "640": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\640.jpg",
+          "size": 13587
+        },
+        "768": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\768.jpg",
+          "size": 18585
+        },
+        "1024": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\1024.jpg",
+          "size": 29539
+        },
+        "1280": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\1280.jpg",
+          "size": 42272
+        },
+        "1536": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\1536.jpg",
+          "size": 56698
+        },
+        "original": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\original.jpg",
+          "size": 370
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\placeholder.jpg",
+          "size": 369
+        }
+      },
+      "png": {
+        "640": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\640.png",
+          "size": 27112
+        },
+        "768": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\768.png",
+          "size": 36815
+        },
+        "1024": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\1024.png",
+          "size": 57564
+        },
+        "1280": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\1280.png",
+          "size": 83210
+        },
+        "1536": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\1536.png",
+          "size": 110657
+        },
+        "original": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\original.png",
+          "size": 609
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\c104afcd77b1599fc1a366454aeb8bff\\placeholder.png",
+          "size": 456
+        }
+      }
+    }
+  },
+  "ea7fc7772f21e9e34e1278d15ff2a1a1": {
+    "id": "ea7fc7772f21e9e34e1278d15ff2a1a1",
+    "name": "exterior-gris",
+    "category": "products",
+    "originalFormat": "heif",
+    "originalWidth": 4285,
+    "originalHeight": 4500,
+    "originalSize": 123479,
+    "dateAdded": "2025-05-11T17:04:47.742Z",
+    "versions": {
+      "webp": {
+        "640": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\640.webp",
+          "size": 25620
+        },
+        "768": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\768.webp",
+          "size": 33586
+        },
+        "1024": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\1024.webp",
+          "size": 48148
+        },
+        "1280": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\1280.webp",
+          "size": 63018
+        },
+        "1536": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\1536.webp",
+          "size": 79672
+        },
+        "original": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\original.webp",
+          "size": 273672
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\placeholder.webp",
+          "size": 322
+        }
+      },
+      "avif": {
+        "640": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\640.avif",
+          "size": 6397
+        },
+        "768": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\768.avif",
+          "size": 7510
+        },
+        "1024": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\1024.avif",
+          "size": 10219
+        },
+        "1280": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\1280.avif",
+          "size": 12796
+        },
+        "1536": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\1536.avif",
+          "size": 15299
+        },
+        "original": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\original.avif",
+          "size": 578
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\placeholder.avif",
+          "size": 567
+        }
+      },
+      "jpg": {
+        "640": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\640.jpg",
+          "size": 19412
+        },
+        "768": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\768.jpg",
+          "size": 25900
+        },
+        "1024": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\1024.jpg",
+          "size": 41156
+        },
+        "1280": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\1280.jpg",
+          "size": 58030
+        },
+        "1536": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\1536.jpg",
+          "size": 78110
+        },
+        "original": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\original.jpg",
+          "size": 393
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\placeholder.jpg",
+          "size": 388
+        }
+      },
+      "png": {
+        "640": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\640.png",
+          "size": 33678
+        },
+        "768": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\768.png",
+          "size": 43667
+        },
+        "1024": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\1024.png",
+          "size": 69972
+        },
+        "1280": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\1280.png",
+          "size": 97894
+        },
+        "1536": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\1536.png",
+          "size": 130632
+        },
+        "original": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\original.png",
+          "size": 841
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\ea7fc7772f21e9e34e1278d15ff2a1a1\\placeholder.png",
+          "size": 631
+        }
+      }
+    }
+  },
+  "b1e23fed3b3999cbd2602b9ef7bd43fe": {
+    "id": "b1e23fed3b3999cbd2602b9ef7bd43fe",
+    "name": "interior-blanco-bolsa",
+    "category": "products",
+    "originalFormat": "heif",
+    "originalWidth": 2500,
+    "originalHeight": 2500,
+    "originalSize": 80746,
+    "dateAdded": "2025-05-11T17:05:14.157Z",
+    "versions": {
+      "webp": {
+        "640": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\640.webp",
+          "size": 19212
+        },
+        "768": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\768.webp",
+          "size": 24452
+        },
+        "1024": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\1024.webp",
+          "size": 35360
+        },
+        "1280": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\1280.webp",
+          "size": 48976
+        },
+        "1536": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\1536.webp",
+          "size": 62972
+        },
+        "original": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\original.webp",
+          "size": 119778
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\placeholder.webp",
+          "size": 290
+        }
+      },
+      "avif": {
+        "640": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\640.avif",
+          "size": 6468
+        },
+        "768": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\768.avif",
+          "size": 7948
+        },
+        "1024": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\1024.avif",
+          "size": 10957
+        },
+        "1280": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\1280.avif",
+          "size": 13968
+        },
+        "1536": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\1536.avif",
+          "size": 16977
+        },
+        "original": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\original.avif",
+          "size": 593
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\placeholder.avif",
+          "size": 575
+        }
+      },
+      "jpg": {
+        "640": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\640.jpg",
+          "size": 13448
+        },
+        "768": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\768.jpg",
+          "size": 18262
+        },
+        "1024": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\1024.jpg",
+          "size": 29354
+        },
+        "1280": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\1280.jpg",
+          "size": 42318
+        },
+        "1536": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\1536.jpg",
+          "size": 56881
+        },
+        "original": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\original.jpg",
+          "size": 358
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\placeholder.jpg",
+          "size": 356
+        }
+      },
+      "png": {
+        "640": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\640.png",
+          "size": 29009
+        },
+        "768": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\768.png",
+          "size": 39721
+        },
+        "1024": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\1024.png",
+          "size": 61868
+        },
+        "1280": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\1280.png",
+          "size": 86123
+        },
+        "1536": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\1536.png",
+          "size": 115695
+        },
+        "original": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\original.png",
+          "size": 478
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\b1e23fed3b3999cbd2602b9ef7bd43fe\\placeholder.png",
+          "size": 387
+        }
+      }
+    }
+  },
+  "3fab49d8894e385aebb2f150ca3b1ec8": {
+    "id": "3fab49d8894e385aebb2f150ca3b1ec8",
+    "name": "interior-blanco",
+    "category": "products",
+    "originalFormat": "heif",
+    "originalWidth": 4285,
+    "originalHeight": 4500,
+    "originalSize": 126992,
+    "dateAdded": "2025-05-11T17:05:28.162Z",
+    "versions": {
+      "webp": {
+        "640": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\640.webp",
+          "size": 26050
+        },
+        "768": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\768.webp",
+          "size": 33864
+        },
+        "1024": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\1024.webp",
+          "size": 48652
+        },
+        "1280": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\1280.webp",
+          "size": 64054
+        },
+        "1536": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\1536.webp",
+          "size": 79988
+        },
+        "original": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\original.webp",
+          "size": 281610
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\placeholder.webp",
+          "size": 308
+        }
+      },
+      "avif": {
+        "640": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\640.avif",
+          "size": 6193
+        },
+        "768": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\768.avif",
+          "size": 7373
+        },
+        "1024": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\1024.avif",
+          "size": 9963
+        },
+        "1280": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\1280.avif",
+          "size": 12598
+        },
+        "1536": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\1536.avif",
+          "size": 15593
+        },
+        "original": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\original.avif",
+          "size": 564
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\placeholder.avif",
+          "size": 564
+        }
+      },
+      "jpg": {
+        "640": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\640.jpg",
+          "size": 19787
+        },
+        "768": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\768.jpg",
+          "size": 26459
+        },
+        "1024": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\1024.jpg",
+          "size": 42256
+        },
+        "1280": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\1280.jpg",
+          "size": 60146
+        },
+        "1536": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\1536.jpg",
+          "size": 81272
+        },
+        "original": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\original.jpg",
+          "size": 370
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\placeholder.jpg",
+          "size": 370
+        }
+      },
+      "png": {
+        "640": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\640.png",
+          "size": 36188
+        },
+        "768": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\768.png",
+          "size": 46807
+        },
+        "1024": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\1024.png",
+          "size": 72729
+        },
+        "1280": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\1280.png",
+          "size": 96998
+        },
+        "1536": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\1536.png",
+          "size": 131989
+        },
+        "original": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\original.png",
+          "size": 709
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\3fab49d8894e385aebb2f150ca3b1ec8\\placeholder.png",
+          "size": 531
+        }
+      }
+    }
+  },
+  "7479f61438f2ad01069b5bb3dc8b0cdd": {
+    "id": "7479f61438f2ad01069b5bb3dc8b0cdd",
+    "name": "barniz-agua",
+    "category": "products",
+    "originalFormat": "heif",
+    "originalWidth": 2501,
+    "originalHeight": 2501,
+    "originalSize": 173454,
+    "dateAdded": "2025-05-11T17:05:53.659Z",
+    "versions": {
+      "webp": {
+        "640": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\640.webp",
+          "size": 34258
+        },
+        "768": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\768.webp",
+          "size": 44042
+        },
+        "1024": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\1024.webp",
+          "size": 62128
+        },
+        "1280": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\1280.webp",
+          "size": 83320
+        },
+        "1536": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\1536.webp",
+          "size": 104750
+        },
+        "original": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\original.webp",
+          "size": 210348
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\placeholder.webp",
+          "size": 278
+        }
+      },
+      "avif": {
+        "640": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\640.avif",
+          "size": 10271
+        },
+        "768": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\768.avif",
+          "size": 11612
+        },
+        "1024": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\1024.avif",
+          "size": 16485
+        },
+        "1280": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\1280.avif",
+          "size": 21486
+        },
+        "1536": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\1536.avif",
+          "size": 26945
+        },
+        "original": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\original.avif",
+          "size": 552
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\placeholder.avif",
+          "size": 549
+        }
+      },
+      "jpg": {
+        "640": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\640.jpg",
+          "size": 21793
+        },
+        "768": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\768.jpg",
+          "size": 28856
+        },
+        "1024": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\1024.jpg",
+          "size": 45202
+        },
+        "1280": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\1280.jpg",
+          "size": 64459
+        },
+        "1536": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\1536.jpg",
+          "size": 85707
+        },
+        "original": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\original.jpg",
+          "size": 370
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\placeholder.jpg",
+          "size": 372
+        }
+      },
+      "png": {
+        "640": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\640.png",
+          "size": 46650
+        },
+        "768": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\768.png",
+          "size": 62120
+        },
+        "1024": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\1024.png",
+          "size": 94988
+        },
+        "1280": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\1280.png",
+          "size": 138689
+        },
+        "1536": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\1536.png",
+          "size": 193908
+        },
+        "original": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\original.png",
+          "size": 1139
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\7479f61438f2ad01069b5bb3dc8b0cdd\\placeholder.png",
+          "size": 860
+        }
+      }
+    }
+  },
+  "4afdfda869894475345d4836be5ead63": {
+    "id": "4afdfda869894475345d4836be5ead63",
+    "name": "esmalte-agua",
+    "category": "products",
+    "originalFormat": "heif",
+    "originalWidth": 2501,
+    "originalHeight": 2501,
+    "originalSize": 170827,
+    "dateAdded": "2025-05-11T17:06:09.524Z",
+    "versions": {
+      "webp": {
+        "640": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\640.webp",
+          "size": 33674
+        },
+        "768": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\768.webp",
+          "size": 43364
+        },
+        "1024": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\1024.webp",
+          "size": 61702
+        },
+        "1280": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\1280.webp",
+          "size": 81644
+        },
+        "1536": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\1536.webp",
+          "size": 103600
+        },
+        "original": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\original.webp",
+          "size": 208684
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\placeholder.webp",
+          "size": 288
+        }
+      },
+      "avif": {
+        "640": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\640.avif",
+          "size": 10086
+        },
+        "768": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\768.avif",
+          "size": 11243
+        },
+        "1024": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\1024.avif",
+          "size": 16085
+        },
+        "1280": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\1280.avif",
+          "size": 21076
+        },
+        "1536": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\1536.avif",
+          "size": 26259
+        },
+        "original": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\original.avif",
+          "size": 547
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\placeholder.avif",
+          "size": 539
+        }
+      },
+      "jpg": {
+        "640": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\640.jpg",
+          "size": 21670
+        },
+        "768": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\768.jpg",
+          "size": 28728
+        },
+        "1024": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\1024.jpg",
+          "size": 44944
+        },
+        "1280": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\1280.jpg",
+          "size": 63994
+        },
+        "1536": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\1536.jpg",
+          "size": 85248
+        },
+        "original": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\original.jpg",
+          "size": 373
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\placeholder.jpg",
+          "size": 374
+        }
+      },
+      "png": {
+        "640": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\640.png",
+          "size": 46127
+        },
+        "768": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\768.png",
+          "size": 62993
+        },
+        "1024": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\1024.png",
+          "size": 96281
+        },
+        "1280": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\1280.png",
+          "size": 142154
+        },
+        "1536": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\1536.png",
+          "size": 201708
+        },
+        "original": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\original.png",
+          "size": 1152
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\4afdfda869894475345d4836be5ead63\\placeholder.png",
+          "size": 826
+        }
+      }
+    }
+  },
+  "b64bbd5e168f1e67c953815f46fe2906": {
+    "id": "b64bbd5e168f1e67c953815f46fe2906",
+    "name": "frentes-impermeabilizantes",
+    "category": "products",
+    "originalFormat": "heif",
+    "originalWidth": 2501,
+    "originalHeight": 2501,
+    "originalSize": 171980,
+    "dateAdded": "2025-05-11T17:06:25.815Z",
+    "versions": {
+      "webp": {
+        "640": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\640.webp",
+          "size": 34246
+        },
+        "768": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\768.webp",
+          "size": 43718
+        },
+        "1024": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\1024.webp",
+          "size": 62254
+        },
+        "1280": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\1280.webp",
+          "size": 83166
+        },
+        "1536": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\1536.webp",
+          "size": 104754
+        },
+        "original": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\original.webp",
+          "size": 209898
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\placeholder.webp",
+          "size": 278
+        }
+      },
+      "avif": {
+        "640": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\640.avif",
+          "size": 10014
+        },
+        "768": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\768.avif",
+          "size": 11411
+        },
+        "1024": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\1024.avif",
+          "size": 16155
+        },
+        "1280": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\1280.avif",
+          "size": 21376
+        },
+        "1536": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\1536.avif",
+          "size": 26369
+        },
+        "original": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\original.avif",
+          "size": 548
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\placeholder.avif",
+          "size": 544
+        }
+      },
+      "jpg": {
+        "640": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\640.jpg",
+          "size": 21716
+        },
+        "768": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\768.jpg",
+          "size": 28810
+        },
+        "1024": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\1024.jpg",
+          "size": 45063
+        },
+        "1280": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\1280.jpg",
+          "size": 64152
+        },
+        "1536": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\1536.jpg",
+          "size": 85360
+        },
+        "original": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\original.jpg",
+          "size": 374
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\placeholder.jpg",
+          "size": 374
+        }
+      },
+      "png": {
+        "640": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\640.png",
+          "size": 46318
+        },
+        "768": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\768.png",
+          "size": 60305
+        },
+        "1024": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\1024.png",
+          "size": 97819
+        },
+        "1280": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\1280.png",
+          "size": 141521
+        },
+        "1536": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\1536.png",
+          "size": 196577
+        },
+        "original": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\original.png",
+          "size": 1152
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\b64bbd5e168f1e67c953815f46fe2906\\placeholder.png",
+          "size": 843
+        }
+      }
+    }
+  },
+  "e61325522470ab8928b81776bf3e143a": {
+    "id": "e61325522470ab8928b81776bf3e143a",
+    "name": "hidrolaca",
+    "category": "products",
+    "originalFormat": "heif",
+    "originalWidth": 2501,
+    "originalHeight": 2501,
+    "originalSize": 174340,
+    "dateAdded": "2025-05-11T17:06:42.715Z",
+    "versions": {
+      "webp": {
+        "640": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\640.webp",
+          "size": 33950
+        },
+        "768": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\768.webp",
+          "size": 43686
+        },
+        "1024": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\1024.webp",
+          "size": 62180
+        },
+        "1280": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\1280.webp",
+          "size": 82872
+        },
+        "1536": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\1536.webp",
+          "size": 105138
+        },
+        "original": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\original.webp",
+          "size": 210258
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\placeholder.webp",
+          "size": 278
+        }
+      },
+      "avif": {
+        "640": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\640.avif",
+          "size": 10254
+        },
+        "768": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\768.avif",
+          "size": 11554
+        },
+        "1024": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\1024.avif",
+          "size": 16345
+        },
+        "1280": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\1280.avif",
+          "size": 21328
+        },
+        "1536": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\1536.avif",
+          "size": 26706
+        },
+        "original": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\original.avif",
+          "size": 547
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\placeholder.avif",
+          "size": 543
+        }
+      },
+      "jpg": {
+        "640": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\640.jpg",
+          "size": 21862
+        },
+        "768": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\768.jpg",
+          "size": 29048
+        },
+        "1024": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\1024.jpg",
+          "size": 45488
+        },
+        "1280": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\1280.jpg",
+          "size": 64763
+        },
+        "1536": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\1536.jpg",
+          "size": 86144
+        },
+        "original": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\original.jpg",
+          "size": 373
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\placeholder.jpg",
+          "size": 372
+        }
+      },
+      "png": {
+        "640": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\640.png",
+          "size": 46701
+        },
+        "768": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\768.png",
+          "size": 62528
+        },
+        "1024": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\1024.png",
+          "size": 98079
+        },
+        "1280": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\1280.png",
+          "size": 146375
+        },
+        "1536": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\1536.png",
+          "size": 193759
+        },
+        "original": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\original.png",
+          "size": 1174
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\e61325522470ab8928b81776bf3e143a\\placeholder.png",
+          "size": 854
+        }
+      }
+    }
+  },
+  "b7e31709e037cafd0994894b8ec8d975": {
+    "id": "b7e31709e037cafd0994894b8ec8d975",
+    "name": "latex-interior-ext",
+    "category": "products",
+    "originalFormat": "heif",
+    "originalWidth": 2501,
+    "originalHeight": 2501,
+    "originalSize": 176545,
+    "dateAdded": "2025-05-11T17:07:00.241Z",
+    "versions": {
+      "webp": {
+        "640": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\640.webp",
+          "size": 34266
+        },
+        "768": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\768.webp",
+          "size": 44094
+        },
+        "1024": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\1024.webp",
+          "size": 62712
+        },
+        "1280": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\1280.webp",
+          "size": 84166
+        },
+        "1536": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\1536.webp",
+          "size": 106188
+        },
+        "original": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\original.webp",
+          "size": 213290
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\placeholder.webp",
+          "size": 282
+        }
+      },
+      "avif": {
+        "640": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\640.avif",
+          "size": 10177
+        },
+        "768": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\768.avif",
+          "size": 11457
+        },
+        "1024": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\1024.avif",
+          "size": 16052
+        },
+        "1280": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\1280.avif",
+          "size": 21368
+        },
+        "1536": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\1536.avif",
+          "size": 26471
+        },
+        "original": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\original.avif",
+          "size": 550
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\placeholder.avif",
+          "size": 548
+        }
+      },
+      "jpg": {
+        "640": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\640.jpg",
+          "size": 21669
+        },
+        "768": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\768.jpg",
+          "size": 28801
+        },
+        "1024": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\1024.jpg",
+          "size": 45094
+        },
+        "1280": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\1280.jpg",
+          "size": 64236
+        },
+        "1536": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\1536.jpg",
+          "size": 85586
+        },
+        "original": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\original.jpg",
+          "size": 369
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\placeholder.jpg",
+          "size": 371
+        }
+      },
+      "png": {
+        "640": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\640.png",
+          "size": 47660
+        },
+        "768": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\768.png",
+          "size": 61863
+        },
+        "1024": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\1024.png",
+          "size": 97573
+        },
+        "1280": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\1280.png",
+          "size": 141557
+        },
+        "1536": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\1536.png",
+          "size": 199661
+        },
+        "original": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\original.png",
+          "size": 1169
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\b7e31709e037cafd0994894b8ec8d975\\placeholder.png",
+          "size": 857
+        }
+      }
+    }
+  },
+  "69591d92adfd52bd0a20b6a87364404f": {
+    "id": "69591d92adfd52bd0a20b6a87364404f",
+    "name": "latex-interior",
+    "category": "products",
+    "originalFormat": "heif",
+    "originalWidth": 600,
+    "originalHeight": 600,
+    "originalSize": 24911,
+    "dateAdded": "2025-05-11T17:07:17.194Z",
+    "versions": {
+      "webp": {
+        "original": {
+          "path": "assets\\images\\products\\69591d92adfd52bd0a20b6a87364404f\\original.webp",
+          "size": 36836
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\69591d92adfd52bd0a20b6a87364404f\\placeholder.webp",
+          "size": 298
+        }
+      },
+      "avif": {
+        "original": {
+          "path": "assets\\images\\products\\69591d92adfd52bd0a20b6a87364404f\\original.avif",
+          "size": 537
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\69591d92adfd52bd0a20b6a87364404f\\placeholder.avif",
+          "size": 535
+        }
+      },
+      "jpg": {
+        "original": {
+          "path": "assets\\images\\products\\69591d92adfd52bd0a20b6a87364404f\\original.jpg",
+          "size": 380
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\69591d92adfd52bd0a20b6a87364404f\\placeholder.jpg",
+          "size": 378
+        }
+      },
+      "png": {
+        "original": {
+          "path": "assets\\images\\products\\69591d92adfd52bd0a20b6a87364404f\\original.png",
+          "size": 673
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\69591d92adfd52bd0a20b6a87364404f\\placeholder.png",
+          "size": 488
+        }
+      }
+    }
+  },
+  "d40accacd473874f68df036f460376f3": {
+    "id": "d40accacd473874f68df036f460376f3",
+    "name": "esmalte-sintetico",
+    "category": "products",
+    "originalFormat": "heif",
+    "originalWidth": 2500,
+    "originalHeight": 2500,
+    "originalSize": 121404,
+    "dateAdded": "2025-05-11T17:07:17.820Z",
+    "versions": {
+      "webp": {
+        "640": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\640.webp",
+          "size": 37954
+        },
+        "768": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\768.webp",
+          "size": 48756
+        },
+        "1024": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\1024.webp",
+          "size": 70044
+        },
+        "1280": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\1280.webp",
+          "size": 92814
+        },
+        "1536": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\1536.webp",
+          "size": 117248
+        },
+        "original": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\original.webp",
+          "size": 207996
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\placeholder.webp",
+          "size": 288
+        }
+      },
+      "avif": {
+        "640": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\640.avif",
+          "size": 8287
+        },
+        "768": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\768.avif",
+          "size": 10178
+        },
+        "1024": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\1024.avif",
+          "size": 15085
+        },
+        "1280": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\1280.avif",
+          "size": 20048
+        },
+        "1536": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\1536.avif",
+          "size": 26730
+        },
+        "original": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\original.avif",
+          "size": 560
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\placeholder.avif",
+          "size": 545
+        }
+      },
+      "jpg": {
+        "640": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\640.jpg",
+          "size": 19181
+        },
+        "768": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\768.jpg",
+          "size": 26243
+        },
+        "1024": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\1024.jpg",
+          "size": 43310
+        },
+        "1280": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\1280.jpg",
+          "size": 63945
+        },
+        "1536": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\1536.jpg",
+          "size": 87571
+        },
+        "original": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\original.jpg",
+          "size": 363
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\placeholder.jpg",
+          "size": 365
+        }
+      },
+      "png": {
+        "640": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\640.png",
+          "size": 51150
+        },
+        "768": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\768.png",
+          "size": 70053
+        },
+        "1024": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\1024.png",
+          "size": 113873
+        },
+        "1280": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\1280.png",
+          "size": 165338
+        },
+        "1536": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\1536.png",
+          "size": 233392
+        },
+        "original": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\original.png",
+          "size": 593
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\d40accacd473874f68df036f460376f3\\placeholder.png",
+          "size": 450
+        }
+      }
+    }
+  },
+  "9f6373f440c77617ec297bc25644cc1f": {
+    "id": "9f6373f440c77617ec297bc25644cc1f",
+    "name": "lavable",
+    "category": "products",
+    "originalFormat": "heif",
+    "originalWidth": 2501,
+    "originalHeight": 2501,
+    "originalSize": 170967,
+    "dateAdded": "2025-05-11T17:07:50.789Z",
+    "versions": {
+      "webp": {
+        "640": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\640.webp",
+          "size": 33820
+        },
+        "768": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\768.webp",
+          "size": 43620
+        },
+        "1024": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\1024.webp",
+          "size": 61368
+        },
+        "1280": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\1280.webp",
+          "size": 82048
+        },
+        "1536": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\1536.webp",
+          "size": 104392
+        },
+        "original": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\original.webp",
+          "size": 209536
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\placeholder.webp",
+          "size": 280
+        }
+      },
+      "avif": {
+        "640": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\640.avif",
+          "size": 10169
+        },
+        "768": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\768.avif",
+          "size": 11563
+        },
+        "1024": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\1024.avif",
+          "size": 16273
+        },
+        "1280": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\1280.avif",
+          "size": 21355
+        },
+        "1536": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\1536.avif",
+          "size": 26396
+        },
+        "original": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\original.avif",
+          "size": 547
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\placeholder.avif",
+          "size": 543
+        }
+      },
+      "jpg": {
+        "640": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\640.jpg",
+          "size": 22064
+        },
+        "768": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\768.jpg",
+          "size": 29256
+        },
+        "1024": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\1024.jpg",
+          "size": 45693
+        },
+        "1280": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\1280.jpg",
+          "size": 64930
+        },
+        "1536": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\1536.jpg",
+          "size": 86414
+        },
+        "original": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\original.jpg",
+          "size": 371
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\placeholder.jpg",
+          "size": 370
+        }
+      },
+      "png": {
+        "640": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\640.png",
+          "size": 46845
+        },
+        "768": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\768.png",
+          "size": 63586
+        },
+        "1024": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\1024.png",
+          "size": 98845
+        },
+        "1280": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\1280.png",
+          "size": 141342
+        },
+        "1536": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\1536.png",
+          "size": 193845
+        },
+        "original": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\original.png",
+          "size": 1168
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\9f6373f440c77617ec297bc25644cc1f\\placeholder.png",
+          "size": 869
+        }
+      }
+    }
+  },
+  "c1d9a210c417e8f84fef4b2b924d40ea": {
+    "id": "c1d9a210c417e8f84fef4b2b924d40ea",
+    "name": "piscinas",
+    "category": "products",
+    "originalFormat": "heif",
+    "originalWidth": 2501,
+    "originalHeight": 2501,
+    "originalSize": 171838,
+    "dateAdded": "2025-05-11T17:08:24.638Z",
+    "versions": {
+      "webp": {
+        "640": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\640.webp",
+          "size": 33764
+        },
+        "768": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\768.webp",
+          "size": 43320
+        },
+        "1024": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\1024.webp",
+          "size": 61500
+        },
+        "1280": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\1280.webp",
+          "size": 82344
+        },
+        "1536": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\1536.webp",
+          "size": 104126
+        },
+        "original": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\original.webp",
+          "size": 208452
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\placeholder.webp",
+          "size": 284
+        }
+      },
+      "avif": {
+        "640": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\640.avif",
+          "size": 10252
+        },
+        "768": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\768.avif",
+          "size": 11524
+        },
+        "1024": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\1024.avif",
+          "size": 16279
+        },
+        "1280": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\1280.avif",
+          "size": 21397
+        },
+        "1536": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\1536.avif",
+          "size": 26449
+        },
+        "original": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\original.avif",
+          "size": 548
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\placeholder.avif",
+          "size": 545
+        }
+      },
+      "jpg": {
+        "640": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\640.jpg",
+          "size": 21930
+        },
+        "768": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\768.jpg",
+          "size": 29099
+        },
+        "1024": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\1024.jpg",
+          "size": 45318
+        },
+        "1280": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\1280.jpg",
+          "size": 64518
+        },
+        "1536": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\1536.jpg",
+          "size": 85723
+        },
+        "original": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\original.jpg",
+          "size": 374
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\placeholder.jpg",
+          "size": 373
+        }
+      },
+      "png": {
+        "640": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\640.png",
+          "size": 46195
+        },
+        "768": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\768.png",
+          "size": 61164
+        },
+        "1024": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\1024.png",
+          "size": 98708
+        },
+        "1280": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\1280.png",
+          "size": 140522
+        },
+        "1536": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\1536.png",
+          "size": 194617
+        },
+        "original": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\original.png",
+          "size": 1147
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\c1d9a210c417e8f84fef4b2b924d40ea\\placeholder.png",
+          "size": 853
+        }
+      }
+    }
+  },
+  "9152f386e8953b831089f2b6a6dca3de": {
+    "id": "9152f386e8953b831089f2b6a6dca3de",
+    "name": "pisos-deportivos",
+    "category": "products",
+    "originalFormat": "heif",
+    "originalWidth": 2501,
+    "originalHeight": 2501,
+    "originalSize": 173680,
+    "dateAdded": "2025-05-11T17:08:41.515Z",
+    "versions": {
+      "webp": {
+        "640": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\640.webp",
+          "size": 34136
+        },
+        "768": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\768.webp",
+          "size": 43882
+        },
+        "1024": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\1024.webp",
+          "size": 62338
+        },
+        "1280": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\1280.webp",
+          "size": 81866
+        },
+        "1536": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\1536.webp",
+          "size": 105228
+        },
+        "original": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\original.webp",
+          "size": 210810
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\placeholder.webp",
+          "size": 278
+        }
+      },
+      "avif": {
+        "640": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\640.avif",
+          "size": 10304
+        },
+        "768": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\768.avif",
+          "size": 11408
+        },
+        "1024": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\1024.avif",
+          "size": 16489
+        },
+        "1280": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\1280.avif",
+          "size": 21669
+        },
+        "1536": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\1536.avif",
+          "size": 27012
+        },
+        "original": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\original.avif",
+          "size": 549
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\placeholder.avif",
+          "size": 546
+        }
+      },
+      "jpg": {
+        "640": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\640.jpg",
+          "size": 22119
+        },
+        "768": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\768.jpg",
+          "size": 29337
+        },
+        "1024": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\1024.jpg",
+          "size": 45947
+        },
+        "1280": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\1280.jpg",
+          "size": 65525
+        },
+        "1536": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\1536.jpg",
+          "size": 87192
+        },
+        "original": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\original.jpg",
+          "size": 375
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\placeholder.jpg",
+          "size": 374
+        }
+      },
+      "png": {
+        "640": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\640.png",
+          "size": 46569
+        },
+        "768": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\768.png",
+          "size": 61500
+        },
+        "1024": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\1024.png",
+          "size": 98590
+        },
+        "1280": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\1280.png",
+          "size": 140713
+        },
+        "1536": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\1536.png",
+          "size": 194991
+        },
+        "original": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\original.png",
+          "size": 1097
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\9152f386e8953b831089f2b6a6dca3de\\placeholder.png",
+          "size": 850
+        }
+      }
+    }
+  },
+  "f5e4dee2fa621b465eefaf8983d946fa": {
+    "id": "f5e4dee2fa621b465eefaf8983d946fa",
+    "name": "base-niveladora-facilfix",
+    "category": "products",
+    "originalFormat": "webp",
+    "originalWidth": 1081,
+    "originalHeight": 1081,
+    "originalSize": 76114,
+    "dateAdded": "2025-05-11T23:46:07.351Z",
+    "versions": {
+      "webp": {
+        "640": {
+          "path": "assets\\images\\products\\f5e4dee2fa621b465eefaf8983d946fa\\640.webp",
+          "size": 30696
+        },
+        "768": {
+          "path": "assets\\images\\products\\f5e4dee2fa621b465eefaf8983d946fa\\768.webp",
+          "size": 39430
+        },
+        "1024": {
+          "path": "assets\\images\\products\\f5e4dee2fa621b465eefaf8983d946fa\\1024.webp",
+          "size": 58698
+        },
+        "original": {
+          "path": "assets\\images\\products\\f5e4dee2fa621b465eefaf8983d946fa\\original.webp",
+          "size": 73284
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\f5e4dee2fa621b465eefaf8983d946fa\\placeholder.webp",
+          "size": 284
+        }
+      },
+      "avif": {
+        "640": {
+          "path": "assets\\images\\products\\f5e4dee2fa621b465eefaf8983d946fa\\640.avif",
+          "size": 10559
+        },
+        "768": {
+          "path": "assets\\images\\products\\f5e4dee2fa621b465eefaf8983d946fa\\768.avif",
+          "size": 13138
+        },
+        "1024": {
+          "path": "assets\\images\\products\\f5e4dee2fa621b465eefaf8983d946fa\\1024.avif",
+          "size": 18404
+        },
+        "original": {
+          "path": "assets\\images\\products\\f5e4dee2fa621b465eefaf8983d946fa\\original.avif",
+          "size": 544
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\f5e4dee2fa621b465eefaf8983d946fa\\placeholder.avif",
+          "size": 545
+        }
+      },
+      "jpg": {
+        "640": {
+          "path": "assets\\images\\products\\f5e4dee2fa621b465eefaf8983d946fa\\640.jpg",
+          "size": 22808
+        },
+        "768": {
+          "path": "assets\\images\\products\\f5e4dee2fa621b465eefaf8983d946fa\\768.jpg",
+          "size": 30510
+        },
+        "1024": {
+          "path": "assets\\images\\products\\f5e4dee2fa621b465eefaf8983d946fa\\1024.jpg",
+          "size": 48059
+        },
+        "original": {
+          "path": "assets\\images\\products\\f5e4dee2fa621b465eefaf8983d946fa\\original.jpg",
+          "size": 375
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\f5e4dee2fa621b465eefaf8983d946fa\\placeholder.jpg",
+          "size": 376
+        }
+      },
+      "png": {
+        "640": {
+          "path": "assets\\images\\products\\f5e4dee2fa621b465eefaf8983d946fa\\640.png",
+          "size": 47165
+        },
+        "768": {
+          "path": "assets\\images\\products\\f5e4dee2fa621b465eefaf8983d946fa\\768.png",
+          "size": 65188
+        },
+        "1024": {
+          "path": "assets\\images\\products\\f5e4dee2fa621b465eefaf8983d946fa\\1024.png",
+          "size": 103231
+        },
+        "original": {
+          "path": "assets\\images\\products\\f5e4dee2fa621b465eefaf8983d946fa\\original.png",
+          "size": 1048
+        },
+        "placeholder": {
+          "path": "assets\\images\\products\\f5e4dee2fa621b465eefaf8983d946fa\\placeholder.png",
+          "size": 785
+        }
+      }
+    }
+  }
+}

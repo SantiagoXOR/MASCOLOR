@@ -1,0 +1,332 @@
+[
+  {
+    "productId": "21bfb22f-d05f-4a21-87d8-fea02d9e8a8f",
+    "productName": "Latex Latex",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/3159212b305552f1a4c99cc4f7ce3b02/original.webp",
+    "assetId": "3159212b305552f1a4c99cc4f7ce3b02",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/3159212b305552f1a4c99cc4f7ce3b02/original.webp"
+    }
+  },
+  {
+    "productId": "6429cbb6-5e70-4c82-adfd-b048059b96f9",
+    "productName": "Impregnante",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/a2cdbcac473720d80eb0915480a8ef47/original.webp",
+    "assetId": "a2cdbcac473720d80eb0915480a8ef47",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/a2cdbcac473720d80eb0915480a8ef47/original.webp"
+    }
+  },
+  {
+    "productId": "840a6635-e5f7-4a95-ae0b-0eb4f355d4da",
+    "productName": "Membrana",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/b14b2f8c8122ee84089f5d399f7b302a/original.webp",
+    "assetId": "b14b2f8c8122ee84089f5d399f7b302a",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/b14b2f8c8122ee84089f5d399f7b302a/original.webp"
+    }
+  },
+  {
+    "productId": "203e1001-5384-427c-a209-5d874e91e27c",
+    "productName": "Cielorraso",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/5221d44fec224dcb535ad8bba57ae1c7/original.webp",
+    "assetId": "5221d44fec224dcb535ad8bba57ae1c7",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/5221d44fec224dcb535ad8bba57ae1c7/original.webp"
+    }
+  },
+  {
+    "productId": "6e05003a-01e6-4f77-b411-bb76a1383c6b",
+    "productName": "Enduido",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/47e280f6fc41087c605040d90a87c9b0/original.webp",
+    "assetId": "47e280f6fc41087c605040d90a87c9b0",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/47e280f6fc41087c605040d90a87c9b0/original.webp"
+    }
+  },
+  {
+    "productId": "eeb365fb-5950-4a93-91bc-58d1ebe521ba",
+    "productName": "Fibrado",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/8ddb2121e915f0a9237d5fbf41c59b35/original.webp",
+    "assetId": "8ddb2121e915f0a9237d5fbf41c59b35",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/8ddb2121e915f0a9237d5fbf41c59b35/original.webp"
+    }
+  },
+  {
+    "productId": "65976913-36c1-4985-ae23-5fca1a8f9df1",
+    "productName": "Fijador",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/75c8e2e0d5d61e16a2749d2dd3e0610e/original.webp",
+    "assetId": "75c8e2e0d5d61e16a2749d2dd3e0610e",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/75c8e2e0d5d61e16a2749d2dd3e0610e/original.webp"
+    }
+  },
+  {
+    "productId": "5d59d9c1-4f24-4eb6-9016-11f7b350012d",
+    "productName": "Imprimacion",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/ea0476ddc5da2ab50052406d834a1fd8/original.webp",
+    "assetId": "ea0476ddc5da2ab50052406d834a1fd8",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/ea0476ddc5da2ab50052406d834a1fd8/original.webp"
+    }
+  },
+  {
+    "productId": "01078243-1c31-4d73-b365-88c3ae549045",
+    "productName": "Ladrillo Visto",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/c1de8dcedbad448c4de8a94b618622bf/original.webp",
+    "assetId": "c1de8dcedbad448c4de8a94b618622bf",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/c1de8dcedbad448c4de8a94b618622bf/original.webp"
+    }
+  },
+  {
+    "productId": "43891f74-c496-4a9a-816d-250c529dd2ec",
+    "productName": "Latex Exterior",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/b1abc83f6bf67268e19f97eff47a3064/original.webp",
+    "assetId": "b1abc83f6bf67268e19f97eff47a3064",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/b1abc83f6bf67268e19f97eff47a3064/original.webp"
+    }
+  },
+  {
+    "productId": "222b20ae-ee63-4038-937f-343b326bd5ef",
+    "productName": "Masilla Yeso",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/7c1da0baeb7436edc9b036ad20633a7a/original.webp",
+    "assetId": "7c1da0baeb7436edc9b036ad20633a7a",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/7c1da0baeb7436edc9b036ad20633a7a/original.webp"
+    }
+  },
+  {
+    "productId": "2d975471-5a4b-40a9-b735-1b5f06bf55ba",
+    "productName": "Membrana",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/b14b2f8c8122ee84089f5d399f7b302a/original.webp",
+    "assetId": "b14b2f8c8122ee84089f5d399f7b302a",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/b14b2f8c8122ee84089f5d399f7b302a/original.webp"
+    }
+  },
+  {
+    "productId": "6a72f8e7-d0d7-447c-a367-4c4484e28725",
+    "productName": "Exterior Blanco Bolsa",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/1505e3ea4af702caafe55d6c80296e08/original.webp",
+    "assetId": "1505e3ea4af702caafe55d6c80296e08",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/1505e3ea4af702caafe55d6c80296e08/original.webp"
+    }
+  },
+  {
+    "productId": "46f4281e-5358-445d-b4df-5891958c7aae",
+    "productName": "Exterior Blanco",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/8b8b53ee442814f365e3dd8793b2924e/original.webp",
+    "assetId": "8b8b53ee442814f365e3dd8793b2924e",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/8b8b53ee442814f365e3dd8793b2924e/original.webp"
+    }
+  },
+  {
+    "productId": "48151651-f9c7-4044-9332-a15298c5d275",
+    "productName": "Exterior Gris Bolsa",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/c104afcd77b1599fc1a366454aeb8bff/original.webp",
+    "assetId": "c104afcd77b1599fc1a366454aeb8bff",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/c104afcd77b1599fc1a366454aeb8bff/original.webp"
+    }
+  },
+  {
+    "productId": "abe98640-1973-499e-a568-ef8ded16b8a3",
+    "productName": "Exterior Gris",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/ea7fc7772f21e9e34e1278d15ff2a1a1/original.webp",
+    "assetId": "ea7fc7772f21e9e34e1278d15ff2a1a1",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/ea7fc7772f21e9e34e1278d15ff2a1a1/original.webp"
+    }
+  },
+  {
+    "productId": "55a7d86d-cd29-4dfc-9668-c5a7b4ac50d4",
+    "productName": "Interior Blanco Bolsa",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/b1e23fed3b3999cbd2602b9ef7bd43fe/original.webp",
+    "assetId": "b1e23fed3b3999cbd2602b9ef7bd43fe",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/b1e23fed3b3999cbd2602b9ef7bd43fe/original.webp"
+    }
+  },
+  {
+    "productId": "26ec2a18-d678-44c6-8cb4-70e0073a509e",
+    "productName": "Interior Blanco",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/3fab49d8894e385aebb2f150ca3b1ec8/original.webp",
+    "assetId": "3fab49d8894e385aebb2f150ca3b1ec8",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/3fab49d8894e385aebb2f150ca3b1ec8/original.webp"
+    }
+  },
+  {
+    "productId": "9845ac51-51c1-41a6-9932-7a60964d6190",
+    "productName": "Barniz Agua",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/7479f61438f2ad01069b5bb3dc8b0cdd/original.webp",
+    "assetId": "7479f61438f2ad01069b5bb3dc8b0cdd",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/7479f61438f2ad01069b5bb3dc8b0cdd/original.webp"
+    }
+  },
+  {
+    "productId": "67105ea6-6946-4db1-955c-b69a10da73fb",
+    "productName": "Esmalte Agua",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/4afdfda869894475345d4836be5ead63/original.webp",
+    "assetId": "4afdfda869894475345d4836be5ead63",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/4afdfda869894475345d4836be5ead63/original.webp"
+    }
+  },
+  {
+    "productId": "b74533d4-29da-48c5-bdca-579154d0037d",
+    "productName": "Frentes Impermeabilizantes",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/b64bbd5e168f1e67c953815f46fe2906/original.webp",
+    "assetId": "b64bbd5e168f1e67c953815f46fe2906",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/b64bbd5e168f1e67c953815f46fe2906/original.webp"
+    }
+  },
+  {
+    "productId": "2d2882bc-da04-4011-b42c-695463bee250",
+    "productName": "Hidrolaca",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/e61325522470ab8928b81776bf3e143a/original.webp",
+    "assetId": "e61325522470ab8928b81776bf3e143a",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/e61325522470ab8928b81776bf3e143a/original.webp"
+    }
+  },
+  {
+    "productId": "9877e0f6-46e3-443c-ae8b-1c707407ba44",
+    "productName": "Latex Interior Ext",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/b7e31709e037cafd0994894b8ec8d975/original.webp",
+    "assetId": "b7e31709e037cafd0994894b8ec8d975",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/b7e31709e037cafd0994894b8ec8d975/original.webp"
+    }
+  },
+  {
+    "productId": "3b5ddbee-b150-415b-bd9b-d864da605012",
+    "productName": "Latex Interior",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/69591d92adfd52bd0a20b6a87364404f/original.webp",
+    "assetId": "69591d92adfd52bd0a20b6a87364404f",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/69591d92adfd52bd0a20b6a87364404f/original.webp"
+    }
+  },
+  {
+    "productId": "83c8ee06-b17d-42bc-93ea-316bca324c3a",
+    "productName": "Esmalte Sintetico",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/d40accacd473874f68df036f460376f3/original.webp",
+    "assetId": "d40accacd473874f68df036f460376f3",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/d40accacd473874f68df036f460376f3/original.webp"
+    }
+  },
+  {
+    "productId": "5ea06a40-ee95-4d7c-849c-0e195a850b26",
+    "productName": "Lavable Super",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/9f6373f440c77617ec297bc25644cc1f/original.webp",
+    "assetId": "9f6373f440c77617ec297bc25644cc1f",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/9f6373f440c77617ec297bc25644cc1f/original.webp"
+    }
+  },
+  {
+    "productId": "275b7076-4085-4a04-8f5f-bb9094a865bf",
+    "productName": "Lavable",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/9f6373f440c77617ec297bc25644cc1f/original.webp",
+    "assetId": "9f6373f440c77617ec297bc25644cc1f",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/9f6373f440c77617ec297bc25644cc1f/original.webp"
+    }
+  },
+  {
+    "productId": "ce235f0d-9673-4b24-8368-ae4c9a70677d",
+    "productName": "Membrana",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/b14b2f8c8122ee84089f5d399f7b302a/original.webp",
+    "assetId": "b14b2f8c8122ee84089f5d399f7b302a",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/b14b2f8c8122ee84089f5d399f7b302a/original.webp"
+    }
+  },
+  {
+    "productId": "70fb3c5a-09eb-48de-a749-ec6e7ef264f7",
+    "productName": "Piscinas",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/c1d9a210c417e8f84fef4b2b924d40ea/original.webp",
+    "assetId": "c1d9a210c417e8f84fef4b2b924d40ea",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/c1d9a210c417e8f84fef4b2b924d40ea/original.webp"
+    }
+  },
+  {
+    "productId": "3c21f55b-10f6-44ca-bae3-9f0e72d2fd58",
+    "productName": "Pisos Deportivos",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/assets/images/products/9152f386e8953b831089f2b6a6dca3de/original.webp",
+    "assetId": "9152f386e8953b831089f2b6a6dca3de",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/assets/images/products/9152f386e8953b831089f2b6a6dca3de/original.webp"
+    }
+  }
+]

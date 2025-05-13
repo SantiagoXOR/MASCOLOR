@@ -14,7 +14,7 @@ import {
   Thermometer,
   Shield,
   Leaf,
-  Layers
+  Layers,
 } from "lucide-react";
 
 type IconType =
@@ -29,7 +29,15 @@ type IconType =
   | "thermal"
   | "protective"
   | "eco"
-  | "texture";
+  | "texture"
+  | "paint"
+  | "floor"
+  | "ceiling"
+  | "trowel"
+  | "drop"
+  | "primer"
+  | "brick"
+  | "putty";
 
 interface ProductIconProps {
   type: IconType;
@@ -50,10 +58,19 @@ const iconConfig: Record<IconType, React.ElementType> = {
   protective: Shield,
   eco: Leaf,
   texture: Palette,
+  paint: Paintbrush,
+  floor: Building,
+  ceiling: Home,
+  trowel: Hammer,
+  drop: Droplet,
+  primer: Paintbrush,
+  brick: Layers,
+  putty: Palette,
 };
 
 export function ProductIcon({ type, className, size = 16 }: ProductIconProps) {
-  const IconComponent = iconConfig[type];
+  // Usar Paintbrush como icono por defecto si el tipo no está definido
+  const IconComponent = iconConfig[type] || Paintbrush;
 
   return (
     <div className={cn("flex items-center justify-center", className)}>

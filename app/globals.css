@@ -10,13 +10,13 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 328 100% 39%;  /* Cardinal Pink 900 - #870064 */
+    --primary: 328 100% 39%; /* Cardinal Pink 900 - #870064 */
     --primary-foreground: 210 40% 98%;
-    --secondary: 322 100% 50%;  /* Cardinal Pink 600 - #FF00C7 */
+    --secondary: 322 100% 50%; /* Cardinal Pink 600 - #FF00C7 */
     --secondary-foreground: 210 40% 98%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 325 100% 66%;  /* Cardinal Pink 400 - #FF54C9 */
+    --accent: 325 100% 66%; /* Cardinal Pink 400 - #FF54C9 */
     --accent-foreground: 210 40% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -33,13 +33,13 @@
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 328 100% 39%;  /* Cardinal Pink 900 - #870064 */
+    --primary: 328 100% 39%; /* Cardinal Pink 900 - #870064 */
     --primary-foreground: 210 40% 98%;
-    --secondary: 322 100% 50%;  /* Cardinal Pink 600 - #FF00C7 */
+    --secondary: 322 100% 50%; /* Cardinal Pink 600 - #FF00C7 */
     --secondary-foreground: 210 40% 98%;
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 325 100% 66%;  /* Cardinal Pink 400 - #FF54C9 */
+    --accent: 325 100% 66%; /* Cardinal Pink 400 - #FF54C9 */
     --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
@@ -59,7 +59,11 @@
 }
 
 .gradient-mask {
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 50%,
+    transparent 100%
+  );
 }
 
 .text-balance {
@@ -116,4 +120,20 @@
 
 .logo-item-large {
   transform: scale(1.1);
+}
+
+/* Animación para el tooltip del chat */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out forwards;
 }

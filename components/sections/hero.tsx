@@ -13,6 +13,8 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { InfiniteMarquee } from "@/components/ui/infinite-marquee";
 import { BeamsBackground } from "@/components/ui/beams-background";
+import { OptimizedImage } from "@/components/ui/optimized-image";
+import { useFeaturedBrands } from "@/hooks/useFeaturedBrands";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -49,6 +51,9 @@ export function HeroSection() {
   const autoplayTimerRef = useRef<NodeJS.Timeout | null>(null);
   const controls = useAnimation();
 
+  // Obtener marcas y assets desde Supabase
+  const { brands, brandAssets, loading: loadingBrands } = useFeaturedBrands();
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
@@ -58,34 +63,8 @@ export function HeroSection() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
-  // Mapeo de marcas a imágenes de productos y fondos
-  const brandAssets = {
-    facilfix: {
-      bucket: "/images/products/FACIL FIX EXTERIOR BLANCO.png",
-      background: "/images/buckets/FACILFIX.jpg",
-      title: "Reparación y construcción profesional",
-    },
-    ecopainting: {
-      bucket: "/images/products/ECOPAINTINGMEMBRANA.png",
-      background: "/images/buckets/ECOPAINTING.jpg",
-      title: "Rendimiento inteligente para obras y hogares",
-    },
-    newhouse: {
-      bucket: "/images/products/NEW-HOUSE-BARNIZ-MARINO.png",
-      background: "/images/buckets/NEWHOUSE.jpg",
-      title: "Protección total para maderas expuestas",
-    },
-    premium: {
-      bucket: "/images/products/PREMIUM-SUPERLAVABLE.png",
-      background: "/images/buckets/PREMIUM.jpg",
-      title: "Acabados de alta calidad para interiores y exteriores",
-    },
-    expression: {
-      bucket: "/images/products/EXPRESSION-LATEX-ACRILICO-INTERIOR-1.png",
-      background: "/images/buckets/EXPRESSION.jpg",
-      title: "Alta blancura y terminación profesional",
-    },
-  };
+  // Referencia para rastrear la última interacción del usuario
+  const lastInteractionRef = useRef<number>(Date.now());
 
   // Función para manejar el cambio de marca
   const handleBrandChange = async (brand: string) => {
@@ -93,9 +72,9 @@ export function HeroSection() {
 
     // Pausar el autoplay cuando el usuario interactúa
     setAutoplayEnabled(false);
-    if (autoplayTimerRef.current) {
-      clearTimeout(autoplayTimerRef.current);
-    }
+
+    // Actualizar el timestamp de la última interacción
+    lastInteractionRef.current = Date.now();
 
     setIsChanging(true);
 
@@ -112,27 +91,59 @@ export function HeroSection() {
       .then(() => {
         setIsChanging(false);
       });
-
-    // Reanudar el autoplay después de 10 segundos de inactividad
-    autoplayTimerRef.current = setTimeout(() => {
-      setAutoplayEnabled(true);
-    }, 10000);
   };
+
+  // Efecto para manejar la reanudación automática del autoplay después de inactividad
+  useEffect(() => {
+    // Función para verificar si debemos reanudar el autoplay
+    const checkAutoplayResume = () => {
+      const now = Date.now();
+      const timeSinceLastInteraction = now - lastInteractionRef.current;
+
+      // Si han pasado más de 10 segundos desde la última interacción, reanudar autoplay
+      if (timeSinceLastInteraction > 10000 && !autoplayEnabled) {
+        setAutoplayEnabled(true);
+      }
+    };
+
+    // Configurar un intervalo para verificar periódicamente
+    const intervalId = setInterval(checkAutoplayResume, 1000);
+
+    // Limpiar el intervalo cuando el componente se desmonte
+    return () => clearInterval(intervalId);
+  }, [autoplayEnabled]);
 
   // Efecto para el autoplay
   useEffect(() => {
     if (!autoplayEnabled || isChanging) return;
 
     const brands = Object.keys(brandAssets);
+    if (brands.length === 0) return; // Protección contra arrays vacíos
+
     const currentIndex = brands.indexOf(activeBrand);
     const nextIndex = (currentIndex + 1) % brands.length;
 
     const timer = setTimeout(() => {
-      handleBrandChange(brands[nextIndex]);
+      // Usar una función anónima para evitar dependencias circulares
+      const nextBrand = brands[nextIndex];
+      if (nextBrand === activeBrand) return; // Evitar cambios innecesarios
+
+      setIsChanging(true);
+      setActiveBrand(nextBrand);
+
+      controls
+        .start({
+          opacity: 1,
+          scale: 1,
+          transition: { duration: 0.5, type: "spring" },
+        })
+        .then(() => {
+          setIsChanging(false);
+        });
     }, 7000);
 
     return () => clearTimeout(timer);
-  }, [activeBrand, autoplayEnabled, isChanging]);
+  }, [activeBrand, autoplayEnabled, isChanging, controls, brandAssets]);
 
   // Efecto para cambiar la intensidad basada en el scroll con transiciones más suaves
   useEffect(() => {
@@ -270,18 +281,29 @@ export function HeroSection() {
                 {/* Indicador de marca activa */}
                 <div className="absolute -bottom-6 left-0 w-full flex justify-center">
                   <div className="flex gap-3 items-center">
-                    {Object.keys(brandAssets).map((brand) => (
-                      <button
-                        key={brand}
-                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                          activeBrand === brand
-                            ? "bg-white scale-150"
-                            : "bg-white/30 hover:bg-white/50"
-                        }`}
-                        onClick={() => handleBrandChange(brand)}
-                        aria-label={`Seleccionar marca ${brand}`}
-                      />
-                    ))}
+                    {loadingBrands
+                      ? // Mostrar indicadores de carga mientras se cargan las marcas
+                        Array(5)
+                          .fill(0)
+                          .map((_, index) => (
+                            <div
+                              key={index}
+                              className="w-2 h-2 rounded-full bg-white/30 animate-pulse"
+                            />
+                          ))
+                      : // Mostrar botones para cada marca
+                        Object.keys(brandAssets).map((brand) => (
+                          <button
+                            key={brand}
+                            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                              activeBrand === brand
+                                ? "bg-white scale-150"
+                                : "bg-white/30 hover:bg-white/50"
+                            }`}
+                            onClick={() => handleBrandChange(brand)}
+                            aria-label={`Seleccionar marca ${brand}`}
+                          />
+                        ))}
 
                     <button
                       className="ml-4 text-white/60 hover:text-white transition-colors bg-white/10 hover:bg-white/20 rounded-full p-1.5"
@@ -336,136 +358,72 @@ export function HeroSection() {
                 >
                   {/* Contenedor único para los logos */}
                   <div className="logos-slide flex items-center gap-16">
-                    {/* Logo Facil Fix */}
-                    <div
-                      className="logo-item logo-item-large"
-                      data-brand="facilfix"
-                    >
-                      <div className="relative h-16 w-[140px]">
-                        <Image
-                          src="/images/logos/facilfix.svg"
-                          alt="Logo Facil Fix"
-                          width={140}
-                          height={56}
-                          className="object-contain w-full h-full cursor-pointer transition-all duration-300"
-                          style={{
-                            filter: "brightness(0) invert(1)",
-                            opacity: activeBrand === "facilfix" ? 1 : 0.6,
-                            transform:
-                              activeBrand === "facilfix"
-                                ? "scale(1.15)"
-                                : "scale(1)",
-                            transition: "all 0.3s ease-in-out",
-                          }}
-                          priority
-                          onMouseEnter={() => handleBrandChange("facilfix")}
-                          onClick={() => handleBrandChange("facilfix")}
-                        />
-                      </div>
-                    </div>
-
-                    {/* Logo Eco Painting */}
-                    <div className="logo-item" data-brand="ecopainting">
-                      <div className="relative h-12 w-[100px]">
-                        <Image
-                          src="/images/logos/ecopainting.svg"
-                          alt="Logo Eco Painting"
-                          width={100}
-                          height={40}
-                          className="object-contain w-full h-full cursor-pointer transition-all duration-300"
-                          style={{
-                            filter: "brightness(0) invert(1)",
-                            opacity: activeBrand === "ecopainting" ? 1 : 0.6,
-                            transform:
-                              activeBrand === "ecopainting"
-                                ? "scale(1.15)"
-                                : "scale(1)",
-                            transition: "all 0.3s ease-in-out",
-                          }}
-                          priority
-                          onMouseEnter={() => handleBrandChange("ecopainting")}
-                          onClick={() => handleBrandChange("ecopainting")}
-                        />
-                      </div>
-                    </div>
-
-                    {/* Logo New House */}
-                    <div className="logo-item" data-brand="newhouse">
-                      <div className="relative h-12 w-[100px]">
-                        <Image
-                          src="/images/logos/newhouse.svg"
-                          alt="Logo New House"
-                          width={100}
-                          height={40}
-                          className="object-contain w-full h-full cursor-pointer transition-all duration-300"
-                          style={{
-                            filter: "brightness(0) invert(1)",
-                            opacity: activeBrand === "newhouse" ? 1 : 0.6,
-                            transform:
-                              activeBrand === "newhouse"
-                                ? "scale(1.15)"
-                                : "scale(1)",
-                            transition: "all 0.3s ease-in-out",
-                          }}
-                          priority
-                          onMouseEnter={() => handleBrandChange("newhouse")}
-                          onClick={() => handleBrandChange("newhouse")}
-                        />
-                      </div>
-                    </div>
-
-                    {/* Logo Premium */}
-                    <div
-                      className="logo-item logo-item-large"
-                      data-brand="premium"
-                    >
-                      <div className="relative h-16 w-[140px]">
-                        <Image
-                          src="/images/logos/premium.svg"
-                          alt="Logo Premium"
-                          width={140}
-                          height={56}
-                          className="object-contain w-full h-full cursor-pointer transition-all duration-300"
-                          style={{
-                            filter: "brightness(0) invert(1)",
-                            opacity: activeBrand === "premium" ? 1 : 0.6,
-                            transform:
-                              activeBrand === "premium"
-                                ? "scale(1.15)"
-                                : "scale(1)",
-                            transition: "all 0.3s ease-in-out",
-                          }}
-                          priority
-                          onMouseEnter={() => handleBrandChange("premium")}
-                          onClick={() => handleBrandChange("premium")}
-                        />
-                      </div>
-                    </div>
-
-                    {/* Logo Expression */}
-                    <div className="logo-item" data-brand="expression">
-                      <div className="relative h-12 w-[100px]">
-                        <Image
-                          src="/images/logos/expression.svg"
-                          alt="Logo Expression"
-                          width={100}
-                          height={40}
-                          className="object-contain w-full h-full cursor-pointer transition-all duration-300"
-                          style={{
-                            filter: "brightness(0) invert(1)",
-                            opacity: activeBrand === "expression" ? 1 : 0.6,
-                            transform:
-                              activeBrand === "expression"
-                                ? "scale(1.15)"
-                                : "scale(1)",
-                            transition: "all 0.3s ease-in-out",
-                          }}
-                          priority
-                          onMouseEnter={() => handleBrandChange("expression")}
-                          onClick={() => handleBrandChange("expression")}
-                        />
-                      </div>
-                    </div>
+                    {loadingBrands
+                      ? // Mostrar placeholders mientras se cargan las marcas
+                        Array(5)
+                          .fill(0)
+                          .map((_, index) => (
+                            <div key={index} className="logo-item">
+                              <div className="relative h-12 w-[100px] bg-white/10 animate-pulse rounded-md"></div>
+                            </div>
+                          ))
+                      : // Mostrar logos de marcas desde Supabase
+                        brands.map((brand) => (
+                          <div
+                            key={brand.id}
+                            className={`logo-item ${
+                              brand.slug === "premium" ||
+                              brand.slug === "facilfix"
+                                ? "logo-item-large"
+                                : ""
+                            }`}
+                            data-brand={brand.slug}
+                          >
+                            <div
+                              className={`relative ${
+                                brand.slug === "premium" ||
+                                brand.slug === "facilfix"
+                                  ? "h-16 w-[140px]"
+                                  : "h-12 w-[100px]"
+                              }`}
+                            >
+                              <Image
+                                src={
+                                  brand.logo_url ||
+                                  `/images/logos/${brand.slug}.svg`
+                                }
+                                alt={`Logo ${brand.name}`}
+                                width={
+                                  brand.slug === "premium" ||
+                                  brand.slug === "facilfix"
+                                    ? 140
+                                    : 100
+                                }
+                                height={
+                                  brand.slug === "premium" ||
+                                  brand.slug === "facilfix"
+                                    ? 56
+                                    : 40
+                                }
+                                className="object-contain w-full h-full cursor-pointer transition-all duration-300"
+                                style={{
+                                  filter: "brightness(0) invert(1)",
+                                  opacity: activeBrand === brand.slug ? 1 : 0.6,
+                                  transform:
+                                    activeBrand === brand.slug
+                                      ? "scale(1.15)"
+                                      : "scale(1)",
+                                  transition: "all 0.3s ease-in-out",
+                                }}
+                                priority
+                                onMouseEnter={() =>
+                                  handleBrandChange(brand.slug)
+                                }
+                                onClick={() => handleBrandChange(brand.slug)}
+                              />
+                            </div>
+                          </div>
+                        ))}
                   </div>
                 </InfiniteMarquee>
               </div>
@@ -558,11 +516,12 @@ export function HeroSection() {
                 className="relative w-[350px] h-[350px] lg:w-[450px] lg:h-[450px]"
                 style={{ zIndex: 20 }}
               >
-                <Image
+                <OptimizedImage
                   src={
                     brandAssets[activeBrand as keyof typeof brandAssets].bucket
                   }
                   alt={`Producto ${activeBrand}`}
+                  fallbackSrc="/images/products/placeholder.jpg"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-contain z-30"
@@ -572,13 +531,10 @@ export function HeroSection() {
                     mixBlendMode: "normal",
                   }}
                   priority
-                  unoptimized={true}
-                  onLoad={() => {
-                    console.log(`Imagen cargada: ${activeBrand}`);
-                  }}
-                  onError={() => {
-                    console.error(`Error al cargar la imagen: ${activeBrand}`);
-                  }}
+                  usePlaceholder={true}
+                  useBlur={true}
+                  containerClassName="w-full h-full"
+                  loadingClassName="bg-transparent"
                 />
               </motion.div>
             </div>

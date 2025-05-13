@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -28,39 +28,47 @@ function createBeam(width: number, height: number): Beam {
   return {
     x: Math.random() * width * 1.5 - width * 0.25,
     y: Math.random() * height * 1.5 - height * 0.25,
-    width: 40 + Math.random() * 80, // Beams más anchos para mayor presencia
-    length: height * 3, // Beams más largos
+    width: 60 + Math.random() * 60, // Beams más anchos pero menos variados para mejor rendimiento
+    length: height * 2.5, // Beams ligeramente más cortos para mejor rendimiento
     angle: angle,
-    speed: 0.7 + Math.random() * 1.4, // Velocidad ligeramente mayor
-    opacity: 0.2 + Math.random() * 0.25, // Mayor opacidad base
+    speed: 0.5 + Math.random() * 1.0, // Velocidad reducida para menos actualizaciones
+    opacity: 0.15 + Math.random() * 0.2, // Menor opacidad base para mejor rendimiento
     // Adaptado a los colores de +COLOR (tonos de púrpura/magenta)
-    hue: 310 + Math.random() * 40, // Rango más amplio para tonos magenta/púrpura
+    hue: 310 + Math.random() * 30, // Rango más estrecho para mejor rendimiento
     pulse: Math.random() * Math.PI * 2,
-    pulseSpeed: 0.025 + Math.random() * 0.035, // Pulso ligeramente más rápido
+    pulseSpeed: 0.02 + Math.random() * 0.02, // Pulso más lento para mejor rendimiento
   };
 }
 
 export function BeamsBackground({
   className,
   children,
-  intensity = "strong",
+  intensity = "subtle",
 }: BeamsBackgroundProps) {
   // Asegurarse de que intensity sea uno de los valores válidos
   const safeIntensity =
     typeof intensity === "string" &&
     ["subtle", "medium", "strong", "very-strong"].includes(intensity)
       ? intensity
-      : "medium";
+      : "subtle";
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const beamsRef = useRef<Beam[]>([]);
   const animationFrameRef = useRef<number>(0);
-  const MINIMUM_BEAMS = 30; // Aumentado para más densidad visual
+  const MINIMUM_BEAMS = 8; // Reducido drásticamente para mejorar rendimiento
+
+  // Detectar si es un dispositivo móvil para reducir aún más los efectos
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Detectar dispositivos móviles o de bajo rendimiento
+    setIsMobile(window.innerWidth < 768 || navigator.hardwareConcurrency <= 4);
+  }, []);
 
   const opacityMap = {
-    subtle: 0.75,
-    medium: 0.9,
-    strong: 1.1,
-    "very-strong": 1.3,
+    subtle: 0.4, // Reducido significativamente
+    medium: 0.6, // Reducido significativamente
+    strong: 0.8, // Reducido significativamente
+    "very-strong": 1.0, // Reducido significativamente
   };
 
   useEffect(() => {
@@ -71,15 +79,18 @@ export function BeamsBackground({
     if (!ctx) return;
 
     const updateCanvasSize = () => {
-      const dpr = window.devicePixelRatio || 1;
+      // Usar un DPR máximo de 1.5 para mejorar rendimiento en dispositivos de alta densidad
+      // En móviles, usar DPR de 1 para máximo rendimiento
+      const dpr = isMobile ? 1 : Math.min(window.devicePixelRatio || 1, 1.5);
       canvas.width = window.innerWidth * dpr;
       canvas.height = window.innerHeight * dpr;
       canvas.style.width = `${window.innerWidth}px`;
       canvas.style.height = `${window.innerHeight}px`;
       ctx.scale(dpr, dpr);
 
-      const totalBeams = MINIMUM_BEAMS * 1.5;
-      beamsRef.current = Array.from({ length: totalBeams }, () =>
+      // Reducir drásticamente la cantidad de beams en móviles
+      const totalBeams = isMobile ? MINIMUM_BEAMS * 0.7 : MINIMUM_BEAMS;
+      beamsRef.current = Array.from({ length: Math.floor(totalBeams) }, () =>
         createBeam(canvas.width, canvas.height)
       );
     };
@@ -146,29 +157,53 @@ export function BeamsBackground({
       ctx.restore();
     }
 
-    function animate() {
+    // Variable para controlar la frecuencia de actualización
+    let frameCount = 0;
+    // Aumentar el frameSkip para reducir actualizaciones
+    // En móviles, actualizar cada 4 frames, en desktop cada 2-3
+    const frameSkip = isMobile ? 3 : 2;
+
+    // Variable para controlar la velocidad de actualización
+    let lastUpdateTime = 0;
+    const minUpdateInterval = isMobile ? 100 : 50; // ms entre actualizaciones
+
+    function animate(timestamp: number) {
       if (!canvas || !ctx) return;
 
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.filter = "blur(30px)"; // Reducido para mayor definición
+      // Limitar la frecuencia de actualización basada en tiempo
+      const elapsed = timestamp - lastUpdateTime;
 
-      const totalBeams = beamsRef.current.length;
-      beamsRef.current.forEach((beam, index) => {
-        beam.y -= beam.speed;
-        beam.pulse += beam.pulseSpeed;
+      if (elapsed > minUpdateInterval) {
+        frameCount++;
+        lastUpdateTime = timestamp;
 
-        // Reset beam when it goes off screen
-        if (beam.y + beam.length < -100) {
-          resetBeam(beam, index, totalBeams);
+        // Solo actualizar en ciertos frames para mejorar rendimiento
+        if (frameCount % (frameSkip + 1) === 0) {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          // Reducir el blur para mejorar rendimiento
+          ctx.filter = isMobile ? "blur(15px)" : "blur(18px)";
+
+          const totalBeams = beamsRef.current.length;
+          beamsRef.current.forEach((beam, index) => {
+            // Reducir la velocidad de movimiento para menos actualizaciones
+            beam.y -= beam.speed * 0.8;
+            beam.pulse += beam.pulseSpeed * 0.8;
+
+            // Reset beam when it goes off screen
+            if (beam.y + beam.length < -100) {
+              resetBeam(beam, index, totalBeams);
+            }
+
+            drawBeam(ctx, beam);
+          });
         }
-
-        drawBeam(ctx, beam);
-      });
+      }
 
       animationFrameRef.current = requestAnimationFrame(animate);
     }
 
-    animate();
+    // Iniciar la animación con timestamp
+    animationFrameRef.current = requestAnimationFrame(animate);
 
     return () => {
       window.removeEventListener("resize", updateCanvasSize);
@@ -176,8 +211,41 @@ export function BeamsBackground({
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [safeIntensity]);
+  }, [safeIntensity, isMobile]);
 
+  // Si es un dispositivo móvil o de bajo rendimiento, usar una versión estática
+  if (isMobile) {
+    return (
+      <div
+        className={cn(
+          "relative min-h-screen w-full overflow-hidden bg-neutral-950",
+          className
+        )}
+      >
+        {/* Fondo estático para dispositivos móviles */}
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-mascolor-pink-950/80 to-mascolor-primary/30"
+          style={{
+            backgroundImage: "url('/images/paint-texture.jpg')",
+            backgroundBlendMode: "overlay",
+            backgroundSize: "cover",
+            opacity: 0.4,
+          }}
+        />
+
+        {/* Contenido */}
+        {children ? (
+          <div className="relative z-10 w-full h-full">{children}</div>
+        ) : (
+          <div className="relative z-10 flex h-screen w-full items-center justify-center">
+            <div className="flex flex-col items-center justify-center gap-6 px-4 text-center"></div>
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  // Versión completa para desktop
   return (
     <div
       className={cn(
@@ -188,21 +256,21 @@ export function BeamsBackground({
       <canvas
         ref={canvasRef}
         className="absolute inset-0"
-        style={{ filter: "blur(12px)" }} // Reducido para mayor definición
+        style={{ filter: "blur(10px)" }}
       />
 
       <motion.div
-        className="absolute inset-0 bg-mascolor-pink-950/50" // Reducida opacidad para que se vean más los beams
+        className="absolute inset-0 bg-mascolor-pink-950/50"
         animate={{
-          opacity: [0.5, 0.6, 0.5], // Valores más bajos para mayor contraste con los beams
+          opacity: [0.5, 0.52, 0.5], // Reducido aún más el rango
         }}
         transition={{
-          duration: 8, // Más rápido para mayor dinamismo
+          duration: 12, // Más lento para reducir actualizaciones
           ease: "easeInOut",
           repeat: Number.POSITIVE_INFINITY,
         }}
         style={{
-          backdropFilter: "blur(15px)", // Reducido para mayor definición
+          backdropFilter: "blur(8px)", // Reducido para mejorar rendimiento
         }}
       />
 

@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { AnimatedButton } from "@/components/ui/animated-button";
 import { Menu, X, Phone } from "lucide-react";
 import { MascolorNavBar } from "@/components/ui/mascolor-navbar";
+import { SearchBar } from "@/components/ui/search-bar";
 
 // Componente para el enlace "Skip to content" para accesibilidad
 const SkipToContent = () => (
@@ -85,7 +86,7 @@ export function Header() {
             </Link>
           </motion.div>
 
-          {/* Contenedor derecho para navegación y botón */}
+          {/* Contenedor derecho para navegación, búsqueda y botón */}
           <div className="hidden md:flex items-center space-x-4">
             {/* Desktop Navigation con animación */}
             <motion.div
@@ -105,6 +106,16 @@ export function Header() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <MascolorNavBar />
+            </motion.div>
+
+            {/* Barra de búsqueda con animación */}
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className={isScrolled ? "text-mascolor-dark" : "text-white"}
+            >
+              <SearchBar />
             </motion.div>
 
             {/* CTA Button con animación */}
@@ -173,6 +184,12 @@ export function Header() {
                 >
                   <MascolorNavBar isMobile={true} />
                 </div>
+
+                {/* Barra de búsqueda en móvil */}
+                <div className="py-2 flex justify-center">
+                  <SearchBar />
+                </div>
+
                 <AnimatedButton
                   variant="default"
                   size="default"

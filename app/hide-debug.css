@@ -1,0 +1,13 @@
+/* Ocultar todos los elementos de depuración en producción */
+.debug-component,
+.debug-info,
+.debug-panel,
+.debug-overlay,
+.debug-button,
+[data-debug="true"],
+[data-testid^="debug-"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}

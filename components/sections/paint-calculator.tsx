@@ -42,7 +42,7 @@ const paintProducts = [
     name: "Látex Interior",
     category: "interior",
     coverage: 12, // m² por litro
-    image: "/images/products/PREMIUM-LATEXINT.png",
+    image: "/images/products/premium-latex-interior.png",
     icon: <Home size={16} />,
     brand: "premium",
     coats: 2,
@@ -64,7 +64,7 @@ const paintProducts = [
     name: "Látex Exterior",
     category: "exterior",
     coverage: 10, // m² por litro
-    image: "/images/products/PREMIUM-LATEXEXT.png",
+    image: "/images/products/premium-latex-exterior.png",
     icon: <Building size={16} />,
     brand: "premium",
     coats: 2,
@@ -74,7 +74,7 @@ const paintProducts = [
     name: "Frentes Impermeabilizantes",
     category: "exterior",
     coverage: 8, // m² por litro
-    image: "/images/products/PREMIUM-FRENTESIMPERMEABILIZANTES.png",
+    image: "/images/products/premium-frentes-impermeabilizantes.png",
     icon: <Building size={16} />,
     brand: "premium",
     coats: 2,
@@ -86,7 +86,7 @@ const paintProducts = [
     name: "Membrana Líquida",
     category: "techos",
     coverage: 1.5, // m² por litro (más espesa)
-    image: "/images/products/PREMIUM-MEMBRANA-1.png",
+    image: "/images/products/premium-membrana.png",
     icon: <Droplet size={16} />,
     brand: "premium",
     coats: 3,

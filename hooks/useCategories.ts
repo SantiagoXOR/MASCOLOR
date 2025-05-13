@@ -1,31 +1,33 @@
-import { useState, useEffect } from 'react';
-import { Category } from '@/types';
+import { useState, useEffect } from "react";
+import { Category } from "@/types";
+import { getCategories } from "@/lib/supabase/products";
 
-// Datos de ejemplo para categorías
-const mockCategories: Category[] = [
-  { id: "pinturas", name: "Pinturas" },
-  { id: "revestimientos", name: "Revestimientos" },
-  { id: "esmaltes", name: "Esmaltes" },
-  { id: "accesorios", name: "Accesorios" },
-];
-
+/**
+ * Hook para obtener categorías de productos
+ * @returns Categorías, estado de carga y error
+ */
 export function useCategories() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    // Simular una llamada a API
     const fetchCategories = async () => {
       try {
         setLoading(true);
-        // Simular retraso de red
-        await new Promise(resolve => setTimeout(resolve, 300));
-        
-        setCategories(mockCategories);
+
+        // Usar el servicio de Supabase para obtener categorías
+        const data = await getCategories();
+
+        setCategories(data);
         setError(null);
       } catch (err) {
-        setError(err instanceof Error ? err : new Error('Error desconocido al cargar categorías'));
+        console.error("Error al cargar categorías:", err);
+        setError(
+          err instanceof Error
+            ? err
+            : new Error("Error desconocido al cargar categorías")
+        );
       } finally {
         setLoading(false);
       }
@@ -37,6 +39,6 @@ export function useCategories() {
   return {
     categories,
     loading,
-    error
+    error,
   };
 }

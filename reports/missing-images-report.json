@@ -1,0 +1,52 @@
+[
+  {
+    "productId": "ba6a0dc3-1920-473f-b857-94470a2717a4",
+    "productName": "Látex Interior Expression",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/images/products/expression-latex-interior.avif",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/images/products/expression-latex-interior.avif"
+    }
+  },
+  {
+    "productId": "9bdcfb14-cec9-42dc-96de-9a0c832b1b89",
+    "productName": "Microcemento Facilfix",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/images/products/facilfix-microcemento.avif",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/images/products/facilfix-microcemento.avif"
+    }
+  },
+  {
+    "productId": "385eae15-b6c3-4de9-a00c-0c5f022475f2",
+    "productName": "Barniz Marino Newhouse",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/images/products/newhouse-barniz-marino.avif",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/images/products/newhouse-barniz-marino.avif"
+    }
+  },
+  {
+    "productId": "250c2eb7-cbd1-4e9c-b3e0-dec2962abed5",
+    "productName": "Látex Exterior Premium",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/images/products/expression-latex-exterior.avif",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/images/products/expression-latex-exterior.avif"
+    }
+  },
+  {
+    "productId": "740cf73b-4495-41b0-bc4d-cd140118f7e4",
+    "productName": "Membrana Líquida Ecopainting",
+    "oldImageUrl": "/assets/images/products/undefined/original.webp",
+    "newImageUrl": "/images/products/ecopainting-membrana.avif",
+    "updateResult": {
+      "success": true,
+      "newImageUrl": "/images/products/ecopainting-membrana.avif"
+    }
+  }
+]

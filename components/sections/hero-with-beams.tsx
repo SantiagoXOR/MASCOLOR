@@ -13,6 +13,8 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { InfiniteMarquee } from "@/components/ui/infinite-marquee";
 import { BeamsBackground } from "@/components/ui/beams-background";
+import { StaticBackground } from "@/components/ui/static-background";
+import { useBrands } from "@/hooks/useBrands";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -45,6 +47,19 @@ export function HeroWithBeams() {
   const [autoplayEnabled, setAutoplayEnabled] = useState<boolean>(true);
   const autoplayTimerRef = useRef<NodeJS.Timeout | null>(null);
   const controls = useAnimation();
+  const { brands, loading } = useBrands();
+
+  // Detectar si es un dispositivo móvil o de bajo rendimiento
+  const [isLowPerformanceDevice, setIsLowPerformanceDevice] = useState(false);
+
+  useEffect(() => {
+    // Detectar dispositivos móviles o de bajo rendimiento
+    const isMobile = window.innerWidth < 768;
+    const isLowCPU = navigator.hardwareConcurrency <= 4;
+    const isLowMemory = navigator.deviceMemory && navigator.deviceMemory < 4;
+
+    setIsLowPerformanceDevice(isMobile || isLowCPU || Boolean(isLowMemory));
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -56,55 +71,68 @@ export function HeroWithBeams() {
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   // Animación para intensificar el degradado al hacer scroll
+  // Usamos "subtle" por defecto para reducir el consumo de recursos
   const [beamIntensity, setBeamIntensity] = useState<
     "subtle" | "medium" | "strong"
   >("subtle");
-
-  // Efecto para cambiar la intensidad basada en el scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const viewportHeight = window.innerHeight;
-
-      if (scrollY > viewportHeight * 0.1) {
-        setBeamIntensity("medium");
-      } else {
-        setBeamIntensity("subtle");
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   // Mapeo de marcas a imágenes de productos y fondos
   const brandAssets = {
     facilfix: {
       bucket: "/images/products/FACIL FIX EXTERIOR BLANCO.png",
       background: "/images/buckets/FACILFIX.jpg",
-      title: "Reparación y construcción con",
+      title: "Reparación y construcción profesional",
     },
     ecopainting: {
       bucket: "/images/products/ECOPAINTINGMEMBRANA.png",
       background: "/images/buckets/ECOPAINTING.jpg",
-      title: "Pinturas ecológicas con",
+      title: "Rendimiento inteligente para obras y hogares",
     },
     newhouse: {
       bucket: "/images/products/NEW-HOUSE-BARNIZ-MARINO.png",
       background: "/images/buckets/NEWHOUSE.jpg",
-      title: "Protección para maderas con",
+      title: "Protección total para maderas expuestas",
     },
     premium: {
       bucket: "/images/products/PREMIUM-SUPERLAVABLE.png",
       background: "/images/buckets/PREMIUM.jpg",
-      title: "Acabados de alta calidad con",
+      title: "Acabados de alta calidad para interiores y exteriores",
     },
     expression: {
       bucket: "/images/products/EXPRESSION-LATEX-ACRILICO-INTERIOR-1.png",
       background: "/images/buckets/EXPRESSION.jpg",
-      title: "Expresá tu estilo con",
+      title: "Alta blancura y terminación profesional",
     },
   };
+
+  // Actualizar los títulos con los datos de la base de datos
+  useEffect(() => {
+    if (brands && brands.length > 0) {
+      const updatedAssets = { ...brandAssets };
+      let hasUpdates = false;
+
+      brands.forEach((brand) => {
+        if (
+          brand.slug &&
+          updatedAssets[brand.slug as keyof typeof updatedAssets]
+        ) {
+          // Solo actualizamos si hay una descripción disponible
+          if (brand.description) {
+            updatedAssets[brand.slug as keyof typeof updatedAssets].title =
+              brand.description;
+            hasUpdates = true;
+          }
+        }
+      });
+
+      // Solo actualizamos el estado si hubo cambios
+      if (hasUpdates) {
+        console.log(
+          "Actualizando títulos de marcas con datos de la base de datos"
+        );
+      }
+    }
+  }, [brands]);
 
   // Función para manejar el cambio de marca
   const handleBrandChange = async (brand: string) => {
@@ -219,11 +247,18 @@ export function HeroWithBeams() {
         <div className="absolute inset-0 bg-[url('/images/paint-texture.jpg')] bg-cover bg-center mix-blend-overlay opacity-20"></div>
       </motion.div>
 
-      {/* Fondo de Beams con intensidad basada en scroll */}
-      <BeamsBackground
-        intensity={beamIntensity}
-        className="absolute inset-0 z-1 mix-blend-screen opacity-70"
-      />
+      {/* Fondo de efectos - usar StaticBackground para dispositivos de bajo rendimiento */}
+      {isLowPerformanceDevice ? (
+        <StaticBackground
+          intensity="subtle"
+          className="absolute inset-0 z-1 mix-blend-screen opacity-70"
+        />
+      ) : (
+        <BeamsBackground
+          intensity={beamIntensity}
+          className="absolute inset-0 z-1 mix-blend-screen opacity-70"
+        />
+      )}
 
       <div className="container mx-auto z-10">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">

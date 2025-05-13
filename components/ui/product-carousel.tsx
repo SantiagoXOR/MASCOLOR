@@ -1,7 +1,9 @@
 "use client";
 
 import * as React from "react";
-import useEmblaCarousel, { type UseEmblaCarouselType } from "embla-carousel-react";
+import useEmblaCarousel, {
+  type UseEmblaCarouselType,
+} from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -33,6 +35,10 @@ export function ProductCarousel({
     {
       ...opts,
       axis: orientation === "horizontal" ? "x" : "y",
+      align: "start",
+      loop: false,
+      dragFree: false,
+      containScroll: "trimSnaps",
     },
     plugins
   );
@@ -80,11 +86,9 @@ export function ProductCarousel({
   return (
     <div className={cn("relative", className)}>
       <div ref={carouselRef} className="overflow-hidden">
-        <div className="flex">
-          {children}
-        </div>
+        <div className="flex">{children}</div>
       </div>
-      <div className="flex justify-center gap-3 mt-6">
+      <div className="flex justify-center gap-3 mt-3">
         <Button
           variant="outline"
           size="icon"
@@ -125,7 +129,7 @@ export function ProductCarouselItem({
 }) {
   return (
     <motion.div
-      className={cn("min-w-0 flex-shrink-0 flex-grow-0", className)}
+      className={cn("min-w-0 flex-shrink-0 flex-grow-0 w-full", className)}
       initial={{ opacity: 0.8, scale: 0.98 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
