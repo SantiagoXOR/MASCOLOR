@@ -20,10 +20,10 @@ export function SearchBar() {
   const inputRef = useRef<HTMLInputElement>(null);
   const searchContainerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
-  
+
   // Debounce la consulta de búsqueda para evitar demasiadas solicitudes
   const debouncedQuery = useDebounce(query, 300);
-  
+
   // Manejar clic fuera del componente de búsqueda
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -34,13 +34,13 @@ export function SearchBar() {
         setIsOpen(false);
       }
     };
-    
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-  
+
   // Buscar productos cuando cambia la consulta
   useEffect(() => {
     const searchProducts = async () => {
@@ -48,21 +48,30 @@ export function SearchBar() {
         setResults([]);
         return;
       }
-      
+
       setLoading(true);
       try {
-        const products = await getProducts({ search: debouncedQuery, limit: 5 });
-        setResults(products);
+        const result = await getProducts({ search: debouncedQuery, limit: 5 });
+        // Verificar si el resultado es un array o un objeto con data y total
+        if (Array.isArray(result)) {
+          setResults(result);
+        } else if (result && "data" in result) {
+          setResults(result.data);
+        } else {
+          // Si no es ninguno de los anteriores, establecer un array vacío
+          setResults([]);
+        }
       } catch (error) {
         console.error("Error al buscar productos:", error);
+        setResults([]);
       } finally {
         setLoading(false);
       }
     };
-    
+
     searchProducts();
   }, [debouncedQuery]);
-  
+
   // Abrir la búsqueda y enfocar el input
   const openSearch = () => {
     setIsOpen(true);
@@ -70,20 +79,20 @@ export function SearchBar() {
       inputRef.current?.focus();
     }, 100);
   };
-  
+
   // Cerrar la búsqueda y limpiar
   const closeSearch = () => {
     setIsOpen(false);
     setQuery("");
     setResults([]);
   };
-  
+
   // Navegar a la página del producto
   const navigateToProduct = (slug: string) => {
     router.push(`/productos/${slug}`);
     closeSearch();
   };
-  
+
   return (
     <div className="relative" ref={searchContainerRef}>
       {/* Botón de búsqueda */}
@@ -94,7 +103,7 @@ export function SearchBar() {
       >
         <Search size={20} className="text-mascolor-dark" />
       </button>
-      
+
       {/* Panel de búsqueda */}
       {isOpen && (
         <div className="absolute right-0 top-full mt-2 w-80 bg-white rounded-lg shadow-xl z-50 overflow-hidden">
@@ -122,7 +131,7 @@ export function SearchBar() {
               )}
             </div>
           </div>
-          
+
           {/* Resultados de búsqueda */}
           <div className="max-h-80 overflow-y-auto">
             {loading ? (
@@ -147,7 +156,9 @@ export function SearchBar() {
                         />
                       </div>
                       <div className="ml-3 text-left">
-                        <p className="font-medium text-mascolor-dark">{product.name}</p>
+                        <p className="font-medium text-mascolor-dark">
+                          {product.name}
+                        </p>
                         <p className="text-xs text-gray-500 truncate">
                           {product.category?.name} | {product.brand?.name}
                         </p>
@@ -162,7 +173,7 @@ export function SearchBar() {
               </div>
             ) : null}
           </div>
-          
+
           {/* Pie del panel de búsqueda */}
           <div className="p-3 border-t bg-gray-50">
             <button
