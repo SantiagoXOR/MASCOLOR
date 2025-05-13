@@ -157,12 +157,7 @@ export function ProductCard({ product, onClick }: ProductCardProps) {
           {/* Brand logo */}
           {product.brand && (
             <div className="absolute bottom-2 right-2 z-30">
-              {logProductDebug("Renderizando logo de marca", {
-                brand: product.brand?.name,
-                slug: product.brand?.slug,
-                logo_url: product.brand?.logo_url,
-                fallback: `/images/logos/${product.brand?.slug}.svg`,
-              })}
+              {/* Llamada a logProductDebug movida fuera del JSX */}
               <div className="h-8 bg-white shadow-md rounded-md flex items-center justify-center px-2 py-1 border border-gray-100 z-10">
                 {/* Usar una imagen estática según el slug de la marca con img en lugar de Image */}
                 {product.brand.slug === "premium" && (
@@ -344,12 +339,7 @@ export function ProductCard({ product, onClick }: ProductCardProps) {
           {/* Brand logo */}
           {product.brand && (
             <div className="absolute bottom-2 right-2 z-30">
-              {logProductDebug("Renderizando logo de marca", {
-                brand: product.brand?.name,
-                slug: product.brand?.slug,
-                logo_url: product.brand?.logo_url,
-                fallback: `/images/logos/${product.brand?.slug}.svg`,
-              })}
+              {/* Llamada a logProductDebug movida fuera del JSX */}
               <div className="h-8 bg-white shadow-md rounded-md flex items-center justify-center px-2 py-1 border border-gray-100 z-10">
                 {/* Usar una imagen estática según el slug de la marca con img en lugar de Image */}
                 {product.brand.slug === "premium" && (
@@ -461,11 +451,7 @@ export function ProductCard({ product, onClick }: ProductCardProps) {
 
           {/* Product image */}
           <div className="absolute inset-0 z-10 flex items-center justify-center">
-            {/* Debug */}
-            {logProductDebug("Renderizando imagen", {
-              image_url: imageUrl,
-              hasValidImage,
-            })}
+            {/* Llamada a logProductDebug movida fuera del JSX */}
             <div className="relative w-[85%] h-[85%]">
               <Image
                 src={imageUrl}
