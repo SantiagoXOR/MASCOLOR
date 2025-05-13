@@ -154,23 +154,19 @@ export function ProductImageDebug() {
       : [];
 
     if (productsArray.length > 0) {
+      // Crear un objeto con las estadísticas
+      const stats = {
+        total: productsArray.length,
+        withImages: productsArray.filter((p) => !!p.image_url).length,
+        withoutImages: productsArray.filter((p) => !p.image_url).length,
+        withAssetId: productsArray.filter((p) => !!p.asset_id).length,
+      };
+
+      // Llamar a logger.info con el formato correcto
       logger.info(
         "ProductImageDebug",
-        "Estadísticas de imágenes de productos: " +
-          `Total: ${productsArray.length}, ` +
-          `Con imágenes: ${
-            productsArray.filter((p) => !!p.image_url).length
-          }, ` +
-          `Sin imágenes: ${
-            productsArray.filter((p) => !p.image_url).length
-          }, ` +
-          `Con asset_id: ${productsArray.filter((p) => !!p.asset_id).length}`,
-        {
-          total: productsArray.length,
-          withImages: productsArray.filter((p) => !!p.image_url).length,
-          withoutImages: productsArray.filter((p) => !p.image_url).length,
-          withAssetId: productsArray.filter((p) => !!p.asset_id).length,
-        }
+        `Estadísticas de imágenes de productos: Total: ${stats.total}, Con imágenes: ${stats.withImages}, Sin imágenes: ${stats.withoutImages}, Con asset_id: ${stats.withAssetId}`,
+        stats
       );
     }
   }, [products, logger]);
