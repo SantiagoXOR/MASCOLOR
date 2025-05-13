@@ -26,7 +26,7 @@ interface ProductCardProps {
  * @param onClick Función a ejecutar al hacer clic en el botón "Ver detalles"
  */
 // Función para registrar información de depuración solo en desarrollo
-const logProductDebug = (message, data = {}) => {
+const logProductDebug = (message: string, data: Record<string, any> = {}) => {
   if (process.env.NODE_ENV === "development") {
     console.log(
       "%c[ProductCard Debug]%c " + message,
@@ -126,7 +126,11 @@ export function ProductCard({ product, onClick }: ProductCardProps) {
     // Detectar dispositivos móviles o de bajo rendimiento
     const isMobile = window.innerWidth < 768;
     const isLowCPU = navigator.hardwareConcurrency <= 4;
-    const isLowMemory = navigator.deviceMemory && navigator.deviceMemory < 4;
+
+    // La propiedad deviceMemory no está disponible en todos los navegadores
+    // y no está incluida en el tipo Navigator de TypeScript
+    const deviceMemory = (navigator as any).deviceMemory;
+    const isLowMemory = deviceMemory && deviceMemory < 4;
 
     setIsLowPerformanceDevice(isMobile || isLowCPU || Boolean(isLowMemory));
   }, []);
