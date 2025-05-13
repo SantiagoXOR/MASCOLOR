@@ -40,7 +40,15 @@ export function CategoriesSection() {
   const { categories, loading, error } = useCategoryDetails();
 
   // Función para manejar el clic en una categoría
-  const handleCategoryClick = (category) => {
+  const handleCategoryClick = (category: {
+    id: string;
+    slug: string;
+    name: string;
+    description?: string;
+    iconName: string;
+    color: string;
+    image: string;
+  }) => {
     console.log(`Navegando a la categoría: ${category.slug}`);
 
     // 1. Actualizar la URL con el hash correcto
