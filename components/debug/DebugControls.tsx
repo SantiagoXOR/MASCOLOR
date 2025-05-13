@@ -141,7 +141,9 @@ export function DebugControls() {
                   <button
                     className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded hover:bg-blue-200 transition-colors"
                     onClick={() => {
-                      logger.info("Logs limpiados manualmente");
+                      logger.info("Logs limpiados manualmente", {
+                        action: "clear_logs",
+                      });
                       logger.clearLogs();
                     }}
                   >
