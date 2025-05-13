@@ -1,30 +1,11 @@
-import { Metadata } from "next";
-import { generateMetadata as generatePageMetadata } from "@/components/seo/metadata";
 import SearchResultsPage from "./page-client";
 
-/**
- * Genera metadatos dinámicos para la página de búsqueda
- * @param props Propiedades para la generación de metadatos
- * @returns Metadatos para la página
- */
-export function generateMetadata({
-  searchParams,
-}: {
-  searchParams: { q?: string };
-}): Metadata {
-  const query = searchParams.q || "";
+export const metadata = {
+  title: "Búsqueda | +COLOR",
+  description:
+    "Busca productos de +COLOR por nombre, categoría o características.",
+};
 
-  return generatePageMetadata({
-    title: `Resultados de búsqueda: ${query}`,
-    description: `Resultados de búsqueda para "${query}" en +COLOR.`,
-    canonical: `/busqueda?q=${encodeURIComponent(query)}`,
-  });
-}
-
-/**
- * Página de resultados de búsqueda
- * @returns Componente de página
- */
 export default function SearchPage({
   searchParams,
 }: {
