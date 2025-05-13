@@ -29,7 +29,7 @@ interface OptimizedImageProps extends Omit<ImageProps, "src"> {
  * - Art direction para diferentes dispositivos
  */
 // Función para registrar información de depuración
-const logImageDebug = (message, data = {}) => {
+const logImageDebug = (message: string, data: Record<string, any> = {}) => {
   console.log(
     "%c[OptimizedImage Debug]%c " + message,
     "background: #870064; color: white; padding: 2px 4px; border-radius: 2px;",
