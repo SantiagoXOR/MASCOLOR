@@ -150,7 +150,7 @@ export function ProductCard({ product, onClick }: ProductCardProps) {
           {/* Icon */}
           {product.icon && (
             <div className="absolute bottom-2 left-2 z-20">
-              <ProductIcon type={product.icon} />
+              <ProductIcon type={product.icon as any} />
             </div>
           )}
 
@@ -337,7 +337,7 @@ export function ProductCard({ product, onClick }: ProductCardProps) {
           {/* Icon */}
           {product.icon && (
             <div className="absolute bottom-2 left-2 z-20">
-              <ProductIcon type={product.icon} />
+              <ProductIcon type={product.icon as any} />
             </div>
           )}
 
