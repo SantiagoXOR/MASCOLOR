@@ -162,14 +162,14 @@ export function ProductImageDebug() {
         withAssetId: productsArray.filter((p) => !!p.asset_id).length,
       };
 
-      // Llamar a logger.info con el formato correcto
-      logger.info(
-        "ProductImageDebug",
+      // Usar useLogger en lugar de logger directamente
+      const debugLogger = useLogger("ProductImageDebug");
+      debugLogger.info(
         `Estadísticas de imágenes de productos: Total: ${stats.total}, Con imágenes: ${stats.withImages}, Sin imágenes: ${stats.withoutImages}, Con asset_id: ${stats.withAssetId}`,
         stats
       );
     }
-  }, [products, logger]);
+  }, [products]);
 
   // No renderizar si no está habilitado el depurador o estamos en producción
   if (
