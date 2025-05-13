@@ -17,6 +17,19 @@ interface ProductGridProps {
  * @param onProductClick Función a ejecutar al hacer clic en un producto
  */
 export function ProductGrid({ products, onProductClick }: ProductGridProps) {
+  // Detectar si es un dispositivo móvil o de bajo rendimiento
+  const [isLowPerformanceDevice, setIsLowPerformanceDevice] = useState(false);
+
+  // Efecto para detectar dispositivos de bajo rendimiento
+  useEffect(() => {
+    // Detectar dispositivos móviles o de bajo rendimiento
+    const isMobile = window.innerWidth < 768;
+    const isLowCPU = navigator.hardwareConcurrency <= 4;
+    const isLowMemory = navigator.deviceMemory && navigator.deviceMemory < 4;
+
+    setIsLowPerformanceDevice(isMobile || isLowCPU || Boolean(isLowMemory));
+  }, []);
+
   // Depuración: Registrar productos recibidos
   console.log(
     "%c[ProductGrid Debug]%c Productos recibidos:",
@@ -114,19 +127,6 @@ export function ProductGrid({ products, onProductClick }: ProductGridProps) {
       </div>
     );
   }
-
-  // Detectar si es un dispositivo móvil o de bajo rendimiento
-  const [isLowPerformanceDevice, setIsLowPerformanceDevice] = useState(false);
-
-  // Efecto para detectar dispositivos de bajo rendimiento
-  useEffect(() => {
-    // Detectar dispositivos móviles o de bajo rendimiento
-    const isMobile = window.innerWidth < 768;
-    const isLowCPU = navigator.hardwareConcurrency <= 4;
-    const isLowMemory = navigator.deviceMemory && navigator.deviceMemory < 4;
-
-    setIsLowPerformanceDevice(isMobile || isLowCPU || Boolean(isLowMemory));
-  }, []);
 
   return (
     <>
