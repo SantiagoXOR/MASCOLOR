@@ -2,8 +2,6 @@ import { Metadata } from "next";
 import { generateMetadata as generatePageMetadata } from "@/components/seo/metadata";
 import SearchResultsPage from "./page-client";
 
-type SearchParams = { q?: string };
-
 /**
  * Genera metadatos dinámicos para la página de búsqueda
  * @param props Propiedades para la generación de metadatos
@@ -12,7 +10,7 @@ type SearchParams = { q?: string };
 export function generateMetadata({
   searchParams,
 }: {
-  searchParams: SearchParams;
+  searchParams: { q?: string };
 }): Metadata {
   const query = searchParams.q || "";
 
@@ -25,15 +23,12 @@ export function generateMetadata({
 
 /**
  * Página de resultados de búsqueda
- * @param props Propiedades de la página
  * @returns Componente de página
  */
 export default function SearchPage({
-  params,
   searchParams,
 }: {
-  params: {};
-  searchParams: SearchParams;
+  searchParams: { q?: string };
 }) {
   const query = searchParams.q || "";
 
