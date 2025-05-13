@@ -162,9 +162,8 @@ export function ProductImageDebug() {
         withAssetId: productsArray.filter((p) => !!p.asset_id).length,
       };
 
-      // Usar useLogger en lugar de logger directamente
-      const debugLogger = useLogger("ProductImageDebug");
-      debugLogger.info(
+      // Usar el logger que ya está definido en el componente
+      logger.info(
         `Estadísticas de imágenes de productos: Total: ${stats.total}, Con imágenes: ${stats.withImages}, Sin imágenes: ${stats.withoutImages}, Con asset_id: ${stats.withAssetId}`,
         stats
       );
