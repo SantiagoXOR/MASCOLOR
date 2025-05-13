@@ -31,7 +31,8 @@ export function ImagePathDebug() {
   // Función para probar una imagen
   const testImage = (url: string) => {
     return new Promise<boolean>((resolve) => {
-      const img = new Image();
+      // Usar window.Image en lugar de Image para evitar errores de tipo
+      const img = new window.Image();
       img.onload = () => resolve(true);
       img.onerror = () => resolve(false);
       img.src = url;
@@ -70,7 +71,9 @@ export function ImagePathDebug() {
 
   return (
     <div className="p-4 bg-white rounded-lg shadow">
-      <h2 className="text-lg font-bold mb-4">Depuración de Rutas de Imágenes</h2>
+      <h2 className="text-lg font-bold mb-4">
+        Depuración de Rutas de Imágenes
+      </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* Lista de productos */}
