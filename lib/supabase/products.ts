@@ -37,7 +37,8 @@ export async function getCategories(): Promise<Category[]> {
   }
 
   logServiceDebug("Categorías obtenidas", { count: data?.length || 0 });
-  return data || [];
+  // Asegurar que los datos cumplen con la interfaz Category
+  return (data as Category[]) || [];
 }
 
 /**
@@ -59,7 +60,8 @@ export async function getBrands(): Promise<Brand[]> {
   }
 
   logServiceDebug("Marcas obtenidas", { count: data?.length || 0 });
-  return data || [];
+  // Asegurar que los datos cumplen con la interfaz Brand
+  return (data as Brand[]) || [];
 }
 
 // Variable para almacenar en caché la existencia de search_vector
