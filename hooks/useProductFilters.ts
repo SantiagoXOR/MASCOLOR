@@ -155,6 +155,7 @@ export function useProductFilters() {
             console.log("Parámetro de categoría detectado:", categoria);
 
             if (
+              categoria &&
               [
                 "especiales",
                 "exteriores",
@@ -173,6 +174,7 @@ export function useProductFilters() {
             console.log("Parámetro de marca detectado:", marca);
 
             if (
+              marca &&
               [
                 "facilfix",
                 "ecopainting",
