@@ -108,7 +108,7 @@ export async function getProducts({
   offset?: number;
   withCount?: boolean;
   fields?: string;
-}): Promise<Product[] | { data: Product[]; total: number }> {
+}): Promise<any> {
   const startTime = Date.now();
   logServiceDebug("Obteniendo productos con filtros", {
     category,
@@ -314,12 +314,12 @@ export async function getProducts({
     // Devolver datos según el formato solicitado
     if (withCount) {
       return {
-        data: (data as Product[]) || [],
+        data: processedData || [],
         total: count || 0,
       };
     }
 
-    return (data as Product[]) || [];
+    return processedData || [];
   } catch (error) {
     logServiceDebug("Error en la consulta de productos", { error });
     throw error;
