@@ -37,8 +37,18 @@ export async function getCategories(): Promise<Category[]> {
   }
 
   logServiceDebug("Categorías obtenidas", { count: data?.length || 0 });
-  // Asegurar que los datos cumplen con la interfaz Category
-  return (data as Category[]) || [];
+
+  // Convertir explícitamente los datos a Category[]
+  if (!data) return [];
+
+  // Mapear cada objeto para asegurar que tiene las propiedades requeridas
+  return data.map((item) => ({
+    id: item.id as string,
+    slug: item.slug as string,
+    name: item.name as string,
+    description: item.description as string | undefined,
+    icon: item.icon as string | undefined,
+  }));
 }
 
 /**
@@ -60,8 +70,18 @@ export async function getBrands(): Promise<Brand[]> {
   }
 
   logServiceDebug("Marcas obtenidas", { count: data?.length || 0 });
-  // Asegurar que los datos cumplen con la interfaz Brand
-  return (data as Brand[]) || [];
+
+  // Convertir explícitamente los datos a Brand[]
+  if (!data) return [];
+
+  // Mapear cada objeto para asegurar que tiene las propiedades requeridas
+  return data.map((item) => ({
+    id: item.id as string,
+    slug: item.slug as string,
+    name: item.name as string,
+    description: item.description as string | undefined,
+    logo_url: item.logo_url as string | undefined,
+  }));
 }
 
 // Variable para almacenar en caché la existencia de search_vector
