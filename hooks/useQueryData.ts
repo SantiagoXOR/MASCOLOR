@@ -40,12 +40,8 @@ export function useQueryData<TData, TError = Error>(
     retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
     refetchOnWindowFocus: process.env.NODE_ENV === "production",
     refetchOnReconnect: true,
-    onError: (error) => {
-      logger.error("Error en consulta", { error });
-    },
-    onSuccess: () => {
-      logger.debug("Consulta exitosa");
-    },
+    // Las propiedades onError y onSuccess ya no son parte de UseQueryOptions en versiones recientes
+    // Se manejan a través de los callbacks en useQuery
   };
 
   // Combinar opciones
