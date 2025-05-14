@@ -142,7 +142,11 @@ export function useProductsQuery(options?: {
   } = options || {};
 
   // Construir la clave de consulta
-  const queryKey = ["products", { category, brand, search, limit, offset }];
+  // Convertir a string para evitar problemas de tipo
+  const queryKey = [
+    "products",
+    JSON.stringify({ category, brand, search, limit, offset }),
+  ];
 
   // Función para obtener productos
   const fetchProducts = async () => {
@@ -217,7 +221,8 @@ export function useCombinedDataQuery(options?: {
   offset?: number;
 }) {
   // Construir la clave de consulta
-  const queryKey = ["combinedData", options];
+  // Convertir a string para evitar problemas de tipo
+  const queryKey = ["combinedData", options ? JSON.stringify(options) : ""];
 
   // Función para obtener todos los datos en paralelo
   const fetchCombinedData = async () => {
