@@ -45,7 +45,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ? productsResult.data
     : [];
 
-  const productPages = products.map((product) => ({
+  const productPages = products.map((product: any) => ({
     url: `${baseUrl}/productos/${product.slug}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
@@ -54,7 +54,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Obtener categorías
   const categories = await getCategories();
-  const categoryPages = categories.map((category) => ({
+  const categoryPages = categories.map((category: any) => ({
     url: `${baseUrl}/categorias/${category.slug}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
@@ -63,7 +63,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Obtener marcas
   const brands = await getBrands();
-  const brandPages = brands.map((brand) => ({
+  const brandPages = brands.map((brand: any) => ({
     url: `${baseUrl}/marcas/${brand.slug}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
