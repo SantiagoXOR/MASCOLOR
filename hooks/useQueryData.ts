@@ -169,8 +169,8 @@ export function useProductsQuery(options?: {
 
   return useQueryData(queryKey, fetchProducts, {
     staleTime: 2 * 60 * 1000, // 2 minutos
-    // Usar keepPreviousData para evitar parpadeos durante la paginación
-    keepPreviousData: enablePagination,
+    // La propiedad keepPreviousData ya no existe en versiones recientes de React Query
+    // Se ha reemplazado por placeholderData
   });
 }
 
