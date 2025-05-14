@@ -146,8 +146,11 @@ export function useProducts({
         */
 
         // Depuración adicional: Verificar si los productos tienen todas las propiedades necesarias
-        if (data.length > 0) {
-          const missingProperties = data.filter(
+        // Verificar si data es un array o un objeto con propiedad data
+        const productsArray = Array.isArray(data) ? data : data.data || [];
+
+        if (productsArray.length > 0) {
+          const missingProperties = productsArray.filter(
             (p) => !p.id || !p.name || !p.image_url || !p.category || !p.brand
           );
 
@@ -180,7 +183,8 @@ export function useProducts({
 
         // Solo actualizar el estado si el componente sigue montado
         if (isMountedRef.current) {
-          setProducts(data);
+          // Asegurarse de que siempre se establezca un array de productos
+          setProducts(Array.isArray(data) ? data : data.data || []);
           setError(null);
         }
       } catch (err) {
