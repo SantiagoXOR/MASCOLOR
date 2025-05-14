@@ -252,7 +252,16 @@ export async function getProducts({
       // Filtrar y procesar los productos en una sola pasada para mejorar rendimiento
       const originalLength = data.length;
       data = data
-        .filter((product) => !excludedProductIds.includes(product.id))
+        .filter((product) => {
+          // Verificar que product es un objeto y tiene una propiedad id de tipo string
+          return (
+            typeof product === "object" &&
+            product !== null &&
+            "id" in product &&
+            typeof product.id === "string" &&
+            !excludedProductIds.includes(product.id as string)
+          );
+        })
         .map((product) => {
           // Normalizar URL de imagen
           if (product.asset_id) {
