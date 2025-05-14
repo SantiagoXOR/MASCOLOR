@@ -157,9 +157,10 @@ export function ProductImageDebug() {
       // Crear un objeto con las estadísticas
       const stats = {
         total: productsArray.length,
-        withImages: productsArray.filter((p) => !!p.image_url).length,
-        withoutImages: productsArray.filter((p) => !p.image_url).length,
-        withAssetId: productsArray.filter((p) => !!p.asset_id).length,
+        withImages: productsArray.filter((p: Product) => !!p.image_url).length,
+        withoutImages: productsArray.filter((p: Product) => !p.image_url)
+          .length,
+        withAssetId: productsArray.filter((p: Product) => !!p.asset_id).length,
       };
 
       // Usar el logger que ya está definido en el componente
@@ -298,7 +299,7 @@ export function ProductImageDebug() {
                       ? products.data
                       : [];
                     const selected = productsArray.find(
-                      (p) => p.id === e.target.value
+                      (p: Product) => p.id === e.target.value
                     );
                     setSelectedProduct(selected || null);
                   }}
@@ -309,7 +310,7 @@ export function ProductImageDebug() {
                     : products && "data" in products
                     ? products.data
                     : []
-                  ).map((product) => (
+                  ).map((product: Product) => (
                     <option key={product.id} value={product.id}>
                       {product.name} ({product.brand?.name})
                     </option>

@@ -11,10 +11,10 @@ export function throttle<T extends (...args: any[]) => any>(
   let lastFunc: ReturnType<typeof setTimeout>;
   let lastRan = 0;
 
-  return function(...args: Parameters<T>): void {
+  return function (this: any, ...args: Parameters<T>): void {
     const context = this;
     const now = Date.now();
-    
+
     if (now - lastRan >= limit) {
       func.apply(context, args);
       lastRan = now;
@@ -44,21 +44,21 @@ export function debounce<T extends (...args: any[]) => any>(
 ): (...args: Parameters<T>) => void {
   let timeout: ReturnType<typeof setTimeout> | null = null;
 
-  return function(...args: Parameters<T>): void {
+  return function (this: any, ...args: Parameters<T>): void {
     const context = this;
-    const later = function() {
+    const later = function () {
       timeout = null;
       if (!immediate) func.apply(context, args);
     };
-    
+
     const callNow = immediate && !timeout;
-    
+
     if (timeout) {
       clearTimeout(timeout);
     }
-    
+
     timeout = setTimeout(later, wait);
-    
+
     if (callNow) {
       func.apply(context, args);
     }
@@ -75,9 +75,9 @@ export function createTaskQueue() {
 
   const processQueue = async () => {
     if (isProcessing || queue.length === 0) return;
-    
+
     isProcessing = true;
-    
+
     try {
       const task = queue.shift();
       if (task) await task();
@@ -104,6 +104,6 @@ export function createTaskQueue() {
     },
     get isProcessing() {
       return isProcessing;
-    }
+    },
   };
 }

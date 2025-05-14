@@ -151,7 +151,8 @@ export function useProducts({
 
         if (productsArray.length > 0) {
           const missingProperties = productsArray.filter(
-            (p) => !p.id || !p.name || !p.image_url || !p.category || !p.brand
+            (p: Product) =>
+              !p.id || !p.name || !p.image_url || !p.category || !p.brand
           );
 
           if (missingProperties.length > 0) {

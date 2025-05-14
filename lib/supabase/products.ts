@@ -296,7 +296,7 @@ export async function getProducts({
       }
 
       // Actualizar data con los productos procesados
-      data = processedData;
+      data = processedData as any;
 
       logServiceDebug("Productos procesados", {
         originalCount: originalLength,
@@ -314,12 +314,12 @@ export async function getProducts({
     // Devolver datos según el formato solicitado
     if (withCount) {
       return {
-        data: processedData || [],
+        data: data || [],
         total: count || 0,
       };
     }
 
-    return processedData || [];
+    return data || [];
   } catch (error) {
     logServiceDebug("Error en la consulta de productos", { error });
     throw error;
@@ -371,7 +371,7 @@ export async function preloadCategoriesAndBrands(): Promise<void> {
       });
     } else if (categoriesResult.data) {
       // Guardar en caché
-      categoriesResult.data.forEach((category) => {
+      categoriesResult.data.forEach((category: any) => {
         categoryIdCache[category.slug] = category.id;
       });
       logServiceDebug("Categorías precargadas", {
@@ -386,7 +386,7 @@ export async function preloadCategoriesAndBrands(): Promise<void> {
       });
     } else if (brandsResult.data) {
       // Guardar en caché
-      brandsResult.data.forEach((brand) => {
+      brandsResult.data.forEach((brand: any) => {
         brandIdCache[brand.slug] = brand.id;
       });
       logServiceDebug("Marcas precargadas", {
