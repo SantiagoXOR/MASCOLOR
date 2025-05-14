@@ -252,17 +252,17 @@ export async function getProducts({
       // Filtrar y procesar los productos en una sola pasada para mejorar rendimiento
       const originalLength = data.length;
 
-      // Convertir explícitamente a Product[] para evitar errores de tipo
-      const typedData = data as unknown as Product[];
+      // Crear un nuevo array para evitar problemas de tipo
+      const processedData: Product[] = [];
 
-      data = typedData
-        .filter((product) => {
-          // Verificar que el producto tiene un ID y no está en la lista de excluidos
-          return (
-            product && product.id && !excludedProductIds.includes(product.id)
-          );
-        })
-        .map((product) => {
+      // Procesar manualmente cada elemento
+      for (let i = 0; i < data.length; i++) {
+        const item = data[i] as any;
+
+        // Verificar que el item es válido y no está en la lista de excluidos
+        if (item && item.id && !excludedProductIds.includes(item.id)) {
+          const product = { ...item } as Product;
+
           // Normalizar URL de imagen
           if (product.asset_id) {
             product.image_url = `/assets/images/products/${product.asset_id}/original.webp`;
@@ -290,13 +290,18 @@ export async function getProducts({
             }`;
           }
 
-          return product;
-        });
+          // Añadir el producto procesado al array
+          processedData.push(product);
+        }
+      }
+
+      // Actualizar data con los productos procesados
+      data = processedData;
 
       logServiceDebug("Productos procesados", {
         originalCount: originalLength,
-        filteredCount: data.length,
-        excludedCount: originalLength - data.length,
+        filteredCount: processedData.length,
+        excludedCount: originalLength - processedData.length,
       });
     }
 
