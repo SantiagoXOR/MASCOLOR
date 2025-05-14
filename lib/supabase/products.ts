@@ -251,15 +251,15 @@ export async function getProducts({
 
       // Filtrar y procesar los productos en una sola pasada para mejorar rendimiento
       const originalLength = data.length;
-      data = data
+
+      // Convertir explícitamente a Product[] para evitar errores de tipo
+      const typedData = data as unknown as Product[];
+
+      data = typedData
         .filter((product) => {
-          // Verificar que product es un objeto y tiene una propiedad id de tipo string
+          // Verificar que el producto tiene un ID y no está en la lista de excluidos
           return (
-            typeof product === "object" &&
-            product !== null &&
-            "id" in product &&
-            typeof product.id === "string" &&
-            !excludedProductIds.includes(product.id as string)
+            product && product.id && !excludedProductIds.includes(product.id)
           );
         })
         .map((product) => {
@@ -309,12 +309,12 @@ export async function getProducts({
     // Devolver datos según el formato solicitado
     if (withCount) {
       return {
-        data: data || [],
+        data: (data as Product[]) || [],
         total: count || 0,
       };
     }
 
-    return data || [];
+    return (data as Product[]) || [];
   } catch (error) {
     logServiceDebug("Error en la consulta de productos", { error });
     throw error;
