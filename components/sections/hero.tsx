@@ -212,7 +212,7 @@ export function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-24 md:py-28"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-24 md:py-28 hidden lg:flex"
     >
       {/* Imagen de fondo con efecto parallax */}
       <motion.div className="absolute inset-0 z-0" style={{ y, opacity }}>

@@ -1,0 +1,101 @@
+{
+  "timestamp": "2025-06-05T14:05:37.834Z",
+  "title": "Solicitud de Re-indexación - URLs con Redirects",
+  "description": "URLs que necesitan ser re-indexadas después de implementar redirects 301",
+  "problematicUrls": {
+    "description": "URLs antiguas que ahora redirigen - solicitar eliminación del índice",
+    "urls": [
+      "https://pinturasmascolor.com.ar/etiqueta-producto/facil-fix",
+      "https://pinturasmascolor.com.ar/etiqueta-producto/facilfix",
+      "https://pinturasmascolor.com.ar/etiqueta-producto/premium",
+      "https://pinturasmascolor.com.ar/etiqueta-producto/expression",
+      "https://pinturasmascolor.com.ar/etiqueta-producto/ecopainting",
+      "https://pinturasmascolor.com.ar/etiqueta-producto/newhouse",
+      "https://pinturasmascolor.com.ar/productos-facilfix",
+      "https://pinturasmascolor.com.ar/facilfix",
+      "https://pinturasmascolor.com.ar/catalogo"
+    ],
+    "action": "REMOVE_FROM_INDEX",
+    "method": "Google Search Console > Eliminaciones > Eliminar temporalmente"
+  },
+  "newUrls": {
+    "description": "URLs nuevas que deben indexarse",
+    "urls": [
+      "https://pinturasmascolor.com.ar/productos",
+      "https://pinturasmascolor.com.ar/#productos"
+    ],
+    "action": "REQUEST_INDEXING",
+    "method": "Google Search Console > Inspección de URLs > Solicitar indexación"
+  },
+  "instructions": {
+    "step1": {
+      "title": "1. Acceder a Google Search Console",
+      "url": "https://search.google.com/search-console",
+      "description": "Inicia sesión con la cuenta que tiene acceso al sitio pinturasmascolor.com.ar"
+    },
+    "step2": {
+      "title": "2. Eliminar URLs problemáticas del índice",
+      "description": "Para cada URL problemática:",
+      "substeps": [
+        "Ir a 'Eliminaciones' en el menú lateral",
+        "Hacer clic en 'Eliminar temporalmente'",
+        "Seleccionar 'Eliminar temporalmente la URL del índice de Google'",
+        "Pegar la URL problemática",
+        "Hacer clic en 'Siguiente' y confirmar"
+      ]
+    },
+    "step3": {
+      "title": "3. Solicitar indexación de URLs nuevas",
+      "description": "Para cada URL nueva:",
+      "substeps": [
+        "Ir a 'Inspección de URLs' en el menú lateral",
+        "Pegar la URL nueva en la barra de búsqueda",
+        "Hacer clic en 'Solicitar indexación'",
+        "Esperar confirmación"
+      ]
+    },
+    "step4": {
+      "title": "4. Enviar sitemap actualizado",
+      "description": "Asegurar que Google tenga el sitemap más reciente:",
+      "substeps": [
+        "Ir a 'Sitemaps' en el menú lateral",
+        "Agregar nuevo sitemap: 'sitemap.xml'",
+        "Hacer clic en 'Enviar'",
+        "Verificar que no haya errores"
+      ]
+    },
+    "step5": {
+      "title": "5. Monitorear resultados",
+      "description": "Durante las próximas 2-4 semanas:",
+      "substeps": [
+        "Revisar 'Cobertura' para ver reducción de errores 404",
+        "Verificar 'Rendimiento' para tráfico a nuevas URLs",
+        "Comprobar que las URLs problemáticas desaparezcan de los resultados"
+      ]
+    }
+  },
+  "timeline": {
+    "immediate": [
+      "Eliminar URLs problemáticas del índice",
+      "Solicitar indexación de URLs nuevas",
+      "Enviar sitemap actualizado"
+    ],
+    "week1": [
+      "Verificar que los redirects funcionen correctamente",
+      "Monitorear errores 404 en Search Console",
+      "Revisar tráfico a nuevas URLs en Analytics"
+    ],
+    "week2_4": [
+      "Confirmar que URLs problemáticas desaparezcan de resultados",
+      "Verificar mejora en métricas SEO",
+      "Documentar resultados obtenidos"
+    ]
+  },
+  "expectedResults": [
+    "Reducción de errores 404 en Google Search Console",
+    "Desaparición de URLs problemáticas de resultados de búsqueda",
+    "Indexación correcta de nuevas URLs",
+    "Preservación del tráfico orgánico mediante redirects",
+    "Mejora en la experiencia del usuario"
+  ]
+}

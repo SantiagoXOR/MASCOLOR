@@ -1,12 +1,12 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx,js,jsx,mdx}',
-    './components/**/*.{ts,tsx,js,jsx,mdx}',
-    './app/**/*.{ts,tsx,js,jsx,mdx}',
-    './src/**/*.{ts,tsx,js,jsx,mdx}',
+    "./pages/**/*.{ts,tsx,js,jsx,mdx}",
+    "./components/**/*.{ts,tsx,js,jsx,mdx}",
+    "./app/**/*.{ts,tsx,js,jsx,mdx}",
+    "./src/**/*.{ts,tsx,js,jsx,mdx}",
   ],
   prefix: "",
   theme: {
@@ -19,12 +19,9 @@ const config: Config = {
     },
     extend: {
       fontFamily: {
-        mazzard: ["var(--font-poppins)", "sans-serif"],
+        mazzard: ["mazzard", "var(--font-poppins)", "sans-serif"],
         inter: ["var(--font-inter)", "sans-serif"],
-        sans: [
-          'var(--font-poppins)',
-          'sans-serif'
-        ],
+        sans: ["var(--font-poppins)", "sans-serif"],
         stolzl: ["stolzl", "sans-serif"],
       },
       fontWeight: {
@@ -37,12 +34,12 @@ const config: Config = {
       },
       colors: {
         mascolor: {
-          primary: "#870064",    // Cardinal Pink 900 como color principal
-          secondary: "#FF00C7",  // Cardinal Pink 600 como acento
-          accent: "#FF54C9",     // Cardinal Pink 400 como acento secundario
-          neutral: "#9E9E9E",    // Gris neutro
-          dark: "#212121",       // Casi negro
-          light: "#F5F5F5",      // Casi blanco
+          primary: "#870064", // Cardinal Pink 900 como color principal
+          secondary: "#870064", // Cambiado a color primario de la marca
+          accent: "#870064", // Cambiado a color primario de la marca
+          neutral: "#9E9E9E", // Gris neutro
+          dark: "#212121", // Casi negro
+          light: "#F5F5F5", // Casi blanco
           pink: {
             50: "#FFF1FB",
             100: "#FFE1F7",
@@ -108,6 +105,11 @@ const config: Config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      zIndex: {
+        "60": "60",
+        "65": "65",
+        "70": "70",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -125,6 +127,6 @@ const config: Config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
 
-export default config
+export default config;

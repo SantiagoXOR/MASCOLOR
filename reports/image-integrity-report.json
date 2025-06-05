@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-05-24T15:00:26.570Z",
+  "summary": {
+    "totalIssues": 0,
+    "productImages": {
+      "total": 172,
+      "valid": 172,
+      "invalid": 0,
+      "issues": []
+    },
+    "mobileImages": {
+      "expected": 5,
+      "found": 5,
+      "missing": 0,
+      "missingImages": []
+    },
+    "logoImages": {
+      "expected": 5,
+      "found": 5,
+      "missing": 0,
+      "missingLogos": []
+    },
+    "placeholderImage": {
+      "found": true,
+      "size": 13979
+    }
+  }
+}

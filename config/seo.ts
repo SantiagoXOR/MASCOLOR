@@ -2,8 +2,8 @@ export const siteConfig = {
   name: "+COLOR",
   description:
     "Pinturas y revestimientos de alta calidad para tus proyectos de construcción y decoración.",
-  url: "https://www.mascolor.com",
-  ogImage: "https://www.mascolor.com/og-image.jpg",
+  url: "https://www.pinturamascolor.com.ar",
+  ogImage: "https://www.pinturamascolor.com.ar/og-image-final.svg",
   links: {
     twitter: "https://twitter.com/mascolor",
     instagram: "https://instagram.com/mascolor",
@@ -38,7 +38,7 @@ export const siteConfig = {
     title: "+COLOR | Pinturas y revestimientos de alta calidad",
     description:
       "Descubre nuestra línea de pinturas y revestimientos de alta calidad para tus proyectos.",
-    images: ["https://www.mascolor.com/og-image.jpg"],
+    images: ["https://www.pinturamascolor.com.ar/og-image-final.svg"],
     creator: "@mascolor",
   },
 };

@@ -1,19 +1,21 @@
 # Documentación de Estilos y Colores
 
 ## Descripción General
+
 El sitio web +COLOR utiliza una paleta de colores específica basada en tonos de púrpura/magenta que refleja la identidad visual de la marca. Los estilos están implementados principalmente con Tailwind CSS, con algunas personalizaciones adicionales en archivos CSS.
 
 ## Paleta de Colores
 
 ### Colores Principales
+
 La paleta de colores principal está definida en `tailwind.config.ts`:
 
 ```typescript
 colors: {
   mascolor: {
     primary: "#870064",    // Cardinal Pink 900 como color principal
-    secondary: "#FF00C7",  // Cardinal Pink 600 como acento
-    accent: "#FF54C9",     // Cardinal Pink 400 como acento secundario
+    secondary: "#870064",  // Cambiado a color primario de la marca
+    accent: "#870064",     // Cambiado a color primario de la marca
     neutral: "#9E9E9E",    // Gris neutro
     dark: "#212121",       // Casi negro
     light: "#F5F5F5",      // Casi blanco
@@ -47,6 +49,7 @@ colors: {
 ```
 
 ### Variables CSS
+
 Las variables CSS para los colores están definidas en `globals.css`:
 
 ```css
@@ -57,13 +60,13 @@ Las variables CSS para los colores están definidas en `globals.css`:
   --card-foreground: 222.2 84% 4.9%;
   --popover: 0 0% 100%;
   --popover-foreground: 222.2 84% 4.9%;
-  --primary: 328 100% 39%;  /* Cardinal Pink 900 - #870064 */
+  --primary: 328 100% 39%; /* Cardinal Pink 900 - #870064 */
   --primary-foreground: 210 40% 98%;
-  --secondary: 322 100% 50%;  /* Cardinal Pink 600 - #FF00C7 */
+  --secondary: 322 100% 50%; /* Cardinal Pink 600 - #FF00C7 */
   --secondary-foreground: 210 40% 98%;
   --muted: 210 40% 96.1%;
   --muted-foreground: 215.4 16.3% 46.9%;
-  --accent: 325 100% 66%;  /* Cardinal Pink 400 - #FF54C9 */
+  --accent: 325 100% 66%; /* Cardinal Pink 400 - #FF54C9 */
   --accent-foreground: 210 40% 98%;
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 210 40% 98%;
@@ -77,6 +80,7 @@ Las variables CSS para los colores están definidas en `globals.css`:
 ## Tipografía
 
 ### Fuentes Principales
+
 Las fuentes utilizadas en el proyecto están definidas en `app/layout.tsx` y `tailwind.config.ts`:
 
 ```typescript
@@ -103,6 +107,7 @@ fontFamily: {
 ```
 
 ### Pesos de Fuente
+
 ```typescript
 fontWeight: {
   thin: "100",
@@ -117,6 +122,7 @@ fontWeight: {
 ## Componentes de Estilo
 
 ### Botones
+
 Los botones tienen estilos específicos según su variante:
 
 ```typescript
@@ -127,20 +133,24 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        destructive:
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        outline:
+          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+        secondary:
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         color: "bg-mascolor-primary text-white hover:bg-mascolor-primary/90",
       },
       // ...
-    }
+    },
   }
-)
+);
 ```
 
 ### Badges (Insignias)
+
 Las insignias tienen estilos específicos según su variante:
 
 ```typescript
@@ -150,21 +160,26 @@ const badgeVariants = cva(
   {
     variants: {
       variant: {
-        default: "border-transparent bg-primary text-primary-foreground hover:bg-primary/80",
-        secondary: "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        destructive: "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
+        default:
+          "border-transparent bg-primary text-primary-foreground hover:bg-primary/80",
+        secondary:
+          "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        destructive:
+          "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
         outline: "text-foreground",
-        color: "border-transparent bg-mascolor-primary text-white hover:bg-mascolor-primary/80",
+        color:
+          "border-transparent bg-mascolor-primary text-white hover:bg-mascolor-primary/80",
       },
     },
     defaultVariants: {
       variant: "default",
     },
   }
-)
+);
 ```
 
 ### Product Badges
+
 Las insignias de productos tienen colores específicos según su tipo:
 
 ```typescript
@@ -196,6 +211,7 @@ const badgeConfig = {
 ## Efectos Visuales
 
 ### Fondos con Blur
+
 Se utilizan fondos con efecto blur en varios componentes para dar profundidad:
 
 ```jsx
@@ -216,6 +232,7 @@ Se utilizan fondos con efecto blur en varios componentes para dar profundidad:
 ```
 
 ### Gradientes
+
 Se utilizan gradientes para crear efectos visuales en fondos:
 
 ```jsx
@@ -227,6 +244,7 @@ Se utilizan gradientes para crear efectos visuales en fondos:
 ```
 
 ### Sombras
+
 Se utilizan sombras para dar profundidad a los elementos:
 
 ```jsx
@@ -247,6 +265,7 @@ Se utilizan sombras para dar profundidad a los elementos:
 ## Animaciones
 
 ### Framer Motion
+
 Se utiliza Framer Motion para crear animaciones fluidas:
 
 ```jsx
@@ -276,6 +295,7 @@ Se utiliza Framer Motion para crear animaciones fluidas:
 ```
 
 ### Transiciones CSS
+
 Se utilizan transiciones CSS para efectos más simples:
 
 ```jsx
@@ -296,6 +316,7 @@ Se utilizan transiciones CSS para efectos más simples:
 ## Responsive Design
 
 ### Breakpoints
+
 Se utilizan los breakpoints estándar de Tailwind CSS:
 
 ```
@@ -307,6 +328,7 @@ xl: 1280px
 ```
 
 ### Ejemplos de Diseño Responsive
+
 ```jsx
 // Grid responsive para productos
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -326,6 +348,7 @@ xl: 1280px
 ## Logos e Imágenes
 
 ### Logos
+
 Los logos tienen estilos específicos según el contexto:
 
 ```jsx
@@ -362,6 +385,7 @@ Los logos tienen estilos específicos según el contexto:
 ```
 
 ### Imágenes de Productos
+
 Las imágenes de productos tienen estilos específicos:
 
 ```jsx
@@ -372,13 +396,14 @@ Las imágenes de productos tienen estilos específicos:
     fill
     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
     className="object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-lg"
-    style={{ objectFit: 'contain' }}
+    style={{ objectFit: "contain" }}
     priority={product.badge === "bestseller" || product.badge === "new"}
   />
 </div>
 ```
 
 ## Notas Adicionales
+
 - Se utiliza `clsx` y `tailwind-merge` (a través de la función `cn()`) para combinar clases de Tailwind de manera eficiente
 - Se utilizan variables CSS para mantener la coherencia en los colores y facilitar cambios globales
 - Se aplican efectos visuales sutiles (blur, sombras, gradientes) para mejorar la estética sin comprometer el rendimiento

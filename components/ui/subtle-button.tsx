@@ -34,7 +34,7 @@ export function SubtleButton({
   const buttonContent = (
     <motion.button
       className={cn(
-        "subtle-button relative flex items-center justify-center gap-1.5 text-xs font-medium text-mascolor-primary hover:text-mascolor-secondary transition-colors rounded-md py-1.5 px-3 border border-transparent hover:border-mascolor-primary/20",
+        "subtle-button relative flex items-center justify-center gap-1.5 text-xs font-medium text-mascolor-primary hover:text-mascolor-primary transition-colors rounded-md py-1.5 px-3 border border-transparent hover:border-mascolor-primary/20",
         className
       )}
       {...motionProps}

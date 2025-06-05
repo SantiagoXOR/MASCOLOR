@@ -83,22 +83,22 @@ export function HeroWithBeams() {
   // Mapeo de marcas a imágenes de productos y fondos
   const brandAssets = {
     facilfix: {
-      bucket: "/images/products/FACIL FIX EXTERIOR BLANCO.png",
+      bucket: "/images/products/facilfix-exterior-blanco.png",
       background: "/images/buckets/FACILFIX.jpg",
       title: "Reparación y construcción profesional",
     },
     ecopainting: {
-      bucket: "/images/products/ECOPAINTINGMEMBRANA.png",
+      bucket: "/images/products/ecopainting-membrana.png",
       background: "/images/buckets/ECOPAINTING.jpg",
       title: "Rendimiento inteligente para obras y hogares",
     },
     newhouse: {
-      bucket: "/images/products/NEW-HOUSE-BARNIZ-MARINO.png",
+      bucket: "/images/products/newhouse-barniz-marino.png",
       background: "/images/buckets/NEWHOUSE.jpg",
       title: "Protección total para maderas expuestas",
     },
     premium: {
-      bucket: "/images/products/PREMIUM-SUPERLAVABLE.png",
+      bucket: "/images/products/premium-lavable-super.png",
       background: "/images/buckets/PREMIUM.jpg",
       title: "Acabados de alta calidad para interiores y exteriores",
     },

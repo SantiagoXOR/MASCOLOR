@@ -12,7 +12,13 @@ import Image from "next/image";
  * Componente de barra de búsqueda
  * Permite buscar productos en tiempo real
  */
-export function SearchBar() {
+interface SearchBarProps {
+  iconColor?: string;
+}
+
+export function SearchBar({
+  iconColor = "text-mascolor-dark",
+}: SearchBarProps = {}) {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<Product[]>([]);
@@ -101,7 +107,7 @@ export function SearchBar() {
         className="p-2 rounded-full hover:bg-mascolor-primary/10 transition-colors duration-300"
         aria-label="Buscar productos"
       >
-        <Search size={20} className="text-mascolor-dark" />
+        <Search size={20} className={iconColor} />
       </button>
 
       {/* Panel de búsqueda */}

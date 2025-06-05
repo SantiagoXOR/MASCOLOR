@@ -14,6 +14,8 @@ import { useRouter } from "next/navigation";
 import { Product } from "@/types";
 import { Droplet, Home, Building, Layers, Palette, Star } from "lucide-react";
 import { ProductsDebug, BrandLogoDebug } from "@/components/debug";
+import { ProductDetailModal } from "@/components/ui/product-detail-modal";
+import { useProductDetailModal } from "@/hooks/useProductDetailModal";
 
 export function ProductsSection() {
   const router = useRouter();
@@ -28,6 +30,15 @@ export function ProductsSection() {
     loading,
     error,
   } = useProductFilters();
+
+  // Hook para manejar el modal de detalles del producto
+  const {
+    isOpen: isModalOpen,
+    productId: modalProductId,
+    openModal,
+    closeModal,
+    navigateToProduct,
+  } = useProductDetailModal();
 
   // Depuración: Registrar estado de productos
   useEffect(() => {
@@ -53,6 +64,11 @@ export function ProductsSection() {
   const handleProductClick = (product: Product) => {
     // Aquí podrías navegar a la página del producto
     router.push(`/productos/${product.slug}`);
+  };
+
+  // Manejar apertura del modal de detalles
+  const handleViewDetails = (productId: string) => {
+    openModal(productId);
   };
 
   // Renderizar iconos según la categoría
@@ -333,6 +349,7 @@ export function ProductsSection() {
                           <ProductGrid
                             products={products}
                             onProductClick={handleProductClick}
+                            onViewDetails={handleViewDetails}
                           />
                         </ProductCarousel>
                       ) : (
@@ -411,6 +428,7 @@ export function ProductsSection() {
                         <ProductGrid
                           products={products}
                           onProductClick={handleProductClick}
+                          onViewDetails={handleViewDetails}
                         />
                       </ProductCarousel>
                     ) : (
@@ -429,6 +447,14 @@ export function ProductsSection() {
             )}
           </>
         )}
+
+        {/* Modal de detalles del producto */}
+        <ProductDetailModal
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          productId={modalProductId || undefined}
+          onNavigateToProduct={navigateToProduct}
+        />
       </div>
     </section>
   );

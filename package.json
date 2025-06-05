@@ -32,9 +32,16 @@
     "process-product-images": "node scripts/process-product-images.js",
     "create-assets-table": "node scripts/create-assets-table.js",
     "find-missing-images": "node scripts/find-missing-images.js",
+    "fix-image-references": "node scripts/fix-image-references-comprehensive.js",
+    "verify-image-integrity": "node scripts/verify-image-integrity.js",
+    "generate-mobile-images": "node scripts/generate-mobile-images.js",
+    "verify-mobile-improvements": "node scripts/verify-mobile-improvements.js",
+    "monitor-images": "node scripts/monitor-image-errors.js",
+    "monitor-images-continuous": "node scripts/monitor-image-errors.js --continuous",
     "version:patch": "node scripts/version-manager.js patch",
     "version:minor": "node scripts/version-manager.js minor",
     "version:major": "node scripts/version-manager.js major",
+    "fix-dev-errors": "node scripts/fix-dev-server-errors.js",
     "prepare": "husky install"
   },
   "dependencies": {

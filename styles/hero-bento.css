@@ -1,0 +1,562 @@
+/* Estilos específicos para el componente HeroBento */
+
+/* Estilos para HeroBento (versión original) */
+.hero-bento-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0 0 2rem 2rem;
+  box-shadow: 0 4px 20px rgba(135, 0, 100, 0.15);
+  min-height: 100vh;
+}
+
+.hero-bento-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-bento-product {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bento-product::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(240, 180, 224, 0.3),
+    rgba(135, 0, 100, 0.1)
+  );
+  box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+.hero-bento-advisor {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.hero-bento-advisor-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #870064;
+  object-fit: cover;
+}
+
+.hero-bento-benefit {
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+.hero-bento-benefit:hover {
+  transform: translateY(-5px);
+}
+
+.hero-bento-benefit-icon {
+  width: 32px;
+  height: 32px;
+  margin: 0 auto 0.5rem;
+}
+
+.hero-bento-benefit-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #870064;
+  margin-bottom: 0.25rem;
+}
+
+.hero-bento-benefit-subtitle {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+/* Estilos para HeroBentoMobile (versión nueva) */
+.hero-bento-mobile {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  min-height: 100vh;
+  font-family: "Mazzard", system-ui, -apple-system, sans-serif;
+  z-index: 10;
+}
+
+/* Mostrar solo en móviles y tablets */
+@media (max-width: 1023px) {
+  .hero-bento-mobile {
+    display: block;
+  }
+}
+
+/* Ocultar en desktop */
+@media (min-width: 1024px) {
+  .hero-bento-mobile {
+    display: none !important;
+  }
+}
+
+/* Forzar ocultación en desktop con especificidad alta */
+@media (min-width: 1024px) {
+  section.hero-bento-mobile,
+  .hero-bento-mobile,
+  [class*="hero-bento-mobile"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+  }
+}
+
+/* Estilos para el encabezado */
+.hero-bento-mobile .hero-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem 0.5rem;
+  position: relative;
+  z-index: 60;
+}
+
+.hero-bento-mobile .hero-logo {
+  height: 28px;
+  width: auto;
+  position: relative;
+  z-index: 65;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.hero-bento-mobile .hero-phone-button {
+  background-color: #870064;
+  color: white;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 6px rgba(135, 0, 100, 0.25);
+  position: relative;
+  z-index: 65;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.hero-bento-mobile .hero-phone-button:hover {
+  background-color: rgba(135, 0, 100, 0.9);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(135, 0, 100, 0.3);
+}
+
+/* Estilos para el título y subtítulo */
+.hero-bento-mobile .hero-title {
+  color: #870064;
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.hero-bento-mobile .hero-subtitle {
+  color: #666;
+  font-size: 0.875rem;
+  text-align: center;
+  line-height: 1.4;
+  max-width: 280px;
+  margin: 0 auto 1.5rem;
+}
+
+.hero-bento-mobile .bento-grid {
+  margin-top: 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-bento-mobile .bento-item {
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 12px rgba(135, 0, 100, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(135, 0, 100, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 20;
+}
+
+.hero-bento-mobile .bento-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(135, 0, 100, 0.15);
+  border-color: rgba(135, 0, 100, 0.2);
+}
+
+/* Estilos para el carrusel de marcas */
+.hero-bento-mobile .brands-container {
+  background-color: white;
+  border-radius: 1.25rem;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 20;
+}
+
+.hero-bento-mobile .brands-title {
+  color: #666;
+  font-size: 0.875rem;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.hero-bento-mobile .brand-carousel {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  z-index: 25;
+}
+
+.hero-bento-mobile .logo-item {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  z-index: 30;
+}
+
+.hero-bento-mobile .logo-item:hover {
+  transform: scale(1.1);
+  opacity: 1 !important;
+}
+
+.hero-bento-mobile .logo-item.active {
+  transform: scale(1.1);
+  opacity: 1 !important;
+}
+
+/* Estilos para el producto destacado */
+.hero-bento-mobile .product-container {
+  background-color: white;
+  border-radius: 1.25rem;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bento-mobile .product-image {
+  max-width: 80%;
+  height: auto;
+  margin: 0 auto;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.1));
+}
+
+.hero-bento-mobile .product-brand-logo {
+  max-width: 120px;
+  height: auto;
+  margin: 0.5rem auto 0;
+}
+
+/* Estilos para el carrusel de productos */
+.hero-bento-mobile .product-carousel {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 0 0 2rem 2rem;
+}
+
+.hero-bento-mobile .product-carousel .product-title {
+  font-family: "mazzard", "Poppins", sans-serif;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
+}
+
+.hero-bento-mobile .product-carousel .brand-logo-container {
+  background: #870064;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 4px 12px rgba(135, 0, 100, 0.3);
+}
+
+.hero-bento-mobile .product-carousel .product-image {
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+}
+
+.hero-bento-mobile .product-carousel .carousel-indicators {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 30;
+}
+
+.hero-bento-mobile .product-carousel .carousel-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hero-bento-mobile .product-carousel .carousel-indicator.active {
+  background: white;
+  transform: scale(1.25);
+}
+
+.hero-bento-mobile .product-carousel .swipe-area {
+  position: absolute;
+  inset: 0;
+  z-index: 25;
+  cursor: grab;
+}
+
+.hero-bento-mobile .product-carousel .swipe-area:active {
+  cursor: grabbing;
+}
+
+/* Estilos para el asesor */
+.hero-bento-mobile .advisor-container {
+  background-color: white;
+  border-radius: 1.25rem;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-bento-mobile .advisor-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hero-bento-mobile .advisor-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #870064;
+  position: relative;
+}
+
+.hero-bento-mobile .advisor-status {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 12px;
+  height: 12px;
+  background-color: #25d366;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.hero-bento-mobile .advisor-name {
+  color: #870064;
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.hero-bento-mobile .advisor-role {
+  color: #666;
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+.hero-bento-mobile .whatsapp-button {
+  background-color: #25d366;
+  color: white;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 6px rgba(37, 211, 102, 0.25);
+}
+
+/* Breakpoints para tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-bento-mobile {
+    display: block;
+    min-height: 90vh;
+    font-family: "Mazzard", system-ui, -apple-system, sans-serif;
+  }
+
+  .hero-bento-mobile .hero-header {
+    padding: 1.5rem 1.5rem 1rem;
+  }
+
+  .hero-bento-mobile .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-bento-mobile .hero-subtitle {
+    font-size: 1rem;
+    max-width: 400px;
+  }
+
+  .hero-bento-section {
+    display: none;
+  }
+}
+
+/* ===== ESTILOS OPTIMIZADOS PARA HEROBENTOMOBILE ===== */
+
+/* Optimizaciones generales para móvil */
+.hero-bento-mobile {
+  /* Asegurar altura completa de viewport en móviles */
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height para móviles modernos */
+  font-family: "Mazzard", "Poppins", system-ui, -apple-system, sans-serif;
+}
+
+/* Tipografía Mazzard optimizada */
+.hero-bento-mobile .product-title,
+.hero-bento-mobile h3 {
+  font-family: "Mazzard", "Poppins", sans-serif;
+  font-weight: 700;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+/* Botón de teléfono optimizado */
+.hero-bento-mobile .hero-phone-button {
+  font-family: "Mazzard", "Poppins", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  text-shadow: none;
+}
+
+/* Logo optimizado */
+.hero-bento-mobile .hero-logo {
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.15));
+}
+
+/* Optimizaciones para el carrusel de productos */
+.hero-bento-mobile .product-carousel {
+  height: 450px;
+  border-radius: 1.5rem;
+}
+
+/* Mejoras en los indicadores del carrusel */
+.hero-bento-mobile .carousel-indicators {
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+}
+
+/* Optimización de controles táctiles */
+.hero-bento-mobile .swipe-area {
+  touch-action: pan-x;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Responsividad móvil específica */
+@media (max-width: 480px) {
+  .hero-bento-mobile {
+    min-height: 100vh;
+    min-height: 100svh; /* Small viewport height */
+  }
+
+  .hero-bento-mobile .product-title,
+  .hero-bento-mobile h3 {
+    font-size: 1.875rem;
+    line-height: 1.1;
+    max-width: 65%;
+  }
+
+  .hero-bento-mobile .hero-phone-button {
+    font-size: 0.875rem;
+    padding: 0.625rem 1rem;
+  }
+
+  .hero-bento-mobile .product-carousel {
+    height: 420px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .hero-bento-mobile .product-title,
+  .hero-bento-mobile h3 {
+    font-size: 2.25rem;
+    line-height: 1.15;
+    max-width: 65%;
+  }
+
+  .hero-bento-mobile .product-carousel {
+    height: 480px;
+  }
+}
+
+/* Optimizaciones para dispositivos con notch */
+@supports (padding-top: env(safe-area-inset-top)) {
+  .hero-bento-mobile {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+/* Mejoras de rendimiento */
+.hero-bento-mobile * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Optimización de animaciones para dispositivos de bajo rendimiento */
+@media (prefers-reduced-motion: reduce) {
+  .hero-bento-mobile * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Optimizaciones para pantallas de alta densidad */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .hero-bento-mobile .hero-logo,
+  .hero-bento-mobile .product-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}

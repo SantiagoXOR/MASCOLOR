@@ -6,7 +6,8 @@ import Link from "next/link";
 
 export const metadata = {
   title: "¿Dónde comprar? | +COLOR",
-  description: "Encuentra los puntos de venta de +COLOR más cercanos a tu ubicación.",
+  description:
+    "Encuentra los puntos de venta de +COLOR más cercanos a tu ubicación.",
 };
 
 const locations = [
@@ -15,7 +16,7 @@ const locations = [
     name: "Casa Central +COLOR",
     address: "Av. Siempreviva 742, Buenos Aires",
     phone: "011 4567-8901",
-    hours: "Lunes a Viernes: 9:00 - 18:00, Sábados: 9:00 - 13:00",
+    hours: "Lunes a Viernes: 8:00 - 16:00",
     mapUrl: "https://maps.google.com",
   },
   {
@@ -23,7 +24,7 @@ const locations = [
     name: "Distribuidor Oficial Norte",
     address: "Av. Libertador 5678, San Isidro",
     phone: "011 4765-4321",
-    hours: "Lunes a Viernes: 8:30 - 17:30, Sábados: 9:00 - 13:00",
+    hours: "Lunes a Viernes: 8:00 - 16:00",
     mapUrl: "https://maps.google.com",
   },
   {
@@ -31,7 +32,7 @@ const locations = [
     name: "Distribuidor Oficial Sur",
     address: "Av. Hipólito Yrigoyen 1234, Quilmes",
     phone: "011 4250-9876",
-    hours: "Lunes a Viernes: 9:00 - 18:00, Sábados: 9:00 - 14:00",
+    hours: "Lunes a Viernes: 8:00 - 16:00",
     mapUrl: "https://maps.google.com",
   },
   {
@@ -39,7 +40,7 @@ const locations = [
     name: "Distribuidor Oficial Oeste",
     address: "Av. Rivadavia 12345, Morón",
     phone: "011 4627-5432",
-    hours: "Lunes a Viernes: 8:00 - 17:00, Sábados: 8:00 - 13:00",
+    hours: "Lunes a Viernes: 8:00 - 16:00",
     mapUrl: "https://maps.google.com",
   },
 ];
@@ -62,9 +63,14 @@ export default function DondeComprarPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {locations.map((location) => (
-              <Card key={location.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+              <Card
+                key={location.id}
+                className="overflow-hidden hover:shadow-lg transition-shadow"
+              >
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-mascolor-dark mb-4">{location.name}</h3>
+                  <h3 className="text-xl font-semibold text-mascolor-dark mb-4">
+                    {location.name}
+                  </h3>
 
                   <div className="space-y-3 mb-6">
                     <div className="flex items-start">
@@ -84,7 +90,12 @@ export default function DondeComprarPage() {
                   </div>
 
                   <Button variant="outline" className="w-full" asChild>
-                    <Link href={location.mapUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                    <Link
+                      href={location.mapUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center"
+                    >
                       <span>Ver en mapa</span>
                       <ExternalLink className="ml-2 w-4 h-4" />
                     </Link>
@@ -95,11 +106,19 @@ export default function DondeComprarPage() {
           </div>
 
           <div className="mt-16 text-center">
-            <h2 className="text-2xl font-bold text-mascolor-dark mb-4">¿No encuentras un punto de venta cercano?</h2>
+            <h2 className="text-2xl font-bold text-mascolor-dark mb-4">
+              ¿No encuentras un punto de venta cercano?
+            </h2>
             <p className="text-mascolor-gray-600 mb-6 max-w-2xl mx-auto">
-              Contáctanos y te ayudaremos a encontrar el distribuidor más cercano a tu ubicación.
+              Contáctanos y te ayudaremos a encontrar el distribuidor más
+              cercano a tu ubicación.
             </p>
-            <Button variant="color" size="lg" className="bg-mascolor-primary hover:bg-mascolor-primary/90" asChild>
+            <Button
+              variant="color"
+              size="lg"
+              className="bg-mascolor-primary hover:bg-mascolor-primary/90"
+              asChild
+            >
               <Link href="/contacto">Contactar</Link>
             </Button>
           </div>

@@ -52,7 +52,7 @@ const paintProducts = [
     name: "Látex Lavable",
     category: "interior",
     coverage: 11, // m² por litro
-    image: "/images/products/PREMIUM-LAVABLE.png",
+    image: "/images/products/premium-lavable-super.png",
     icon: <Home size={16} />,
     brand: "premium",
     coats: 2,

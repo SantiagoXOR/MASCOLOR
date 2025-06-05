@@ -5,6 +5,7 @@ import { getBrands } from "@/lib/supabase/products";
 interface BrandAsset {
   bucket: string;
   background: string;
+  backgroundMobile?: string;
   title: string;
 }
 
@@ -22,26 +23,31 @@ export function useFeaturedBrands() {
     facilfix: {
       bucket: "/images/products/facilfix-exterior-blanco.png",
       background: "/images/buckets/FACILFIX.jpg",
+      backgroundMobile: "/images/buckets/FACILFIX-mobile.jpg",
       title: "Reparación y construcción profesional",
     },
     ecopainting: {
       bucket: "/images/products/ecopainting-membrana.png",
       background: "/images/buckets/ECOPAINTING.jpg",
+      backgroundMobile: "/images/buckets/ECOPAINTING-mobile.jpg",
       title: "Rendimiento inteligente para obras y hogares",
     },
     newhouse: {
       bucket: "/images/products/newhouse-barniz-marino.png",
       background: "/images/buckets/NEWHOUSE.jpg",
+      backgroundMobile: "/images/buckets/NEWHOUSE-mobile.jpg",
       title: "Protección total para maderas expuestas",
     },
     premium: {
       bucket: "/images/products/premium-lavable-super.png",
       background: "/images/buckets/PREMIUM.jpg",
+      backgroundMobile: "/images/buckets/PREMIUM-mobile.jpg",
       title: "Acabados de alta calidad para interiores y exteriores",
     },
     expression: {
       bucket: "/images/products/expression-latex-interior.png",
       background: "/images/buckets/EXPRESSION.jpg",
+      backgroundMobile: "/images/buckets/EXPRESSION-mobile.jpg",
       title: "Alta blancura y terminación profesional",
     },
   });
@@ -68,8 +74,18 @@ export function useFeaturedBrands() {
               updatedAssets[brand.slug].title = brand.description;
             }
 
-            // Actualizar la imagen de fondo si está disponible
-            // Nota: Esto requeriría un campo adicional en la tabla de marcas
+            // Verificar si existen imágenes móviles específicas
+            const mobileImagePath = `/images/buckets/${brand.slug.toUpperCase()}-mobile.jpg`;
+            const desktopImagePath = `/images/buckets/${brand.slug.toUpperCase()}.jpg`;
+
+            // Actualizar rutas de imágenes con verificación
+            updatedAssets[brand.slug].backgroundMobile = mobileImagePath;
+            updatedAssets[brand.slug].background = desktopImagePath;
+
+            // Si hay logo_url en Supabase, usarlo
+            if (brand.logo_url) {
+              // Nota: El logo se maneja directamente en el componente
+            }
           }
         });
 

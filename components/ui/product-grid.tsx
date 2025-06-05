@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 interface ProductGridProps {
   products: Product[];
   onProductClick?: (product: Product) => void;
+  onViewDetails?: (productId: string) => void;
 }
 
 /**
@@ -16,7 +17,11 @@ interface ProductGridProps {
  * @param products Lista de productos a mostrar
  * @param onProductClick Función a ejecutar al hacer clic en un producto
  */
-export function ProductGrid({ products, onProductClick }: ProductGridProps) {
+export function ProductGrid({
+  products,
+  onProductClick,
+  onViewDetails,
+}: ProductGridProps) {
   // Detectar si es un dispositivo móvil o de bajo rendimiento
   const [isLowPerformanceDevice, setIsLowPerformanceDevice] = useState(false);
 
@@ -144,6 +149,7 @@ export function ProductGrid({ products, onProductClick }: ProductGridProps) {
                   <ProductCard
                     product={product}
                     onClick={() => onProductClick?.(product)}
+                    onViewDetails={onViewDetails}
                   />
                 </div>
               ))}
@@ -162,6 +168,7 @@ export function ProductGrid({ products, onProductClick }: ProductGridProps) {
                   <ProductCard
                     product={product}
                     onClick={() => onProductClick?.(product)}
+                    onViewDetails={onViewDetails}
                   />
                 </motion.div>
               ))}

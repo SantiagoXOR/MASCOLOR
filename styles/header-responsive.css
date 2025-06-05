@@ -1,0 +1,110 @@
+/* Estilos responsivos para headers */
+
+/* Header desktop - solo visible en pantallas grandes */
+.header-desktop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition: all 0.5s ease;
+}
+
+/* Ocultar header desktop en móviles y tablets */
+@media (max-width: 1023px) {
+  .header-desktop {
+    display: none !important;
+  }
+}
+
+/* Mostrar header desktop solo en desktop */
+@media (min-width: 1024px) {
+  .header-desktop {
+    display: block;
+  }
+
+  /* Asegurar que el HeroBentoMobile esté oculto en desktop */
+  .hero-bento-mobile {
+    display: none !important;
+  }
+}
+
+/* HeroBentoMobile - solo visible en móviles y tablets */
+@media (max-width: 1023px) {
+  .hero-bento-mobile {
+    display: block;
+    position: relative;
+    z-index: 10;
+  }
+
+  /* Asegurar que el header del HeroBentoMobile tenga el z-index correcto */
+  .hero-bento-mobile .hero-header {
+    position: relative;
+    z-index: 60;
+  }
+
+  .hero-bento-mobile .hero-logo,
+  .hero-bento-mobile .hero-phone-button {
+    position: relative;
+    z-index: 65;
+  }
+}
+
+/* Transiciones suaves para cambios de dispositivo */
+.header-desktop,
+.hero-bento-mobile {
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+/* Asegurar que los elementos ocultos no interfieran */
+@media (max-width: 1023px) {
+  .header-desktop {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-bento-mobile {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .header-desktop {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/* Asegurar que no haya superposición de z-index */
+.header-desktop {
+  z-index: 50;
+}
+
+.hero-bento-mobile {
+  z-index: 10;
+}
+
+.hero-bento-mobile .hero-header {
+  z-index: 60;
+}
+
+.hero-bento-mobile .hero-logo,
+.hero-bento-mobile .hero-phone-button {
+  z-index: 65;
+}
+
+/* Breakpoint específico para tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-bento-mobile {
+    display: block;
+    min-height: 90vh;
+  }
+
+  .header-desktop {
+    display: none !important;
+  }
+}

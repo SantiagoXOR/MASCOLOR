@@ -6,6 +6,7 @@ import "./fonts.css";
 import "./hide-debug.css";
 import { Providers } from "./providers";
 import "./hide-debug.js";
+import { siteConfig } from "../config/seo";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const poppins = Poppins({
@@ -15,11 +16,36 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "+COLOR | Pinturas y revestimientos de alta calidad",
-  description:
-    "Descubre nuestra línea de pinturas y revestimientos de alta calidad para tus proyectos de construcción y decoración.",
-  keywords:
-    "pinturas, revestimientos, colores, decoración, construcción, +COLOR",
+  title: siteConfig.name + " | Pinturas y revestimientos de alta calidad",
+  description: siteConfig.description,
+  keywords: siteConfig.keywords.join(", "),
+  authors: [{ name: siteConfig.creator }],
+  creator: siteConfig.creator,
+  metadataBase: new URL(siteConfig.url),
+  openGraph: {
+    type: "website",
+    locale: siteConfig.openGraph.locale,
+    url: siteConfig.url,
+    title: siteConfig.name + " | Pinturas y revestimientos de alta calidad",
+    description: siteConfig.description,
+    siteName: siteConfig.openGraph.siteName,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name + " - Pinturas y revestimientos de alta calidad",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.twitter.title,
+    description: siteConfig.twitter.description,
+    creator: siteConfig.twitter.creator,
+    images: siteConfig.twitter.images,
+  },
+  icons: siteConfig.icons,
 };
 
 export default function RootLayout({
@@ -50,7 +76,6 @@ export default function RootLayout({
         />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="shortcut icon" href="/favicon.ico" />
-        <meta name="theme-color" content="#870064" />
       </head>
       <body
         className={`${inter.variable} ${poppins.variable} font-sans antialiased`}

@@ -364,32 +364,21 @@ export function OptimizedImage({
     pngSrc,
   ]);
 
-  // Registrar información de depuración
+  // Registrar información de depuración solo en desarrollo
   useEffect(() => {
-    // Solo registrar en desarrollo
-    if (process.env.NODE_ENV === "development") {
+    if (
+      process.env.NODE_ENV === "development" &&
+      process.env.DEBUG_IMAGES === "true"
+    ) {
       console.log(`[OptimizedImage] Renderizando imagen: ${src}`, {
         imgSrc,
         isLoading,
         error,
         hasPlaceholder,
         isAssetPath,
-        fill: props.fill,
-        width: props.width,
-        height: props.height,
       });
     }
-  }, [
-    src,
-    imgSrc,
-    isLoading,
-    error,
-    hasPlaceholder,
-    isAssetPath,
-    props.fill,
-    props.width,
-    props.height,
-  ]);
+  }, [src, imgSrc, isLoading, error, hasPlaceholder, isAssetPath]);
 
   return (
     <div className={cn("relative overflow-hidden", containerClassName)}>
@@ -420,18 +409,53 @@ export function OptimizedImage({
           setIsLoading(false);
         }}
         onError={(e) => {
-          // Registrar error
-          console.error(`[OptimizedImage] Error al cargar imagen: ${imgSrc}`, {
-            src,
-            imgSrc,
-            alt,
-            attemptCount,
-            isAssetPath,
-          });
+          // Registrar error detallado en desarrollo
+          if (process.env.NODE_ENV === "development") {
+            const errorDetails = {
+              originalSrc: src,
+              currentSrc: imgSrc,
+              alt,
+              attemptCount,
+              isAssetPath,
+              fallbackSrc,
+              timestamp: new Date().toISOString(),
+            };
 
-          // Si hay un error al cargar la imagen, usar directamente el fallback
-          setImgSrc(fallbackSrc);
-          setError(true);
+            if (process.env.DEBUG_IMAGES === "true") {
+              console.error(
+                `[OptimizedImage] Error al cargar imagen: ${imgSrc}`,
+                errorDetails
+              );
+            }
+
+            // Verificar si es un error 404 común de nomenclatura antigua
+            if (
+              imgSrc.includes("PREMIUM-SUPERLAVABLE") ||
+              imgSrc.includes("FACIL FIX EXTERIOR") ||
+              imgSrc.includes("ECOPAINTINGMEMBRANA") ||
+              imgSrc.includes("NEW-HOUSE-BARNIZ") ||
+              imgSrc.includes("EXPRESSION-LATEX-INTERIOR")
+            ) {
+              console.warn(
+                `[OptimizedImage] ⚠️ Imagen con nomenclatura antigua detectada: ${imgSrc}`
+              );
+              console.warn(
+                `[OptimizedImage] 💡 Ejecuta el script de reparación: npm run fix-image-references`
+              );
+            }
+          }
+
+          // Incrementar contador de intentos
+          const newAttemptCount = attemptCount + 1;
+          setAttemptCount(newAttemptCount);
+
+          // Si es el primer intento y hay fallback, intentar con fallback
+          if (newAttemptCount === 1 && fallbackSrc && imgSrc !== fallbackSrc) {
+            setImgSrc(fallbackSrc);
+          } else {
+            // Si ya se intentó con fallback o no hay fallback, marcar como error
+            setError(true);
+          }
         }}
       />
 

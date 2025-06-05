@@ -85,9 +85,9 @@ Los colores principales de la marca se pueden modificar en `tailwind.config.ts`:
 ```typescript
 colors: {
   mascolor: {
-    primary: "#FF5722",    // Naranja vibrante
-    secondary: "#4CAF50",  // Verde
-    accent: "#2196F3",     // Azul
+    primary: "#870064",    // Color principal de la marca
+    secondary: "#870064",  // Color secundario (mismo que primario)
+    accent: "#870064",     // Color de acento (mismo que primario)
     neutral: "#9E9E9E",    // Gris neutro
     dark: "#212121",       // Casi negro
     light: "#F5F5F5",      // Casi blanco

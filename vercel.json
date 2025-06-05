@@ -4,6 +4,83 @@
   "outputDirectory": ".next",
   "framework": "nextjs",
   "regions": ["sfo1"],
+  "redirects": [
+    {
+      "source": "/etiqueta-producto/facil-fix",
+      "destination": "/#productos",
+      "permanent": true
+    },
+    {
+      "source": "/etiqueta-producto/facilfix",
+      "destination": "/#productos",
+      "permanent": true
+    },
+    {
+      "source": "/etiqueta-producto/premium",
+      "destination": "/#productos",
+      "permanent": true
+    },
+    {
+      "source": "/etiqueta-producto/expression",
+      "destination": "/#productos",
+      "permanent": true
+    },
+    {
+      "source": "/etiqueta-producto/ecopainting",
+      "destination": "/#productos",
+      "permanent": true
+    },
+    {
+      "source": "/etiqueta-producto/newhouse",
+      "destination": "/#productos",
+      "permanent": true
+    },
+    {
+      "source": "/etiqueta-producto/(.*)",
+      "destination": "/#productos",
+      "permanent": true
+    },
+    {
+      "source": "/productos-facilfix",
+      "destination": "/#productos",
+      "permanent": true
+    },
+    {
+      "source": "/facilfix",
+      "destination": "/#productos",
+      "permanent": true
+    },
+    {
+      "source": "/premium",
+      "destination": "/#productos",
+      "permanent": true
+    },
+    {
+      "source": "/expression",
+      "destination": "/#productos",
+      "permanent": true
+    },
+    {
+      "source": "/ecopainting",
+      "destination": "/#productos",
+      "permanent": true
+    },
+    {
+      "source": "/newhouse",
+      "destination": "/#productos",
+      "permanent": true
+    },
+    {
+      "source": "/catalogo",
+      "destination": "/#productos",
+      "permanent": true
+    },
+    {
+      "source": "/productos-catalogo",
+      "destination": "/#productos",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

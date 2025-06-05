@@ -1,5 +1,5 @@
 import { getSupabaseClient } from "./client";
-import { Product, Category, Brand } from "@/types";
+import { Product, Category, Brand, ProductFeature } from "@/types";
 
 // Caché en memoria para IDs de categorías y marcas
 const categoryIdCache: Record<string, string> = {};
@@ -406,5 +406,167 @@ export async function preloadCategoriesAndBrands(): Promise<void> {
     logServiceDebug("Error en precarga", { error });
   } finally {
     preloadInProgress = false;
+  }
+}
+
+/**
+ * Obtiene un producto específico por ID con todas sus relaciones y características
+ * @param id ID del producto
+ * @returns Producto con todas sus relaciones o null si no se encuentra
+ */
+export async function getProductById(id: string): Promise<Product | null> {
+  logServiceDebug("Obteniendo producto por ID", { id });
+
+  const supabase = getSupabaseClient();
+
+  try {
+    const { data, error } = await supabase
+      .from("products")
+      .select(
+        `
+        *,
+        category:categories(*),
+        brand:brands(*),
+        features:product_features(*)
+      `
+      )
+      .eq("id", id)
+      .single();
+
+    if (error) {
+      if (error.code === "PGRST116") {
+        logServiceDebug("Producto no encontrado", { id });
+        return null;
+      }
+      logServiceDebug("Error al obtener producto por ID", { error, id });
+      throw error;
+    }
+
+    if (!data) {
+      logServiceDebug("No se encontraron datos para el producto", { id });
+      return null;
+    }
+
+    // Procesar el producto de la misma manera que en getProducts
+    const product = { ...data } as Product;
+
+    // Normalizar URL de imagen
+    if (product.asset_id) {
+      product.image_url = `/assets/images/products/${product.asset_id}/original.webp`;
+    } else if (product.image_url) {
+      if (
+        !product.image_url.startsWith("http://") &&
+        !product.image_url.startsWith("https://") &&
+        !product.image_url.startsWith("/")
+      ) {
+        product.image_url = "/" + product.image_url;
+      }
+    } else {
+      product.image_url = "/images/products/placeholder.jpg";
+    }
+
+    // Asegurar que tenga slug
+    if (!product.slug) {
+      product.slug = product.name.toLowerCase().replace(/\s+/g, "-");
+    }
+
+    // Asegurar que tenga descripción
+    if (!product.description) {
+      product.description = `${product.name} - ${
+        product.brand?.name || "Marca desconocida"
+      }`;
+    }
+
+    logServiceDebug("Producto obtenido exitosamente", {
+      id,
+      name: product.name,
+      featuresCount: product.features?.length || 0,
+    });
+
+    return product;
+  } catch (error) {
+    logServiceDebug("Error en getProductById", { error, id });
+    throw error;
+  }
+}
+
+/**
+ * Obtiene un producto específico por slug con todas sus relaciones y características
+ * @param slug Slug del producto
+ * @returns Producto con todas sus relaciones o null si no se encuentra
+ */
+export async function getProductBySlug(slug: string): Promise<Product | null> {
+  logServiceDebug("Obteniendo producto por slug", { slug });
+
+  const supabase = getSupabaseClient();
+
+  try {
+    const { data, error } = await supabase
+      .from("products")
+      .select(
+        `
+        *,
+        category:categories(*),
+        brand:brands(*),
+        features:product_features(*)
+      `
+      )
+      .eq("slug", slug)
+      .single();
+
+    if (error) {
+      if (error.code === "PGRST116") {
+        logServiceDebug("Producto no encontrado", { slug });
+        return null;
+      }
+      logServiceDebug("Error al obtener producto por slug", { error, slug });
+      throw error;
+    }
+
+    if (!data) {
+      logServiceDebug("No se encontraron datos para el producto", { slug });
+      return null;
+    }
+
+    // Procesar el producto de la misma manera que en getProducts
+    const product = { ...data } as Product;
+
+    // Normalizar URL de imagen
+    if (product.asset_id) {
+      product.image_url = `/assets/images/products/${product.asset_id}/original.webp`;
+    } else if (product.image_url) {
+      if (
+        !product.image_url.startsWith("http://") &&
+        !product.image_url.startsWith("https://") &&
+        !product.image_url.startsWith("/")
+      ) {
+        product.image_url = "/" + product.image_url;
+      }
+    } else {
+      product.image_url = "/images/products/placeholder.jpg";
+    }
+
+    // Asegurar que tenga slug
+    if (!product.slug) {
+      product.slug = product.name.toLowerCase().replace(/\s+/g, "-");
+    }
+
+    // Asegurar que tenga descripción
+    if (!product.description) {
+      product.description = `${product.name} - ${
+        product.brand?.name || "Marca desconocida"
+      }`;
+    }
+
+    logServiceDebug("Producto obtenido exitosamente", {
+      slug,
+      name: product.name,
+      featuresCount: product.features?.length || 0,
+    });
+
+    return product;
+  } catch (error) {
+    logServiceDebug("Error en getProductBySlug", { error, slug });
+    throw error;
   }
 }

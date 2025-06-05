@@ -1,0 +1,184 @@
+/* Estilos para el sistema BentoGrid */
+
+/* Estilos base para BentoGrid */
+.bento-grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+/* Estilos para BentoItem */
+.bento-item {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(135, 0, 100, 0.1);
+  transition: all 0.3s ease;
+}
+
+.bento-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: rgba(135, 0, 100, 0.3);
+}
+
+/* Estilos para BentoImage */
+.bento-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+
+.bento-image {
+  transition: transform 0.5s ease;
+}
+
+.bento-item:hover .bento-image {
+  transform: scale(1.05);
+}
+
+/* Estilos para overlay */
+.bento-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(135, 0, 100, 0.3);
+  z-index: 10;
+  transition: opacity 0.3s ease;
+}
+
+.bento-item:hover .bento-overlay {
+  opacity: 0.5;
+}
+
+/* Media queries para responsive */
+@media (min-width: 640px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .bento-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Estilos específicos para HeroBentoMobile */
+.hero-bento-mobile {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: transparent;
+  padding: 1.5rem 1rem 2.5rem;
+  min-height: 90vh;
+}
+
+.hero-bento-mobile::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-bento-mobile .bento-grid {
+  gap: 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-bento-mobile .bento-item {
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 12px rgba(135, 0, 100, 0.1);
+  backdrop-filter: blur(4px);
+}
+
+/* Breakpoints para tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-bento-mobile {
+    display: block;
+    padding: 2rem 1.5rem 3rem;
+    min-height: 85vh;
+  }
+
+  .hero-bento-mobile .bento-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .hero-bento-mobile .bento-item {
+    border-radius: 1.5rem;
+  }
+}
+
+/* Ocultar en desktop */
+@media (min-width: 1024px) {
+  .hero-bento-mobile {
+    display: none;
+  }
+}
+
+/* Estilos para el carrusel de marcas */
+.brand-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+
+.brand-carousel::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+.brand-carousel-item {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  margin-right: 1rem;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.brand-carousel-item.active,
+.brand-carousel-item:hover {
+  opacity: 1;
+}
+
+/* Estilos para botones de acción */
+.action-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.action-button:hover {
+  transform: translateY(-3px);
+}
+
+.action-button.whatsapp {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+}
+
+.action-button.phone {
+  background: linear-gradient(135deg, #870064, #591a48);
+}

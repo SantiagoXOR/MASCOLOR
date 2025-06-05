@@ -1,9 +1,11 @@
 # Documentación del Proyecto +COLOR
 
 ## Descripción General
+
 Este proyecto es una landing page para la marca +COLOR, especializada en pinturas y revestimientos de alta calidad. La página web está diseñada con una estética moderna y profesional, utilizando una paleta de colores púrpura/magenta que refleja la identidad de la marca.
 
 ## Tecnologías Utilizadas
+
 - **Framework**: Next.js 15
 - **Biblioteca UI**: React 18
 - **Lenguaje**: TypeScript
@@ -14,6 +16,7 @@ Este proyecto es una landing page para la marca +COLOR, especializada en pintura
 - **Backend** (opcional): Supabase
 
 ## Estructura del Proyecto
+
 ```
 +COLOR/
 ├── app/                    # Componentes, rutas y lógica principal
@@ -33,13 +36,14 @@ Este proyecto es una landing page para la marca +COLOR, especializada en pintura
 ```
 
 ## Paleta de Colores
-La paleta de colores principal de +COLOR se basa en tonos de púrpura/magenta:
+
+La paleta de colores principal de +COLOR se basa en el color primario de la marca:
 
 ```typescript
 // Colores principales
 primary: "#870064",    // Cardinal Pink 900 (color principal)
-secondary: "#FF00C7",  // Cardinal Pink 600 (acento)
-accent: "#FF54C9",     // Cardinal Pink 400 (acento secundario)
+secondary: "#870064",  // Cambiado a color primario de la marca
+accent: "#870064",     // Cambiado a color primario de la marca
 
 // Escala completa de Cardinal Pink
 pink: {
@@ -72,6 +76,7 @@ gray: {
 ```
 
 ## Tipografía
+
 - **Principal**: Poppins (variable: `--font-poppins`)
 - **Secundaria**: Inter (variable: `--font-inter`)
 - **Adicional**: Stolzl (importada vía Typekit)
@@ -79,6 +84,7 @@ gray: {
 ## Componentes Principales
 
 ### Secciones
+
 1. **HeroSection**: Sección principal con carrusel de marcas interactivo
 2. **TrustBlocks**: Sección de bloques de confianza con estadísticas
 3. **CategoriesSection**: Categorías de productos
@@ -88,6 +94,7 @@ gray: {
 7. **ContactSection**: Información de contacto
 
 ### Componentes UI Personalizados
+
 1. **AnimatedButton**: Botón con animaciones de hover y transiciones
 2. **SubtleButton**: Botón sutil para acciones secundarias
 3. **ProductCarousel**: Carrusel especializado para productos
@@ -99,6 +106,7 @@ gray: {
 La sección de productos (`components/sections/products.tsx`) es un componente clave que muestra los productos organizados por categorías:
 
 ### Características
+
 - Tabs para filtrar por categorías (Especiales, Exteriores, Interiores, Recubrimientos)
 - Carrusel horizontal para navegar entre grupos de productos
 - Tarjetas de producto con:
@@ -111,6 +119,7 @@ La sección de productos (`components/sections/products.tsx`) es un componente c
 - Diseño responsive que se adapta a diferentes tamaños de pantalla
 
 ### Estructura de Datos
+
 ```typescript
 // Interfaces para tipado
 interface ProductCategory {
@@ -126,11 +135,24 @@ interface Product {
   description: string;
   image: string;
   badge?: "new" | "bestseller" | "featured" | "limited";
-  icon?: "interior" | "exterior" | "pool" | "sports" | "metal" | "wood" | "concrete" | "waterproof" | "thermal" | "protective" | "eco" | "texture";
+  icon?:
+    | "interior"
+    | "exterior"
+    | "pool"
+    | "sports"
+    | "metal"
+    | "wood"
+    | "concrete"
+    | "waterproof"
+    | "thermal"
+    | "protective"
+    | "eco"
+    | "texture";
 }
 ```
 
 ## Logos e Imágenes
+
 - **Logos**: Ubicados en `/public/images/logos/`
   - `+color.svg`: Logo principal con texto
   - `+colorsolo.svg`: Logo solo (símbolo)
@@ -139,6 +161,7 @@ interface Product {
 - **Fondos y Baldes**: Ubicados en `/public/images/buckets/`
 
 ## Requisitos Específicos
+
 - El logo de +COLOR debe mostrarse en color blanco en el header cuando está en la parte superior
 - El logo cambia al color de la marca (#870064) cuando se hace scroll
 - Los botones "Ver detalles" deben ser sutiles, pequeños y usar un símbolo "+" en lugar de ">"
@@ -146,6 +169,7 @@ interface Product {
 - Las imágenes de productos deben mostrarse con fondo transparente y un círculo con efecto blur
 
 ## Desarrollo y Despliegue
+
 1. **Instalación**: `npm install`
 2. **Desarrollo**: `npm run dev`
 3. **Construcción**: `npm run build`
@@ -153,6 +177,7 @@ interface Product {
 5. **Despliegue**: Configurado para Vercel
 
 ## Contacto
+
 - **Teléfono**: 0800-555-0189
-- **Horario de atención**: Lunes a sábados de 8:00 a 21:00
+- **Horario de atención**: Lunes a viernes de 8:00 a 16:00
 - **Créditos**: Diseñado y desarrollado por XOR

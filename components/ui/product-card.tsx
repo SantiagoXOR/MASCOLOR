@@ -18,6 +18,7 @@ import { useEffect, useState } from "react";
 interface ProductCardProps {
   product: Product;
   onClick?: () => void;
+  onViewDetails?: (productId: string) => void;
 }
 
 /**
@@ -25,9 +26,12 @@ interface ProductCardProps {
  * @param product Datos del producto a mostrar
  * @param onClick Función a ejecutar al hacer clic en el botón "Ver detalles"
  */
-// Función para registrar información de depuración solo en desarrollo
+// Función para registrar información de depuración solo en desarrollo con debug habilitado
 const logProductDebug = (message: string, data: Record<string, any> = {}) => {
-  if (process.env.NODE_ENV === "development") {
+  if (
+    process.env.NODE_ENV === "development" &&
+    process.env.DEBUG_PRODUCTS === "true"
+  ) {
     console.log(
       "%c[ProductCard Debug]%c " + message,
       "background: #870064; color: white; padding: 2px 4px; border-radius: 2px;",
@@ -37,7 +41,11 @@ const logProductDebug = (message: string, data: Record<string, any> = {}) => {
   }
 };
 
-export function ProductCard({ product, onClick }: ProductCardProps) {
+export function ProductCard({
+  product,
+  onClick,
+  onViewDetails,
+}: ProductCardProps) {
   // Registrar información del producto
   logProductDebug("Renderizando ProductCard", {
     id: product.id,
@@ -138,7 +146,16 @@ export function ProductCard({ product, onClick }: ProductCardProps) {
   // Renderizar versión optimizada para dispositivos de bajo rendimiento
   if (isLowPerformanceDevice) {
     return (
-      <Card className="overflow-hidden hover:shadow-md transition-all duration-300 border-0 group bg-white/80 backdrop-blur-sm h-full flex flex-col rounded-lg">
+      <Card
+        className="overflow-hidden hover:shadow-md transition-all duration-300 border-0 group bg-white/80 backdrop-blur-sm h-full flex flex-col rounded-lg cursor-pointer"
+        onClick={() => {
+          if (onViewDetails) {
+            onViewDetails(product.id);
+          } else if (onClick) {
+            onClick();
+          }
+        }}
+      >
         <div className="relative aspect-square bg-gradient-to-b from-gray-50 to-gray-100 overflow-hidden">
           {/* Badge */}
           {product.badge && (
@@ -308,7 +325,14 @@ export function ProductCard({ product, onClick }: ProductCardProps) {
         <CardFooter className="flex justify-center pt-0 pb-1 mt-auto">
           <SubtleButton
             className="text-xs px-2 py-0.5 hover:bg-mascolor-primary/10 w-full text-center"
-            onClick={onClick}
+            onClick={(e) => {
+              e.stopPropagation(); // Evitar propagación al Card padre
+              if (onViewDetails) {
+                onViewDetails(product.id);
+              } else if (onClick) {
+                onClick();
+              }
+            }}
           >
             Ver detalles
           </SubtleButton>
@@ -320,7 +344,16 @@ export function ProductCard({ product, onClick }: ProductCardProps) {
   // Versión con animaciones para dispositivos de alto rendimiento
   return (
     <motion.div whileHover={{ y: -3 }} transition={{ duration: 0.3 }}>
-      <Card className="overflow-hidden hover:shadow-md transition-all duration-300 border-0 group bg-white/80 backdrop-blur-sm h-full flex flex-col rounded-lg">
+      <Card
+        className="overflow-hidden hover:shadow-md transition-all duration-300 border-0 group bg-white/80 backdrop-blur-sm h-full flex flex-col rounded-lg cursor-pointer"
+        onClick={() => {
+          if (onViewDetails) {
+            onViewDetails(product.id);
+          } else if (onClick) {
+            onClick();
+          }
+        }}
+      >
         <div className="relative aspect-square bg-gradient-to-b from-gray-50 to-gray-100 overflow-hidden">
           {/* Badge */}
           {product.badge && (
@@ -521,7 +554,14 @@ export function ProductCard({ product, onClick }: ProductCardProps) {
         <CardFooter className="flex justify-center pt-0 pb-1 mt-auto">
           <SubtleButton
             className="text-xs px-2 py-0.5 hover:bg-mascolor-primary/10 w-full text-center"
-            onClick={onClick}
+            onClick={(e) => {
+              e.stopPropagation(); // Evitar propagación al Card padre
+              if (onViewDetails) {
+                onViewDetails(product.id);
+              } else if (onClick) {
+                onClick();
+              }
+            }}
           >
             Ver detalles
           </SubtleButton>

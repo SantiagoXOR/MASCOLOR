@@ -53,7 +53,7 @@ export function Header() {
   return (
     <header
       ref={headerRef}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`header-desktop ${
         isScrolled
           ? "bg-white/90 backdrop-blur-md shadow-md py-2"
           : "bg-transparent py-4"
@@ -115,7 +115,9 @@ export function Header() {
               transition={{ duration: 0.5, delay: 0.15 }}
               className={isScrolled ? "text-mascolor-dark" : "text-white"}
             >
-              <SearchBar />
+              <SearchBar
+                iconColor={isScrolled ? "text-mascolor-dark" : "text-white"}
+              />
             </motion.div>
 
             {/* CTA Button con animación */}
@@ -187,7 +189,7 @@ export function Header() {
 
                 {/* Barra de búsqueda en móvil */}
                 <div className="py-2 flex justify-center">
-                  <SearchBar />
+                  <SearchBar iconColor="text-mascolor-dark" />
                 </div>
 
                 <AnimatedButton

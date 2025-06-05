@@ -250,11 +250,11 @@ export function ContactSection() {
                   </div>
                   <ul className="space-y-1 text-mascolor-gray-600">
                     <li className="flex justify-between">
-                      <span>Lunes - Sábados:</span>
-                      <span className="font-medium">8:00 - 21:00</span>
+                      <span>Lunes - Viernes:</span>
+                      <span className="font-medium">8:00 - 16:00</span>
                     </li>
                     <li className="flex justify-between">
-                      <span>Domingos:</span>
+                      <span>Sábados y Domingos:</span>
                       <span>Cerrado</span>
                     </li>
                   </ul>

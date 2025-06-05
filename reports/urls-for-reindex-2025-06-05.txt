@@ -1,0 +1,32 @@
+# URLs para Re-indexación - 2025-06-05T14:05:37.834Z
+
+## URLs PROBLEMÁTICAS (Eliminar del índice)
+https://pinturasmascolor.com.ar/etiqueta-producto/facil-fix
+https://pinturasmascolor.com.ar/etiqueta-producto/facilfix
+https://pinturasmascolor.com.ar/etiqueta-producto/premium
+https://pinturasmascolor.com.ar/etiqueta-producto/expression
+https://pinturasmascolor.com.ar/etiqueta-producto/ecopainting
+https://pinturasmascolor.com.ar/etiqueta-producto/newhouse
+https://pinturasmascolor.com.ar/productos-facilfix
+https://pinturasmascolor.com.ar/facilfix
+https://pinturasmascolor.com.ar/catalogo
+
+## URLs NUEVAS (Solicitar indexación)
+https://pinturasmascolor.com.ar/productos
+https://pinturasmascolor.com.ar/#productos
+
+## Instrucciones rápidas:
+
+### Para eliminar URLs problemáticas:
+1. Google Search Console > Eliminaciones
+2. Eliminar temporalmente > Eliminar URL del índice
+3. Copiar/pegar cada URL problemática
+
+### Para indexar URLs nuevas:
+1. Google Search Console > Inspección de URLs
+2. Pegar URL nueva
+3. Solicitar indexación
+
+### Sitemap:
+- URL: https://pinturasmascolor.com.ar/sitemap.xml
+- Enviar en: Google Search Console > Sitemaps
