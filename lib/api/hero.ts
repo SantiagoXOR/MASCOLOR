@@ -108,7 +108,7 @@ export async function getHeroContent(): Promise<HeroContent> {
       console.log("✅ Producto destacado obtenido:", {
         id: featuredProduct.id,
         name: featuredProduct.name,
-        brand: featuredProduct.brand?.name || "Sin marca",
+        brand: (featuredProduct as any)?.brand?.name || "Sin marca",
       });
     }
 

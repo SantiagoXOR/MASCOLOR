@@ -448,7 +448,7 @@ export async function getProductById(id: string): Promise<Product | null> {
     }
 
     // Procesar el producto de la misma manera que en getProducts
-    const product = { ...data } as Product;
+    const product = { ...data } as unknown as Product;
 
     // Normalizar URL de imagen
     if (product.asset_id) {
@@ -529,7 +529,7 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
     }
 
     // Procesar el producto de la misma manera que en getProducts
-    const product = { ...data } as Product;
+    const product = { ...data } as unknown as Product;
 
     // Normalizar URL de imagen
     if (product.asset_id) {

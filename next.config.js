@@ -38,6 +38,16 @@ const nextConfig = {
     optimizePackageImports: ["framer-motion", "lucide-react"], // Optimizar importaciones
   },
 
+  // Configuración de Turbopack (estable en Next.js 15)
+  turbopack: {
+    rules: {
+      "*.svg": {
+        loaders: ["@svgr/webpack"],
+        as: "*.js",
+      },
+    },
+  },
+
   // Configuración de webpack optimizada
   webpack: (config, { isServer }) => {
     // Configuración específica para el cliente

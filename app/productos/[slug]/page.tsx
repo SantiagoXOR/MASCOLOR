@@ -4,15 +4,18 @@ import { getProductBySlug } from "@/lib/supabase/products";
 import { ProductDetailPage } from "./page-client";
 
 interface ProductPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 // Generar metadata dinámico para SEO
-export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: ProductPageProps): Promise<Metadata> {
   try {
-    const product = await getProductBySlug(params.slug);
+    const { slug } = await params;
+    const product = await getProductBySlug(slug);
 
     if (!product) {
       return {
@@ -22,10 +25,16 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     }
 
     const title = `${product.name} - ${product.brand?.name || ""} | +COLOR`;
-    const description = product.description || `${product.name} de ${product.brand?.name || "nuestra marca"}. Descubre nuestros productos de alta calidad para tus proyectos.`;
-    const imageUrl = product.image_url.startsWith("http") 
-      ? product.image_url 
-      : `${process.env.NEXT_PUBLIC_SITE_URL || "https://mascolor.vercel.app"}${product.image_url}`;
+    const description =
+      product.description ||
+      `${product.name} de ${
+        product.brand?.name || "nuestra marca"
+      }. Descubre nuestros productos de alta calidad para tus proyectos.`;
+    const imageUrl = product.image_url.startsWith("http")
+      ? product.image_url
+      : `${process.env.NEXT_PUBLIC_SITE_URL || "https://mascolor.vercel.app"}${
+          product.image_url
+        }`;
 
     return {
       title,
@@ -37,8 +46,10 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
         "pintura",
         "revestimiento",
         "+COLOR",
-        "MASCOLOR"
-      ].filter(Boolean).join(", "),
+        "MASCOLOR",
+      ]
+        .filter(Boolean)
+        .join(", "),
       openGraph: {
         title,
         description,
@@ -67,14 +78,16 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     console.error("Error generando metadata:", error);
     return {
       title: "Producto - +COLOR",
-      description: "Descubre nuestros productos de alta calidad para tus proyectos.",
+      description:
+        "Descubre nuestros productos de alta calidad para tus proyectos.",
     };
   }
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
   try {
-    const product = await getProductBySlug(params.slug);
+    const { slug } = await params;
+    const product = await getProductBySlug(slug);
 
     if (!product) {
       notFound();

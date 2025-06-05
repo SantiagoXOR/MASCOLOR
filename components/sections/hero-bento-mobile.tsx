@@ -210,7 +210,7 @@ export function HeroBentoMobile() {
 
   // Determinar qué imagen de fondo usar (móvil o desktop)
   const getBackgroundImage = (brandSlug: string) => {
-    const asset = assetsToUse[brandSlug];
+    const asset = assetsToUse[brandSlug as keyof typeof assetsToUse];
     if (!asset) return "/images/buckets/PREMIUM-mobile.jpg";
 
     // Priorizar imagen móvil si está disponible y estamos en móvil/tablet
@@ -346,8 +346,8 @@ export function HeroBentoMobile() {
                       "0 4px 20px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3)",
                   }}
                 >
-                  {assetsToUse[activeBrand]?.title ||
-                    "Rendimiento inteligente para obras y hogares"}
+                  {assetsToUse[activeBrand as keyof typeof assetsToUse]
+                    ?.title || "Rendimiento inteligente para obras y hogares"}
                 </motion.h1>
               </AnimatePresence>
             </div>
@@ -403,7 +403,10 @@ export function HeroBentoMobile() {
                     className="relative"
                   >
                     <Image
-                      src={assetsToUse[activeBrand]?.bucket || productImageUrl}
+                      src={
+                        assetsToUse[activeBrand as keyof typeof assetsToUse]
+                          ?.bucket || productImageUrl
+                      }
                       alt={`Producto premium ${activeBrand}`}
                       width={160}
                       height={160}
