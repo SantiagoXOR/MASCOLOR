@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { ProductsSection } from "@/components/sections/products";
-import { Navbar } from "@/components/layout/navbar";
+import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { WhatsAppButton } from "@/components/whatsapp";
 import { useProductFilters } from "@/hooks/useProductFilters";
@@ -108,8 +108,8 @@ export function ProductsPageClient() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
-      
+      <Header />
+
       <main className="pt-20">
         {/* Hero section para la página de productos */}
         <section className="bg-gradient-to-r from-mascolor-primary/10 to-mascolor-primary/5 py-12">
@@ -118,10 +118,11 @@ export function ProductsPageClient() {
               Catálogo de Productos
             </h1>
             <p className="text-lg text-mascolor-gray-600 max-w-3xl mx-auto">
-              Descubre nuestra amplia gama de pinturas y revestimientos de alta calidad. 
-              Filtra por marca o categoría para encontrar el producto perfecto para tu proyecto.
+              Descubre nuestra amplia gama de pinturas y revestimientos de alta
+              calidad. Filtra por marca o categoría para encontrar el producto
+              perfecto para tu proyecto.
             </p>
-            
+
             {/* Mostrar información del filtro activo */}
             {isInitialized && (
               <div className="mt-6 inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
@@ -130,7 +131,8 @@ export function ProductsPageClient() {
                     <>
                       Mostrando productos de la marca:{" "}
                       <span className="font-semibold text-mascolor-primary">
-                        {brands.find((b) => b.slug === activeBrand)?.name || activeBrand}
+                        {brands.find((b) => b.slug === activeBrand)?.name ||
+                          activeBrand}
                       </span>
                     </>
                   )}
@@ -138,7 +140,8 @@ export function ProductsPageClient() {
                     <>
                       Mostrando productos de la categoría:{" "}
                       <span className="font-semibold text-mascolor-primary">
-                        {categories.find((c) => c.slug === activeCategory)?.name || activeCategory}
+                        {categories.find((c) => c.slug === activeCategory)
+                          ?.name || activeCategory}
                       </span>
                     </>
                   )}
