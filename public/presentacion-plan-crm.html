@@ -1372,7 +1372,7 @@
             try {
                 const response = await fetch('/crm-plan.md');
                 if (response.ok) {
-                    const markdown = await response.text();
+                    let markdown = await response.text();
                     const container = document.getElementById('docs-content');
                     
                     if (container && typeof marked !== 'undefined') {
