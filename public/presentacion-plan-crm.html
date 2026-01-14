@@ -9,6 +9,12 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <!-- Markdown Parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+    <!-- Mermaid Diagrams -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <!-- DOMPurify for HTML sanitization -->
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
     <script>
         tailwind.config = {
             darkMode: "class",
@@ -54,6 +60,197 @@
         .section {
             scroll-margin-top: 80px;
         }
+        
+        /* Markdown Styles */
+        #docs-content {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: #1f2937;
+        }
+        
+        .dark #docs-content {
+            color: #e5e7eb;
+        }
+        
+        #docs-content h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #8B005D;
+            border-bottom: 2px solid #8B005D;
+            padding-bottom: 0.5rem;
+        }
+        
+        .dark #docs-content h1 {
+            color: #d98bc4;
+            border-bottom-color: #d98bc4;
+        }
+        
+        #docs-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #8B005D;
+        }
+        
+        .dark #docs-content h2 {
+            color: #d98bc4;
+        }
+        
+        #docs-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #6A004F;
+        }
+        
+        .dark #docs-content h3 {
+            color: #b05096;
+        }
+        
+        #docs-content h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        #docs-content p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        #docs-content ul, #docs-content ol {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+        
+        #docs-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        #docs-content code {
+            background-color: #f3f4f6;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #8B005D;
+        }
+        
+        .dark #docs-content code {
+            background-color: #1f2937;
+            color: #d98bc4;
+        }
+        
+        #docs-content pre {
+            background-color: #1f2937;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+        
+        .dark #docs-content pre {
+            background-color: #0f172a;
+        }
+        
+        #docs-content pre code {
+            background-color: transparent;
+            padding: 0;
+            color: #e5e7eb;
+        }
+        
+        #docs-content blockquote {
+            border-left: 4px solid #8B005D;
+            padding-left: 1rem;
+            margin-left: 0;
+            margin-bottom: 1rem;
+            font-style: italic;
+            color: #6b7280;
+        }
+        
+        .dark #docs-content blockquote {
+            border-left-color: #d98bc4;
+            color: #9ca3af;
+        }
+        
+        #docs-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+        }
+        
+        #docs-content table th,
+        #docs-content table td {
+            border: 1px solid #e5e7eb;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        
+        .dark #docs-content table th,
+        .dark #docs-content table td {
+            border-color: #374151;
+        }
+        
+        #docs-content table th {
+            background-color: #f3f4f6;
+            font-weight: 600;
+        }
+        
+        .dark #docs-content table th {
+            background-color: #1f2937;
+        }
+        
+        #docs-content a {
+            color: #8B005D;
+            text-decoration: underline;
+            transition: color 0.2s;
+        }
+        
+        #docs-content a:hover {
+            color: #6e004a;
+        }
+        
+        .dark #docs-content a {
+            color: #d98bc4;
+        }
+        
+        .dark #docs-content a:hover {
+            color: #b05096;
+        }
+        
+        /* Checkbox styles */
+        #docs-content input[type="checkbox"] {
+            width: 1.25rem;
+            height: 1.25rem;
+            margin-right: 0.5rem;
+            cursor: pointer;
+            accent-color: #8B005D;
+        }
+        
+        #docs-content label {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Mermaid container */
+        #docs-content .mermaid {
+            margin: 2rem 0;
+            text-align: center;
+            background-color: #ffffff;
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+        
+        .dark #docs-content .mermaid {
+            background-color: #1f2937;
+        }
     </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-white transition-colors duration-300">
@@ -78,6 +275,7 @@
             <a class="hover:text-primary transition-colors cursor-pointer" onclick="scrollToSection('solucion')">Solución</a>
             <a class="hover:text-primary transition-colors cursor-pointer" onclick="scrollToSection('implementacion')">Implementación</a>
             <a class="hover:text-primary transition-colors cursor-pointer" onclick="scrollToSection('prototipo')">Prototipo</a>
+            <a class="hover:text-primary transition-colors cursor-pointer" onclick="scrollToSection('docs')">Docs</a>
         </div>
     </nav>
 
@@ -947,6 +1145,28 @@
         </div>
     </section>
 
+    <!-- Docs Section -->
+    <section id="docs" class="section relative py-20 bg-background-light dark:bg-background-dark">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                    Documentación <span class="text-primary">Técnica</span>
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    Plan completo de implementación del CRM con integraciones UChat y ElevenLabs
+                </p>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
+                <div id="docs-content" class="p-8 md:p-12 max-h-[900px] overflow-y-auto">
+                    <div class="flex items-center justify-center py-12">
+                        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-primary text-white py-12 border-t border-white/10">
         <div class="container mx-auto px-6 text-center">
@@ -1019,6 +1239,163 @@
             document.addEventListener('DOMContentLoaded', loadPrototipoContent);
         } else {
             loadPrototipoContent();
+        }
+
+        // Sistema de gestión de checkboxes
+        const TODO_STORAGE_KEY = 'crm-plan-todos';
+        
+        function getTodoStates() {
+            try {
+                const stored = localStorage.getItem(TODO_STORAGE_KEY);
+                return stored ? JSON.parse(stored) : {};
+            } catch (e) {
+                return {};
+            }
+        }
+        
+        function saveTodoState(id, checked) {
+            const states = getTodoStates();
+            states[id] = checked;
+            try {
+                localStorage.setItem(TODO_STORAGE_KEY, JSON.stringify(states));
+            } catch (e) {
+                console.error('Error guardando estado de todos:', e);
+            }
+        }
+        
+        function restoreCheckboxes() {
+            const states = getTodoStates();
+            Object.keys(states).forEach(id => {
+                const checkbox = document.getElementById(id);
+                if (checkbox) {
+                    checkbox.checked = states[id];
+                }
+            });
+        }
+        
+        function setupCheckboxes() {
+            const checkboxes = document.querySelectorAll('#docs-content input[type="checkbox"]');
+            checkboxes.forEach((checkbox, index) => {
+                const id = `todo-${index}-${Date.now()}`;
+                checkbox.id = id;
+                
+                // Restaurar estado guardado
+                const states = getTodoStates();
+                if (states[id] !== undefined) {
+                    checkbox.checked = states[id];
+                }
+                
+                // Agregar listener
+                checkbox.addEventListener('change', (e) => {
+                    saveTodoState(id, e.target.checked);
+                });
+            });
+        }
+
+        // Inicializar Mermaid
+        function initializeMermaid() {
+            if (typeof mermaid !== 'undefined') {
+                mermaid.initialize({ 
+                    startOnLoad: false,
+                    theme: document.documentElement.classList.contains('dark') ? 'dark' : 'default',
+                    securityLevel: 'loose'
+                });
+                
+                const mermaidElements = document.querySelectorAll('#docs-content .language-mermaid, #docs-content pre code.language-mermaid');
+                mermaidElements.forEach((element, index) => {
+                    const code = element.textContent || element.innerText;
+                    const id = `mermaid-${index}-${Date.now()}`;
+                    
+                    // Crear contenedor para mermaid
+                    const container = document.createElement('div');
+                    container.className = 'mermaid';
+                    container.id = id;
+                    container.textContent = code;
+                    
+                    // Reemplazar el elemento original
+                    const pre = element.closest('pre');
+                    if (pre) {
+                        pre.parentNode.replaceChild(container, pre);
+                    } else {
+                        element.parentNode.replaceChild(container, element);
+                    }
+                });
+                
+                // Renderizar todos los diagramas
+                const mermaidContainers = document.querySelectorAll('#docs-content .mermaid');
+                if (mermaidContainers.length > 0) {
+                    mermaid.run({
+                        nodes: Array.from(mermaidContainers)
+                    }).catch(err => {
+                        console.error('Error renderizando mermaid:', err);
+                    });
+                }
+            }
+        }
+
+        // Cargar y renderizar markdown
+        async function loadDocsContent() {
+            try {
+                const response = await fetch('/crm-plan.md');
+                if (response.ok) {
+                    const markdown = await response.text();
+                    const container = document.getElementById('docs-content');
+                    
+                    if (container && typeof marked !== 'undefined') {
+                        // Configurar marked
+                        marked.setOptions({
+                            breaks: true,
+                            gfm: true,
+                            headerIds: true,
+                            mangle: false
+                        });
+                        
+                        // Parsear markdown a HTML
+                        let html = marked.parse(markdown);
+                        
+                        // Sanitizar HTML (si DOMPurify está disponible)
+                        if (typeof DOMPurify !== 'undefined') {
+                            html = DOMPurify.sanitize(html);
+                        }
+                        
+                        // Inyectar HTML
+                        container.innerHTML = html;
+                        
+                        // Procesar checkboxes
+                        setupCheckboxes();
+                        
+                        // Procesar mermaid después de un pequeño delay para asegurar que el DOM esté listo
+                        setTimeout(() => {
+                            initializeMermaid();
+                        }, 100);
+                    } else {
+                        throw new Error('Librerías de markdown no disponibles');
+                    }
+                } else {
+                    throw new Error(`Error ${response.status}: ${response.statusText}`);
+                }
+            } catch (error) {
+                console.error('Error al cargar la documentación:', error);
+                const container = document.getElementById('docs-content');
+                if (container) {
+                    container.innerHTML = `
+                        <div class="flex flex-col items-center justify-center py-12 text-center">
+                            <div class="text-red-500 mb-4">
+                                <span class="material-icons text-6xl">error_outline</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Error al cargar la documentación</h3>
+                            <p class="text-gray-600 dark:text-gray-400">${error.message}</p>
+                        </div>
+                    `;
+                }
+            }
+        }
+
+        // Cargar docs cuando la página esté lista
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadDocsContent);
+        } else {
+            loadDocsContent();
         }
     </script>
 </body>
