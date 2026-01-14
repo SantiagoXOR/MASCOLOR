@@ -286,7 +286,8 @@ export function ProductsBento() {
       {/* Modal de detalles del producto */}
       {selectedProduct && (
         <ProductDetailModal
-          product={selectedProduct}
+          productId={selectedProduct.id}
+          productSlug={selectedProduct.slug}
           isOpen={isModalOpen}
           onClose={handleCloseModal}
         />
