@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>+COLOR CRM Dashboard</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#870064",
+                        "primary-hover": "#a30076",
+                        "background-light": "#ffffff",
+                        "background-subtle": "#f9fafb",
+                        "surface-white": "#ffffff",
+                        "surface-border": "#e5e7eb",
+                        "text-main": "#1f2937",
+                        "text-muted": "#6b7280",
+                    },
+                    fontFamily: {
+                        "display": ["Poppins", "sans-serif"],
+                        "sans": ["Poppins", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d1d5db; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #870064; 
+        }
+    </style>
+</head>
+<body class="bg-background-subtle text-text-main font-display antialiased selection:bg-primary selection:text-white overflow-hidden">
+<div class="flex h-screen w-full overflow-hidden">
+<aside class="w-64 flex-shrink-0 flex flex-col border-r border-surface-border bg-surface-white z-20 hidden lg:flex shadow-sm">
+<div class="h-16 flex items-center gap-3 px-6 border-b border-surface-border">
+<div class="h-8 w-8 bg-gradient-to-br from-primary to-pink-500 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-primary/30">
+                    +
+                </div>
+<div>
+<h1 class="font-bold text-lg tracking-tight text-text-main">+COLOR CRM</h1>
+<p class="text-xs text-text-muted font-medium">Panel Admin</p>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto py-6 px-3 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary text-white shadow-md shadow-primary/20 group transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-main hover:bg-gray-100 transition-all group" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-medium text-sm">Leads</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-main hover:bg-gray-100 transition-all group" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-medium text-sm">Usuarios</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-main hover:bg-gray-100 transition-all group" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-medium text-sm">Analíticas</span>
+</a>
+<div class="my-2 border-t border-surface-border mx-3"></div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-main hover:bg-gray-100 transition-all group" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-medium text-sm">Configuración</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:text-text-main hover:bg-gray-100 transition-all group" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-medium text-sm">Ayuda</span>
+</a>
+</nav>
+<div class="p-4 border-t border-surface-border">
+<div class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-100 cursor-pointer transition-colors">
+<div class="h-10 w-10 rounded-full bg-cover bg-center border-2 border-primary" data-alt="Portrait of the current user" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC8BK5HqHNfWKAqt74z02z2JEIZo3AcM-DX3QQOwazewXyYoO4ygrCzdwOYsvsIqFMgvR_1AvFQ4hue7DhN1AtZO9CAZVV9I9ajeS-ah6T5gCt-VCnlI_NiOLZhv0ok5F5YgwpOL89_zwkDtcdoKCTeDcD2CIiX97ZPNg0EqvTk6MUtamPUNMkdCGd3VilPyaiI6alxedOAOfzf_2or5G_vo6wCTT1qebXxMiVibUFwzyqXHAWRgY8slRWEmdY51_IwC-3pvQ_XuuA');"></div>
+<div class="flex flex-col overflow-hidden">
+<span class="text-sm font-medium text-text-main truncate">Jane Doe</span>
+<span class="text-xs text-text-muted truncate">Admin</span>
+</div>
+<span class="material-symbols-outlined text-text-muted ml-auto" style="font-size: 20px;">logout</span>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col h-full overflow-hidden bg-background-subtle relative">
+<header class="h-16 flex items-center justify-between px-6 border-b border-surface-border bg-white/80 backdrop-blur-md sticky top-0 z-10 shadow-sm">
+<div class="flex items-center gap-4">
+<button class="lg:hidden text-text-main p-1 rounded-md hover:bg-gray-100">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="text-xl font-bold text-text-main tracking-tight">Dashboard</h2>
+</div>
+<div class="flex items-center gap-4 md:gap-6">
+<div class="hidden md:flex items-center bg-gray-50 rounded-full px-4 py-2 border border-surface-border focus-within:border-primary/50 focus-within:ring-2 focus-within:ring-primary/10 transition-all w-64 lg:w-96 shadow-sm">
+<span class="material-symbols-outlined text-text-muted" style="font-size: 20px;">search</span>
+<input class="bg-transparent border-none text-sm text-text-main placeholder-text-muted focus:ring-0 w-full ml-2" placeholder="Buscar leads, usuarios..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="relative p-2 rounded-full text-text-muted hover:text-primary hover:bg-gray-100 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 22px;">notifications</span>
+<span class="absolute top-2 right-2 h-2 w-2 bg-primary rounded-full border border-white"></span>
+</button>
+<button class="p-2 rounded-full text-text-muted hover:text-primary hover:bg-gray-100 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 22px;">settings</span>
+</button>
+</div>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto p-6 md:p-8 scroll-smooth">
+<div class="max-w-[1400px] mx-auto space-y-8">
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6">
+<div class="bg-surface-white border border-surface-border rounded-xl p-5 hover:border-primary/30 transition-colors group shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-text-muted text-sm font-medium">Total de Leads</p>
+<h3 class="text-text-main text-2xl font-bold mt-1">12,450</h3>
+</div>
+<div class="p-2 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">group</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="bg-emerald-50 text-emerald-600 text-xs font-bold px-2 py-0.5 rounded flex items-center gap-1 border border-emerald-100">
+<span class="material-symbols-outlined" style="font-size: 12px;">trending_up</span>
+                                    5%
+                                </span>
+<span class="text-text-muted text-xs">vs mes anterior</span>
+</div>
+</div>
+<div class="bg-surface-white border border-surface-border rounded-xl p-5 hover:border-primary/30 transition-colors group shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-text-muted text-sm font-medium">Leads de Hoy</p>
+<h3 class="text-text-main text-2xl font-bold mt-1">142</h3>
+</div>
+<div class="p-2 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">person_add</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="bg-emerald-50 text-emerald-600 text-xs font-bold px-2 py-0.5 rounded flex items-center gap-1 border border-emerald-100">
+<span class="material-symbols-outlined" style="font-size: 12px;">trending_up</span>
+                                    12%
+                                </span>
+<span class="text-text-muted text-xs">vs ayer</span>
+</div>
+</div>
+<div class="bg-surface-white border border-surface-border rounded-xl p-5 hover:border-primary/30 transition-colors group shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-text-muted text-sm font-medium">Tasa de Conversión</p>
+<h3 class="text-text-main text-2xl font-bold mt-1">24.8%</h3>
+</div>
+<div class="p-2 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">percent</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="bg-emerald-50 text-emerald-600 text-xs font-bold px-2 py-0.5 rounded flex items-center gap-1 border border-emerald-100">
+<span class="material-symbols-outlined" style="font-size: 12px;">trending_up</span>
+                                    2.1%
+                                </span>
+<span class="text-text-muted text-xs">vs mes anterior</span>
+</div>
+</div>
+<div class="bg-surface-white border border-surface-border rounded-xl p-5 hover:border-primary/30 transition-colors group shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-text-muted text-sm font-medium">Tiempo de Respuesta Prom.</p>
+<h3 class="text-text-main text-2xl font-bold mt-1">1h 15m</h3>
+</div>
+<div class="p-2 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">timer</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="bg-orange-50 text-orange-600 text-xs font-bold px-2 py-0.5 rounded flex items-center gap-1 border border-orange-100">
+<span class="material-symbols-outlined" style="font-size: 12px;">trending_down</span>
+                                    5m
+                                </span>
+<span class="text-text-muted text-xs">vs semana anterior</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<div class="lg:col-span-5 xl:col-span-4 flex flex-col gap-6">
+<div class="bg-surface-white border border-surface-border rounded-xl p-6 flex-1 shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-text-main font-semibold text-lg">Leads por Fuente</h3>
+<button class="text-text-muted hover:text-primary">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<div class="space-y-4">
+<div class="group">
+<div class="flex justify-between text-xs mb-1">
+<span class="text-text-main font-medium flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                                                WhatsApp
+                                            </span>
+<span class="text-text-muted">45%</span>
+</div>
+<div class="w-full bg-gray-100 rounded-full h-2.5">
+<div class="bg-primary h-2.5 rounded-full" style="width: 45%"></div>
+</div>
+</div>
+<div class="group">
+<div class="flex justify-between text-xs mb-1">
+<span class="text-text-main font-medium flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-pink-500"></span>
+                                                Voz IA
+                                            </span>
+<span class="text-text-muted">30%</span>
+</div>
+<div class="w-full bg-gray-100 rounded-full h-2.5">
+<div class="bg-pink-500 h-2.5 rounded-full" style="width: 30%"></div>
+</div>
+</div>
+<div class="group">
+<div class="flex justify-between text-xs mb-1">
+<span class="text-text-main font-medium flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-purple-500"></span>
+                                                Formulario Web
+                                            </span>
+<span class="text-text-muted">15%</span>
+</div>
+<div class="w-full bg-gray-100 rounded-full h-2.5">
+<div class="bg-purple-500 h-2.5 rounded-full" style="width: 15%"></div>
+</div>
+</div>
+<div class="group">
+<div class="flex justify-between text-xs mb-1">
+<span class="text-text-main font-medium flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+                                                Referidos
+                                            </span>
+<span class="text-text-muted">10%</span>
+</div>
+<div class="w-full bg-gray-100 rounded-full h-2.5">
+<div class="bg-indigo-500 h-2.5 rounded-full" style="width: 10%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-white border border-surface-border rounded-xl p-6 flex-1 shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-text-main font-semibold text-lg">Estado de Leads</h3>
+<button class="text-text-muted hover:text-primary">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+<div class="flex gap-4 items-end h-40 px-2 justify-between">
+<div class="flex flex-col items-center gap-2 h-full justify-end w-12 group cursor-pointer">
+<div class="text-xs text-text-main font-bold opacity-0 group-hover:opacity-100 transition-opacity">120</div>
+<div class="w-full bg-emerald-500/20 rounded-t-md relative overflow-hidden h-[60%] border-t border-x border-emerald-500/30 group-hover:bg-emerald-500/40 transition-colors">
+<div class="absolute bottom-0 left-0 w-full bg-emerald-500 h-1"></div>
+</div>
+<span class="text-xs text-text-muted font-medium">Nuevo</span>
+</div>
+<div class="flex flex-col items-center gap-2 h-full justify-end w-12 group cursor-pointer">
+<div class="text-xs text-text-main font-bold opacity-0 group-hover:opacity-100 transition-opacity">85</div>
+<div class="w-full bg-blue-500/20 rounded-t-md relative overflow-hidden h-[45%] border-t border-x border-blue-500/30 group-hover:bg-blue-500/40 transition-colors">
+<div class="absolute bottom-0 left-0 w-full bg-blue-500 h-1"></div>
+</div>
+<span class="text-xs text-text-muted font-medium">Ctct</span>
+</div>
+<div class="flex flex-col items-center gap-2 h-full justify-end w-12 group cursor-pointer">
+<div class="text-xs text-text-main font-bold opacity-0 group-hover:opacity-100 transition-opacity">42</div>
+<div class="w-full bg-purple-500/20 rounded-t-md relative overflow-hidden h-[85%] border-t border-x border-purple-500/30 group-hover:bg-purple-500/40 transition-colors">
+<div class="absolute bottom-0 left-0 w-full bg-purple-500 h-1"></div>
+</div>
+<span class="text-xs text-text-muted font-medium">Calif</span>
+</div>
+<div class="flex flex-col items-center gap-2 h-full justify-end w-12 group cursor-pointer">
+<div class="text-xs text-text-main font-bold opacity-0 group-hover:opacity-100 transition-opacity">15</div>
+<div class="w-full bg-primary/20 rounded-t-md relative overflow-hidden h-[30%] border-t border-x border-primary/30 group-hover:bg-primary/40 transition-colors">
+<div class="absolute bottom-0 left-0 w-full bg-primary h-1"></div>
+</div>
+<span class="text-xs text-text-muted font-medium">Cerrado</span>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 xl:col-span-8">
+<div class="bg-surface-white border border-surface-border rounded-xl h-full flex flex-col shadow-sm">
+<div class="p-6 border-b border-surface-border flex justify-between items-center">
+<div>
+<h3 class="text-text-main font-semibold text-lg">Leads Recientes</h3>
+<p class="text-sm text-text-muted mt-1">Gestiona tus últimos clientes potenciales</p>
+</div>
+<button class="bg-primary hover:bg-primary-hover text-white text-sm font-medium px-4 py-2 rounded-lg flex items-center gap-2 transition-colors shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" style="font-size: 18px;">download</span>
+                                        Exportar
+                                    </button>
+</div>
+<div class="overflow-x-auto flex-1">
+<table class="w-full text-left border-collapse">
+<thead class="bg-gray-50 text-text-muted text-xs uppercase font-semibold">
+<tr>
+<th class="px-6 py-4">Nombre</th>
+<th class="px-6 py-4">Fuente</th>
+<th class="px-6 py-4">Estado</th>
+<th class="px-6 py-4">Fecha</th>
+<th class="px-6 py-4 text-right">Acción</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-border text-sm">
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-gradient-to-tr from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold text-xs shadow-sm">SJ</div>
+<div class="font-medium text-text-main">Sarah Jenkins</div>
+</div>
+</td>
+<td class="px-6 py-4 text-text-muted">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-green-500" style="font-size: 18px;">chat</span>
+                                                        WhatsApp
+                                                    </div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-600 border border-emerald-100">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                                        Nuevo
+                                                    </span>
+</td>
+<td class="px-6 py-4 text-text-muted">Oct 24, 2023</td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-muted hover:text-text-main transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-cover bg-center shadow-sm" data-alt="Portrait of Mike Ross" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDmdg-spM-J0lc1FXYsMIf2RrD4BNFRiUA5JxnbKLBmxHGIM-0t5OClUHIDXP7MwQ0mkKwIImp2jk0SU1OMcsV2lCNd35yRIctwvwL0p09fUKPGfrXTCE0ST3vf_dD8YnIWMOUsZ-p_N_GwMLNRTjJXAqwfaAcE9EJzDVhKCAe1ZRON4CZOZw_loiZe68N8oEpXoSXZFfNbzNULK7fwj5AB9gNgrioyyZjOOIrcVHl7w0qhfvC099tNwp2JHAJU2w7bNpHoccQSEiU')"></div>
+<div class="font-medium text-text-main">Mike Ross</div>
+</div>
+</td>
+<td class="px-6 py-4 text-text-muted">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-pink-500" style="font-size: 18px;">graphic_eq</span>
+                                                        Voz IA
+                                                    </div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-600 border border-blue-100">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                                                        Contactado
+                                                    </span>
+</td>
+<td class="px-6 py-4 text-text-muted">Oct 24, 2023</td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-muted hover:text-text-main transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-gradient-to-tr from-purple-400 to-purple-600 flex items-center justify-center text-white font-bold text-xs shadow-sm">JP</div>
+<div class="font-medium text-text-main">Jessica Pearson</div>
+</div>
+</td>
+<td class="px-6 py-4 text-text-muted">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-purple-500" style="font-size: 18px;">language</span>
+                                                        Form. Web
+                                                    </div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-purple-50 text-purple-600 border border-purple-100">
+<span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                                                        Calificado
+                                                    </span>
+</td>
+<td class="px-6 py-4 text-text-muted">Oct 23, 2023</td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-muted hover:text-text-main transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-cover bg-center shadow-sm" data-alt="Portrait of Louis Litt" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD5vfNfIbUjjw0wXrLXy3wRDpRrg1Nz0tSb22XzUHEPc0ulOYc4KVKCTxN5b_mCytDbDp2iX6H3I4KEcK9-bEaTvLjzY81oTKsV1c_1gyHJLYEkUFKr9dTTRBnVQJSJ56EhAc_aLiHlXIAZKVidxDH2EkdEdcILzAphywheDAyggb5NPPd_7RkORIpHKwp0GccnwfApVP4-3MU2f6GlcCSdzMqmOI_Gq610nT-3anss1Oz6PSPWlvy2b2Mn2EWwJdTw0ofKZUeuc-Y')"></div>
+<div class="font-medium text-text-main">Louis Litt</div>
+</div>
+</td>
+<td class="px-6 py-4 text-text-muted">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-indigo-500" style="font-size: 18px;">share</span>
+                                                        Referido
+                                                    </div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                                        Cerrado
+                                                    </span>
+</td>
+<td class="px-6 py-4 text-text-muted">Oct 23, 2023</td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-muted hover:text-text-main transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-cover bg-center shadow-sm" data-alt="Portrait of Harvey Specter" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCmcEia1-ZP7aHBUavRuw6jsQawFQANtX9oy4EJqlQ-1qPX0h1ut_k3mYt-bA21Mt_0LtQRz0t_jDkObtNjFA1p4oAlMMEXQe327JMT7slG4UWCG0obh9C-cleaHI9l9V4s3q-Vkgdbs45ILaEWR3385UHDFIsbn_Nz6HNcmn1Vcp8WCsaqdDkEVQS4e6JMFOB-XY13jSaqO9w31Y_11ecIHJtV3cbTm_Hl_KA_IHKUmeZ-doMw8mn0V2UmPhIZEx23Snt5MLG0_qA')"></div>
+<div class="font-medium text-text-main">Harvey Specter</div>
+</div>
+</td>
+<td class="px-6 py-4 text-text-muted">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-green-500" style="font-size: 18px;">chat</span>
+                                                        WhatsApp
+                                                    </div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-600 border border-emerald-100">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                                        Nuevo
+                                                    </span>
+</td>
+<td class="px-6 py-4 text-text-muted">Oct 22, 2023</td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-muted hover:text-text-main transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 border-t border-surface-border flex justify-between items-center text-xs text-text-muted bg-gray-50 rounded-b-xl">
+<span>Mostrando 5 de 142 resultados</span>
+<div class="flex gap-1">
+<button class="p-1 rounded hover:bg-gray-200 hover:text-text-main transition-colors"><span class="material-symbols-outlined" style="font-size: 18px;">chevron_left</span></button>
+<button class="p-1 rounded hover:bg-gray-200 hover:text-text-main transition-colors"><span class="material-symbols-outlined" style="font-size: 18px;">chevron_right</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>
