@@ -1295,39 +1295,59 @@
         // Inicializar Mermaid
         function initializeMermaid() {
             if (typeof mermaid !== 'undefined') {
+                const isDark = document.documentElement.classList.contains('dark');
                 mermaid.initialize({ 
                     startOnLoad: false,
-                    theme: document.documentElement.classList.contains('dark') ? 'dark' : 'default',
-                    securityLevel: 'loose'
+                    theme: isDark ? 'dark' : 'default',
+                    securityLevel: 'loose',
+                    themeVariables: {
+                        primaryColor: '#8B005D',
+                        primaryTextColor: '#ffffff',
+                        primaryBorderColor: '#6e004a',
+                        lineColor: '#8B005D',
+                        secondaryColor: '#d98bc4',
+                        tertiaryColor: '#f3f4f6'
+                    }
                 });
                 
-                const mermaidElements = document.querySelectorAll('#docs-content .language-mermaid, #docs-content pre code.language-mermaid');
-                mermaidElements.forEach((element, index) => {
-                    const code = element.textContent || element.innerText;
+                // Buscar bloques de código mermaid (marked genera <pre><code class="language-mermaid">)
+                const mermaidCodeBlocks = document.querySelectorAll('#docs-content pre code.language-mermaid, #docs-content code.language-mermaid');
+                
+                mermaidCodeBlocks.forEach((codeElement, index) => {
+                    const code = codeElement.textContent || codeElement.innerText;
+                    if (!code || code.trim().length === 0) return;
+                    
                     const id = `mermaid-${index}-${Date.now()}`;
                     
                     // Crear contenedor para mermaid
                     const container = document.createElement('div');
                     container.className = 'mermaid';
                     container.id = id;
-                    container.textContent = code;
+                    container.textContent = code.trim();
                     
-                    // Reemplazar el elemento original
-                    const pre = element.closest('pre');
+                    // Reemplazar el <pre> completo (que contiene el <code>)
+                    const pre = codeElement.closest('pre');
                     if (pre) {
                         pre.parentNode.replaceChild(container, pre);
                     } else {
-                        element.parentNode.replaceChild(container, element);
+                        // Si no hay <pre>, reemplazar el <code>
+                        codeElement.parentNode.replaceChild(container, codeElement);
                     }
                 });
                 
-                // Renderizar todos los diagramas
+                // Renderizar todos los diagramas mermaid
                 const mermaidContainers = document.querySelectorAll('#docs-content .mermaid');
                 if (mermaidContainers.length > 0) {
                     mermaid.run({
                         nodes: Array.from(mermaidContainers)
                     }).catch(err => {
                         console.error('Error renderizando mermaid:', err);
+                        // Mostrar mensaje de error en los contenedores fallidos
+                        mermaidContainers.forEach(container => {
+                            if (!container.querySelector('svg')) {
+                                container.innerHTML = `<p class="text-red-500 text-sm">Error al renderizar diagrama: ${err.message}</p>`;
+                            }
+                        });
                     });
                 }
             }
@@ -1367,7 +1387,21 @@
                         // Procesar mermaid después de un pequeño delay para asegurar que el DOM esté listo
                         setTimeout(() => {
                             initializeMermaid();
-                        }, 100);
+                        }, 200);
+                        
+                        // Agregar scroll suave para anclas internas
+                        container.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                            anchor.addEventListener('click', function(e) {
+                                const href = this.getAttribute('href');
+                                if (href && href !== '#') {
+                                    const target = document.querySelector(href);
+                                    if (target) {
+                                        e.preventDefault();
+                                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                    }
+                                }
+                            });
+                        });
                     } else {
                         throw new Error('Librerías de markdown no disponibles');
                     }
