@@ -212,12 +212,12 @@ export function ProductsBento() {
                           <div className="flex flex-wrap gap-1 mb-3">
                             {product.features
                               .slice(0, 2)
-                              .map((feature, idx) => (
+                              .map((feature) => (
                                 <span
-                                  key={idx}
+                                  key={feature.id}
                                   className="text-xs bg-mascolor-primary/10 text-mascolor-primary px-2 py-1 rounded-full"
                                 >
-                                  {feature}
+                                  {feature.name}
                                 </span>
                               ))}
                           </div>
