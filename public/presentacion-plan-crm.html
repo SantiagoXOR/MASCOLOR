@@ -971,6 +971,55 @@
                 element.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
+
+        // Cargar el contenido del prototipo dinámicamente
+        async function loadPrototipoContent() {
+            try {
+                const response = await fetch('/prototipo-dashboard-crm.html');
+                if (response.ok) {
+                    const html = await response.text();
+                    const container = document.getElementById('prototipo-content');
+                    if (container) {
+                        // Extraer solo el body del HTML
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(html, 'text/html');
+                        const bodyContent = doc.body.innerHTML;
+                        container.innerHTML = bodyContent;
+                        
+                        // Inyectar los estilos del head si es necesario
+                        const styles = doc.head.querySelectorAll('style, link[rel="stylesheet"]');
+                        styles.forEach(style => {
+                            if (style.tagName === 'STYLE') {
+                                const styleEl = document.createElement('style');
+                                styleEl.textContent = style.textContent;
+                                document.head.appendChild(styleEl);
+                            } else if (style.tagName === 'LINK') {
+                                document.head.appendChild(style.cloneNode(true));
+                            }
+                        });
+                    }
+                } else {
+                    console.error('Error al cargar el prototipo:', response.status);
+                    const container = document.getElementById('prototipo-content');
+                    if (container) {
+                        container.innerHTML = '<div class="flex items-center justify-center h-full text-gray-500">Error al cargar el prototipo. Por favor, usa el botón "Acceder al CRM" para verlo.</div>';
+                    }
+                }
+            } catch (error) {
+                console.error('Error al cargar el prototipo:', error);
+                const container = document.getElementById('prototipo-content');
+                if (container) {
+                    container.innerHTML = '<div class="flex items-center justify-center h-full text-gray-500">Error al cargar el prototipo. Por favor, usa el botón "Acceder al CRM" para verlo.</div>';
+                }
+            }
+        }
+
+        // Cargar el prototipo cuando la página esté lista
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadPrototipoContent);
+        } else {
+            loadPrototipoContent();
+        }
     </script>
 </body>
 </html>
