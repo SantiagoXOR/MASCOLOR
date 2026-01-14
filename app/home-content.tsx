@@ -8,6 +8,9 @@ import { ContactSection } from "@/components/sections/contact";
 import { CategoriesSection } from "@/components/sections/categories";
 import { PaintCalculator } from "@/components/sections/paint-calculator";
 import { TrustBlocks } from "@/components/sections/trust-blocks";
+import { CategoriesBento } from "@/components/sections/categories-bento";
+import { ProductsBento } from "@/components/sections/products-bento";
+import { BenefitsBento } from "@/components/sections/benefits-bento";
 import { useMobileHero } from "@/hooks/useDeviceDetection";
 
 export function HomeContent() {
@@ -25,13 +28,28 @@ export function HomeContent() {
         <HeroBentoMobile />
       </div>
 
-      {/* Versión alternativa del Hero (oculta) */}
-      {/* <HeroBento /> */}
-
+      {/* Trust Blocks - Siempre visible */}
       <TrustBlocks />
-      <CategoriesSection />
-      <ProductsSection />
-      <BenefitsSection />
+
+      {/* Categorías - Desktop tradicional, Mobile Bento */}
+      <div className="hidden lg:block">
+        <CategoriesSection />
+      </div>
+      <CategoriesBento />
+
+      {/* Productos - Desktop tradicional, Mobile Bento */}
+      <div className="hidden lg:block">
+        <ProductsSection />
+      </div>
+      <ProductsBento />
+
+      {/* Beneficios - Desktop tradicional, Mobile Bento */}
+      <div className="hidden lg:block">
+        <BenefitsSection />
+      </div>
+      <BenefitsBento />
+
+      {/* Calculadora y Contacto - Siempre visibles */}
       <PaintCalculator />
       <ContactSection />
     </>

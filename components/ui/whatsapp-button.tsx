@@ -3,12 +3,15 @@
 import { useState, useEffect } from "react";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { MessageCircle } from "lucide-react";
+import { useFloatingComponents } from "@/hooks/useFloatingComponents";
 
 export function WhatsAppButton() {
   const [isVisible, setIsVisible] = useState(false);
   const controls = useAnimation();
-  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "541112345678";
+  const whatsappNumber =
+    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "541112345678";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Hola,%20me%20gustaría%20obtener%20más%20información%20sobre%20los%20productos%20de%20%2BCOLOR.`;
+  const { setWhatsAppVisible, isChatOpen } = useFloatingComponents();
 
   // Mostrar el botón después de 2 segundos o cuando el usuario haga scroll
   useEffect(() => {
@@ -30,6 +33,11 @@ export function WhatsAppButton() {
     };
   }, []);
 
+  // Actualizar estado global cuando el botón es visible
+  useEffect(() => {
+    setWhatsAppVisible(isVisible);
+  }, [isVisible, setWhatsAppVisible]);
+
   // Efecto de pulso suave
   useEffect(() => {
     if (isVisible) {
@@ -48,9 +56,15 @@ export function WhatsAppButton() {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="fixed bottom-[24px] right-[24px] z-50"
+          className={`fixed right-[24px] z-[55] whatsapp-button-container floating-component-transition ${
+            isChatOpen ? "bottom-[120px]" : "bottom-[24px]"
+          }`}
           initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            y: isChatOpen ? -96 : 0,
+          }}
           exit={{ opacity: 0, scale: 0.5 }}
           transition={{ duration: 0.3 }}
         >
@@ -59,7 +73,10 @@ export function WhatsAppButton() {
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-green-500 rounded-full shadow-xl hover:bg-green-600 transition-colors"
-            whileHover={{ scale: 1.1, boxShadow: "0 0 20px rgba(0, 0, 0, 0.3)" }}
+            whileHover={{
+              scale: 1.1,
+              boxShadow: "0 0 20px rgba(0, 0, 0, 0.3)",
+            }}
             whileTap={{ scale: 0.9 }}
             animate={controls}
             aria-label="Contactar por WhatsApp"

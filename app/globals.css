@@ -35,6 +35,39 @@
     --radius: 0.5rem;
   }
 
+  /* CRM Sidebar Variables */
+  --sidebar-background: 320 100% 27%;
+  --sidebar-foreground: 0 0% 100%;
+  --sidebar-primary: 0 0% 100%;
+  --sidebar-primary-foreground: 320 100% 27%;
+  --sidebar-accent: 320 100% 22%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-border: 320 100% 35%;
+  --sidebar-ring: 0 0% 100%;
+
+  /* Status Colors for CRM */
+  --success: 142 76% 36%;
+  --success-foreground: 0 0% 100%;
+  --warning: 38 92% 50%;
+  --warning-foreground: 0 0% 100%;
+  --info: 217 91% 60%;
+  --info-foreground: 0 0% 100%;
+
+  /* Lead Status Colors */
+  --status-new: 217 91% 60%;
+  --status-contacted: 38 92% 50%;
+  --status-qualified: 320 100% 27%;
+  --status-proposal: 25 95% 53%;
+  --status-won: 142 76% 36%;
+  --status-lost: 0 0% 45%;
+
+  /* Chart Colors */
+  --chart-1: 320 100% 27%;
+  --chart-2: 217 91% 60%;
+  --chart-3: 142 76% 36%;
+  --chart-4: 38 92% 50%;
+  --chart-5: 25 95% 53%;
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -48,6 +81,16 @@
     --secondary-foreground: 210 40% 98%;
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
+
+    /* Dark mode sidebar */
+    --sidebar-background: 0 0% 9%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 320 100% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 320 100% 45%;
     --accent: 328 100% 39%; /* Cambiado a color primario - #870064 */
     --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;

@@ -2,15 +2,19 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
 import Image from "next/image";
-import { MessageCircle, Phone, PlusCircle } from "lucide-react";
-import { BentoGrid, BentoItem, BentoImage } from "@/components/ui/bento";
+import {
+  MessageCircle,
+  Phone,
+  PlusCircle,
+  Building,
+  Home,
+  User,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { InfiniteMarquee } from "@/components/ui/infinite-marquee";
-import { BeamsBackground } from "@/components/ui/beams-background";
 import { useFeaturedBrands } from "@/hooks/useFeaturedBrands";
 import { useDeviceDetection } from "@/hooks/useDeviceDetection";
+import { useFloatingComponents } from "@/hooks/useFloatingComponents";
 import { getHeroContent } from "@/lib/api/hero";
 import { HeroContent } from "@/types/hero";
 
@@ -30,11 +34,17 @@ export function HeroBentoMobile() {
   const [heroData, setHeroData] = useState<HeroContent | null>(null);
   const [loading, setLoading] = useState(true);
 
+  // Estado para el modal del asesor
+  const [advisorModalOpen, setAdvisorModalOpen] = useState<boolean>(false);
+
   // Obtener marcas y assets desde Supabase
   const { brands, brandAssets, loading: loadingBrands } = useFeaturedBrands();
 
   // Obtener información del dispositivo
   const { isMobile, isTablet, screenWidth } = useDeviceDetection();
+
+  // Hook para manejar estado de componentes flotantes
+  const { isChatOpen, setAdvisorWidgetVisible } = useFloatingComponents();
 
   // Debug temporal (solo en desarrollo)
   React.useEffect(() => {
@@ -204,6 +214,12 @@ export function HeroBentoMobile() {
     };
   }, [activeBrand, autoplayEnabled, isChanging, brands]);
 
+  // Notificar al estado global que el widget del asesor está visible
+  useEffect(() => {
+    setAdvisorWidgetVisible(true);
+    return () => setAdvisorWidgetVisible(false);
+  }, [setAdvisorWidgetVisible]);
+
   // Determinar qué assets usar (Supabase o fallback)
   const assetsToUse =
     brands.length > 0 && brandAssets ? brandAssets : fallbackBrandAssets;
@@ -263,174 +279,101 @@ export function HeroBentoMobile() {
   } = heroData;
 
   return (
-    <section className="relative w-full overflow-hidden lg:hidden hero-bento-mobile min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
-      {/* Header mejorado - Más compacto y con mejor espaciado */}
-      <div className="relative z-50 mx-4 mt-3 mb-6">
-        <div className="bg-white/95 backdrop-blur-xl shadow-xl rounded-full px-4 py-2 border border-white/30 flex justify-between items-center min-h-[48px]">
-          {/* Logo +COLOR completo - Color principal de la marca */}
-          <div className="flex-shrink-0 mr-3">
+    <section className="relative w-full overflow-hidden lg:hidden hero-bento-mobile min-h-screen">
+      {/* Imagen de fondo fotográfica con overlay */}
+      <div className="absolute inset-0 z-0">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeBrand}
+            initial={{ opacity: 0, scale: 1.02 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.98 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={getBackgroundImage(activeBrand)}
+              alt={`Interior elegante con productos ${activeBrand}`}
+              fill
+              priority
+              className="object-cover object-center"
+              sizes="100vw"
+            />
+          </motion.div>
+        </AnimatePresence>
+        {/* Overlay sutil con color primario para mantener legibilidad */}
+        <div className="absolute inset-0 bg-mascolor-primary/30 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20 z-10" />
+      </div>
+
+      {/* Layout Bento Grid siguiendo el mockup exacto */}
+      <div className="relative z-20 min-h-screen p-4 flex flex-col gap-3">
+        {/* 1. HEADER - Logo (izquierda) + Teléfono (derecha) */}
+        <motion.div
+          className="flex justify-between items-center bg-white/95 backdrop-blur-xl shadow-lg border-white/30 rounded-2xl px-4 py-3 min-h-[56px]"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
+          {/* Logo +COLOR */}
+          <div className="flex-shrink-0">
             <Image
               src="/images/logos/+color.svg"
               alt="Logo +Color - Pinturas y revestimientos de alta calidad"
               width={120}
               height={28}
-              className="hero-logo drop-shadow-sm"
+              className="drop-shadow-sm"
               priority
               unoptimized={true}
               style={{
                 filter:
-                  "brightness(0) saturate(100%) invert(10%) sepia(83%) saturate(5728%) hue-rotate(307deg) brightness(77%) contrast(111%)", // Color #870064
+                  "brightness(0) saturate(100%) invert(10%) sepia(83%) saturate(5728%) hue-rotate(307deg) brightness(77%) contrast(111%)",
               }}
             />
           </div>
 
-          {/* Botón teléfono compacto - Una sola línea */}
+          {/* Botón teléfono */}
           <a
             href={`tel:${phone}`}
-            className="bg-mascolor-primary hover:bg-mascolor-primary/90 text-white px-4 py-2 rounded-full text-xs font-mazzard font-bold shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 flex items-center gap-1.5 flex-shrink-0 whitespace-nowrap"
-            style={{
-              boxShadow:
-                "0 4px 12px rgba(135, 0, 100, 0.3), 0 2px 4px rgba(0, 0, 0, 0.1)",
-            }}
+            className="bg-mascolor-primary hover:bg-mascolor-primary/90 text-white px-4 py-2.5 rounded-full text-sm font-mazzard font-bold shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 flex items-center gap-2 flex-shrink-0 whitespace-nowrap"
           >
-            <Phone size={14} className="text-white" />
-            <span className="tracking-wide text-xs font-bold leading-none">
+            <Phone size={16} className="text-white" />
+            <span className="tracking-wide text-sm font-bold leading-none">
               {phone}
             </span>
           </a>
-        </div>
-      </div>
+        </motion.div>
 
-      {/* Contenedor principal del carrusel - Diseño aspiracional premium */}
-      <div className="relative mx-4 mb-8 rounded-[2rem] overflow-hidden shadow-2xl border border-white/30">
-        {/* Imagen de fondo fotográfica nítida */}
-        <div className="relative h-[580px] overflow-hidden">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeBrand}
-              initial={{ opacity: 0, scale: 1.02 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.98 }}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
-              className="absolute inset-0"
-            >
-              <Image
-                src={getBackgroundImage(activeBrand)}
-                alt={`Interior elegante con productos ${activeBrand}`}
-                fill
-                priority
-                className="object-cover object-center filter brightness-110 contrast-105"
-                sizes="100vw"
-              />
-            </motion.div>
-          </AnimatePresence>
-
-          {/* Overlay sutil que mantiene legibilidad sin oscurecer */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-white/20 z-10" />
-          <div className="absolute inset-0 bg-gradient-to-br from-mascolor-primary/10 via-transparent to-transparent z-10" />
-
-          {/* Contenido flotante premium - Jerarquía tipográfica mejorada */}
-          <div className="absolute inset-0 z-20 flex flex-col justify-between p-10">
-            {/* Título principal - Esquina superior izquierda con tipografía premium */}
-            <div className="flex-1 flex items-start pt-6">
-              <AnimatePresence mode="wait">
-                <motion.h1
-                  key={activeBrand}
-                  initial={{ opacity: 0, x: -40, y: -15 }}
-                  animate={{ opacity: 1, x: 0, y: 0 }}
-                  exit={{ opacity: 0, x: 40, y: 15 }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="text-white text-4xl md:text-5xl font-mazzard font-bold leading-[1.1] max-w-[70%] drop-shadow-2xl tracking-tight"
-                  style={{
-                    textShadow:
-                      "0 4px 20px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3)",
-                  }}
-                >
-                  {assetsToUse[activeBrand as keyof typeof assetsToUse]
-                    ?.title || "Rendimiento inteligente para obras y hogares"}
-                </motion.h1>
-              </AnimatePresence>
-            </div>
-
-            {/* Contenedor en el borde inferior para marca y producto */}
-            <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-25 w-full max-w-sm">
-              <div className="flex items-end justify-between px-4">
-                {/* Logo de marca */}
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={activeBrand}
-                    initial={{ opacity: 0, y: 40, x: -25 }}
-                    animate={{ opacity: 1, y: 0, x: 0 }}
-                    exit={{ opacity: 0, y: -40, x: 25 }}
-                    transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-                    className="relative"
-                  >
-                    {/* Degradado sutil que se desvanece hacia el producto */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-mascolor-primary/85 via-mascolor-primary/50 via-mascolor-primary/30 to-transparent rounded-2xl blur-sm scale-105" />
-                    <div className="relative bg-gradient-to-r from-mascolor-primary/90 via-mascolor-primary/60 via-mascolor-primary/40 to-transparent rounded-2xl backdrop-blur-sm w-40 h-28 flex items-center justify-center">
-                      <Image
-                        src={getDynamicBrandLogo(activeBrand)}
-                        alt={`Logo de la marca ${activeBrand}`}
-                        width={120}
-                        height={32}
-                        className="object-contain drop-shadow-lg relative z-10 max-w-[110px] max-h-[28px]"
-                        unoptimized={true}
-                        onError={(e) => {
-                          if (process.env.NODE_ENV === "development") {
-                            console.log(
-                              `Error cargando logo del producto: ${activeBrand}`
-                            );
-                          }
-                          e.currentTarget.src = "/images/logos/placeholder.svg";
-                        }}
-                        style={{
-                          filter:
-                            "brightness(0) saturate(100%) invert(100%) drop-shadow(0 2px 4px rgba(0,0,0,0.4))",
-                        }}
-                      />
-                    </div>
-                  </motion.div>
-                </AnimatePresence>
-
-                {/* Producto */}
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={activeBrand}
-                    initial={{ opacity: 0, scale: 0.6, y: 70, x: 25 }}
-                    animate={{ opacity: 1, scale: 1, y: 0, x: 0 }}
-                    exit={{ opacity: 0, scale: 0.6, y: -50, x: -25 }}
-                    transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
-                    className="relative"
-                  >
-                    <Image
-                      src={
-                        assetsToUse[activeBrand as keyof typeof assetsToUse]
-                          ?.bucket || productImageUrl
-                      }
-                      alt={`Producto premium ${activeBrand}`}
-                      width={160}
-                      height={160}
-                      className="object-contain drop-shadow-2xl"
-                      priority
-                      unoptimized={true}
-                      onError={(e) => {
-                        if (process.env.NODE_ENV === "development") {
-                          console.log(
-                            `Error cargando imagen del producto: ${activeBrand}`
-                          );
-                        }
-                        e.currentTarget.src =
-                          "/images/products/placeholder.jpg";
-                      }}
-                    />
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-            </div>
+        {/* 2. SECCIÓN PRINCIPAL - Título grande con indicadores */}
+        <motion.div
+          className="bg-white/10 backdrop-blur-md rounded-2xl p-6 relative overflow-hidden min-h-[140px]"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+        >
+          {/* Título principal */}
+          <div className="relative z-30">
+            <AnimatePresence mode="wait">
+              <motion.h1
+                key={activeBrand}
+                initial={{ opacity: 0, x: -40, y: -15 }}
+                animate={{ opacity: 1, x: 0, y: 0 }}
+                exit={{ opacity: 0, x: 40, y: 15 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="text-white text-2xl md:text-3xl font-mazzard font-bold leading-[1.2] drop-shadow-2xl tracking-tight"
+                style={{
+                  textShadow:
+                    "0 4px 20px rgba(0, 0, 0, 0.7), 0 2px 8px rgba(0, 0, 0, 0.5)",
+                }}
+              >
+                {assetsToUse[activeBrand as keyof typeof assetsToUse]?.title ||
+                  "Acabados de alta calidad para interiores y exteriores"}
+              </motion.h1>
+            </AnimatePresence>
           </div>
 
-          {/* Indicadores de carrusel sutiles - Esquina superior derecha */}
-          <div className="absolute top-6 right-6 z-30 flex gap-2 bg-black/20 backdrop-blur-md rounded-full px-3 py-2 border border-white/20 shadow-lg">
+          {/* Indicadores de carrusel - pequeños y sutiles en la esquina superior derecha */}
+          <div className="absolute top-4 right-4 z-30 flex gap-1 bg-black/20 backdrop-blur-md rounded-full px-2 py-1">
             {(brands.length > 0 ? brands : Object.keys(fallbackBrandAssets))
               .slice(0, 5)
               .map((brand, index) => {
@@ -442,42 +385,118 @@ export function HeroBentoMobile() {
                     onClick={() => {
                       setAutoplayEnabled(false);
                       changeBrand(brandSlug);
-                      setTimeout(() => {
-                        setAutoplayEnabled(true);
-                      }, 4000);
+                      setTimeout(() => setAutoplayEnabled(true), 4000);
                     }}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    className={`w-1 h-1 rounded-full transition-all duration-300 ${
                       brandSlug === activeBrand
-                        ? "bg-white shadow-md"
-                        : "bg-white/50 hover:bg-white/80"
+                        ? "bg-white shadow-sm"
+                        : "bg-white/40 hover:bg-white/70"
                     }`}
                     aria-label={`Ver producto ${brandSlug}`}
                     whileHover={{ scale: 1.2 }}
                     whileTap={{ scale: 0.8 }}
                     animate={{
                       scale: brandSlug === activeBrand ? 1.3 : 1,
-                      opacity: brandSlug === activeBrand ? 1 : 0.7,
+                      opacity: brandSlug === activeBrand ? 1 : 0.6,
                     }}
                     transition={{ duration: 0.2, ease: "easeOut" }}
                   />
                 );
               })}
           </div>
+        </motion.div>
 
-          {/* Área de gestos táctiles para swipe - Sin barra visual */}
+        {/* 3. SECCIÓN PRODUCTO - Logo de marca (izquierda) + Producto (derecha) */}
+        <motion.div
+          className="bg-mascolor-primary/95 backdrop-blur-md rounded-2xl p-4 relative overflow-hidden min-h-[160px] flex items-center justify-between"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+        >
+          {/* Logo de marca - izquierda */}
+          <div className="flex-1 flex items-center justify-start">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeBrand}
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 30 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="bg-white/20 backdrop-blur-sm rounded-xl p-4 min-w-[120px] min-h-[80px] flex items-center justify-center"
+              >
+                <Image
+                  src={getDynamicBrandLogo(activeBrand)}
+                  alt={`Logo de la marca ${activeBrand}`}
+                  width={100}
+                  height={32}
+                  className="object-contain drop-shadow-lg max-w-[90px] max-h-[28px]"
+                  unoptimized={true}
+                  onError={(e) => {
+                    if (process.env.NODE_ENV === "development") {
+                      console.log(
+                        `Error cargando logo del producto: ${activeBrand}`
+                      );
+                    }
+                    e.currentTarget.src = "/images/logos/placeholder.svg";
+                  }}
+                  style={{
+                    filter:
+                      "brightness(0) saturate(100%) invert(100%) drop-shadow(0 2px 4px rgba(0,0,0,0.4))",
+                  }}
+                />
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Imagen del producto - derecha */}
+          <div className="flex-1 flex items-center justify-end">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeBrand}
+                initial={{ opacity: 0, scale: 0.6, x: 30 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                exit={{ opacity: 0, scale: 0.6, x: -30 }}
+                transition={{ duration: 0.9, ease: "easeOut", delay: 0.1 }}
+                className="relative"
+              >
+                <Image
+                  src={
+                    assetsToUse[activeBrand as keyof typeof assetsToUse]
+                      ?.bucket || productImageUrl
+                  }
+                  alt={`Producto premium ${activeBrand}`}
+                  width={140}
+                  height={140}
+                  className="object-contain drop-shadow-2xl"
+                  priority
+                  unoptimized={true}
+                  onError={(e) => {
+                    if (process.env.NODE_ENV === "development") {
+                      console.log(
+                        `Error cargando imagen del producto: ${activeBrand}`
+                      );
+                    }
+                    e.currentTarget.src = "/images/products/placeholder.jpg";
+                  }}
+                />
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Área de gestos táctiles para swipe */}
           <motion.div
             className="absolute inset-0 z-25 cursor-grab active:cursor-grabbing touch-pan-x"
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={0.3}
+            dragElastic={0.2}
             dragMomentum={false}
             onDragStart={() => setAutoplayEnabled(false)}
             onDragEnd={(event, info) => {
-              const threshold = 60;
+              const threshold = 50;
               const velocity = Math.abs(info.velocity.x);
               const offset = info.offset.x;
               const shouldSwipe =
-                Math.abs(offset) > threshold || velocity > 500;
+                Math.abs(offset) > threshold || velocity > 400;
 
               if (shouldSwipe) {
                 const brands_list =
@@ -507,107 +526,174 @@ export function HeroBentoMobile() {
                 }
               }
 
-              setTimeout(() => setAutoplayEnabled(true), 4000);
+              setTimeout(() => setAutoplayEnabled(true), 3000);
             }}
-            whileDrag={{ scale: 0.98, rotateY: 2 }}
-            transition={{ type: "spring", stiffness: 400, damping: 40 }}
+            whileDrag={{ scale: 0.99, rotateY: 1 }}
+            transition={{ type: "spring", stiffness: 500, damping: 50 }}
           />
-        </div>
-      </div>
+        </motion.div>
 
-      {/* Módulo del asesor premium - Expandido y destacado */}
-      <motion.div
-        className="mx-4 mb-8 bg-white/98 backdrop-blur-xl shadow-2xl rounded-[2rem] overflow-hidden border border-white/30"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-        style={{
-          boxShadow:
-            "0 25px 50px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(135, 0, 100, 0.1)",
-        }}
-      >
-        <div className="p-8">
-          <div className="flex justify-between items-center">
-            {/* Información del asesor expandida */}
-            <div className="flex items-center gap-6">
-              <div className="relative">
-                <Image
-                  src={advisor.iconUrl}
-                  alt={advisor.name}
-                  width={64}
-                  height={64}
-                  className="rounded-full border-4 border-mascolor-primary object-cover shadow-xl"
-                  style={{
-                    boxShadow: "0 8px 20px rgba(135, 0, 100, 0.3)",
-                  }}
-                />
-                {/* Indicador de estado online premium */}
-                <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-4 border-white shadow-lg">
-                  <div className="w-full h-full bg-green-400 rounded-full animate-ping opacity-75" />
-                </div>
-              </div>
-              <div className="space-y-1">
-                <p className="text-mascolor-primary font-mazzard font-bold text-xl tracking-wide">
-                  {advisor.name}
-                </p>
-                <p className="text-mascolor-gray-600 text-base font-medium">
-                  {advisor.role}
-                </p>
-                <p className="text-green-600 text-sm font-semibold flex items-center gap-2">
-                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse inline-block" />
-                  En línea ahora
-                </p>
-              </div>
+        {/* 4. GRID INFERIOR - 4 secciones según mockup */}
+        <motion.div
+          className="grid grid-cols-2 gap-3"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+        >
+          {/* Para Exteriores */}
+          <motion.div
+            className="bg-white/95 backdrop-blur-xl rounded-2xl p-4 min-h-[120px] flex flex-col items-center justify-center text-center shadow-lg"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={() => {
+              const categoriesSection = document.getElementById("categories");
+              if (categoriesSection) {
+                categoriesSection.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+              }
+            }}
+          >
+            <Building className="w-8 h-8 text-mascolor-primary mb-2" />
+            <span className="text-sm font-mazzard font-bold text-mascolor-gray-800">
+              Para Exteriores
+            </span>
+          </motion.div>
+
+          {/* Para Interiores */}
+          <motion.div
+            className="bg-white/95 backdrop-blur-xl rounded-2xl p-4 min-h-[120px] flex flex-col items-center justify-center text-center shadow-lg"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={() => {
+              const categoriesSection = document.getElementById("categories");
+              if (categoriesSection) {
+                categoriesSection.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+              }
+            }}
+          >
+            <Home className="w-8 h-8 text-mascolor-primary mb-2" />
+            <span className="text-sm font-mazzard font-bold text-mascolor-gray-800">
+              Para Interiores
+            </span>
+          </motion.div>
+
+          {/* Asesor Leandro */}
+          <motion.div
+            className="bg-mascolor-primary/95 backdrop-blur-xl rounded-2xl p-4 min-h-[120px] flex flex-col items-center justify-center text-center shadow-lg"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={() => setAdvisorModalOpen(true)}
+          >
+            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-2">
+              <User className="w-6 h-6 text-white" />
             </div>
+            <span className="text-sm font-mazzard font-bold text-white">
+              Leandro
+            </span>
+            <span className="text-xs text-white/80">Asesor de +COLOR</span>
+          </motion.div>
 
-            {/* Botones de acción premium */}
-            <div className="flex gap-4">
-              <motion.div
-                whileHover={{ scale: 1.05, y: -3 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.3 }}
+          {/* Sección adicional - Garantía */}
+          <motion.div
+            className="bg-white/95 backdrop-blur-xl rounded-2xl p-4 min-h-[120px] flex flex-col items-center justify-center text-center shadow-lg"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <div className="w-8 h-8 bg-mascolor-primary/10 rounded-full flex items-center justify-center mb-2">
+              <svg
+                className="w-5 h-5 text-mascolor-primary"
+                fill="currentColor"
+                viewBox="0 0 24 24"
               >
-                <Button
-                  variant="default"
-                  size="lg"
-                  className="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-4 shadow-xl transition-all duration-300 hover:shadow-2xl font-mazzard font-bold text-base border-2 border-green-400/30"
-                  onClick={() =>
-                    window.open(
-                      `https://wa.me/5493547639917?text=${encodeURIComponent(
-                        "Hola, me gustaría obtener más información sobre los productos de +COLOR."
-                      )}`,
-                      "_blank"
-                    )
+                <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10V11.5C15.4,11.5 16,12.1 16,12.7V16.2C16,16.8 15.4,17.3 14.8,17.3H9.2C8.6,17.3 8,16.8 8,16.2V12.7C8,12.1 8.6,11.5 9.2,11.5V10C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,10V11.5H13.5V10C13.5,8.7 12.8,8.2 12,8.2Z" />
+              </svg>
+            </div>
+            <span className="text-xs font-mazzard font-bold text-mascolor-gray-800">
+              2 años garantía
+            </span>
+          </motion.div>
+        </motion.div>
+
+        {/* 5. FOOTER - Botones de contacto según mockup */}
+        <motion.div
+          className="flex items-center gap-3 mt-2"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+        >
+          {/* Avatar de Leandro */}
+          <motion.div
+            className="w-14 h-14 bg-mascolor-primary rounded-full flex items-center justify-center cursor-pointer shadow-lg flex-shrink-0"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setAdvisorModalOpen(true)}
+          >
+            <User className="w-7 h-7 text-white" />
+            {/* Indicador online */}
+            <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-green-400 rounded-full border-2 border-white">
+              <div className="w-full h-full bg-green-400 rounded-full animate-pulse"></div>
+            </div>
+          </motion.div>
+
+          {/* Contenedor principal con botones */}
+          <div className="flex-1 bg-white rounded-full border-4 border-mascolor-primary p-1 shadow-lg">
+            <div className="flex items-center gap-2">
+              {/* Botón WhatsApp principal */}
+              <motion.button
+                className="flex-1 bg-green-500 hover:bg-green-600 text-white rounded-full py-3 px-4 font-mazzard font-bold text-sm flex items-center justify-center gap-2 transition-colors"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() =>
+                  window.open(
+                    `https://wa.me/5493547639917?text=${encodeURIComponent(
+                      "Hola, me gustaría obtener más información sobre los productos de +COLOR."
+                    )}`,
+                    "_blank"
+                  )
+                }
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span className="text-xs">Contactar por WhatsApp</span>
+              </motion.button>
+
+              {/* Botón +COLOR circular */}
+              <motion.button
+                className="w-12 h-12 bg-mascolor-primary hover:bg-mascolor-primary/90 rounded-full flex items-center justify-center shadow-lg flex-shrink-0"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                animate={{ rotate: [0, 360] }}
+                transition={{
+                  rotate: { duration: 3, repeat: Infinity, ease: "linear" },
+                  scale: { duration: 0.2 },
+                }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  const productsSection = document.getElementById("products");
+                  if (productsSection) {
+                    productsSection.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  } else {
+                    window.scrollTo({
+                      top: window.innerHeight,
+                      behavior: "smooth",
+                    });
                   }
-                  style={{
-                    boxShadow:
-                      "0 12px 24px rgba(34, 197, 94, 0.3), 0 4px 8px rgba(0, 0, 0, 0.1)",
-                  }}
-                >
-                  <MessageCircle className="w-5 h-5 mr-3" />
-                  <span>WhatsApp</span>
-                </Button>
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.05, y: -3 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.3 }}
+                }}
               >
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="rounded-full bg-white/95 shadow-xl border-3 border-mascolor-primary/50 hover:border-mascolor-primary/80 transition-all duration-300 hover:shadow-2xl w-16 h-16 text-mascolor-primary hover:bg-mascolor-primary/5"
-                  style={{
-                    boxShadow: "0 8px 16px rgba(135, 0, 100, 0.2)",
-                  }}
-                >
-                  <PlusCircle className="w-8 h-8" />
-                </Button>
-              </motion.div>
+                <PlusCircle className="w-6 h-6 text-white" />
+              </motion.button>
             </div>
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 }

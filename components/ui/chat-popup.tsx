@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Send, User } from "lucide-react";
+import { useFloatingComponents } from "@/hooks/useFloatingComponents";
 
 // Preguntas frecuentes predefinidas
 const frequentQuestions = [
@@ -30,6 +31,7 @@ export function ChatPopup() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
+  const { setChatOpen } = useFloatingComponents();
 
   // Detectar scroll para mostrar el chat y abrirlo automáticamente
   useEffect(() => {
@@ -78,6 +80,11 @@ export function ChatPopup() {
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
+
+  // Actualizar estado global cuando el chat se abre/cierra
+  useEffect(() => {
+    setChatOpen(isOpen);
+  }, [isOpen, setChatOpen]);
 
   // Enfocar el input cuando se abre el chat
   useEffect(() => {
@@ -189,7 +196,7 @@ export function ChatPopup() {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="fixed bottom-[24px] left-[24px] z-50"
+          className="fixed bottom-[24px] left-[24px] z-[60] chat-popup-container floating-component-transition"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.5 }}
