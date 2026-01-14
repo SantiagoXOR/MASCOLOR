@@ -35,7 +35,7 @@ const config: Config = {
       },
       colors: {
         mascolor: {
-          primary: "#870064", // Cardinal Pink 900 como color principal
+          primary: "#8B005D", // Morado oscuro de marca
           secondary: "#870064", // Cambiado a color primario de la marca
           accent: "#870064", // Cambiado a color primario de la marca
           neutral: "#9E9E9E", // Gris neutro
