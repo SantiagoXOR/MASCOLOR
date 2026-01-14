@@ -1,9 +1,3 @@
----
-name: CRM + UChat + ElevenLabs Integration
-overview: ""
-todos: []
----
-
 # Análisis Exhaustivo del Proyecto +COLOR y Plan de Implementación CRM + UChat + ElevenLabs
 
 ## 📋 Análisis del Proyecto Actual
@@ -239,6 +233,59 @@ ElevenLabs ofrece tecnología avanzada de inteligencia artificial para generar v
 
 ## 🏗️ Arquitectura Propuesta
 
+### Diagrama de Arquitectura del Sistema
+
+```mermaid
+graph TB
+    subgraph Frontend["Frontend - Next.js 15"]
+        A[Formulario Contacto]
+        B[Panel Admin CRM]
+        C[Dashboard Analytics]
+    end
+    
+    subgraph Backend["Backend - API Routes"]
+        D[API Leads]
+        E[API WhatsApp Webhook]
+        F[API ElevenLabs]
+        G[API Automatización]
+    end
+    
+    subgraph Database["Base de Datos - Supabase"]
+        H[(Tabla Leads)]
+        I[(Tabla Conversaciones)]
+        J[(Tabla Usuarios)]
+        K[(Tabla Mensajes WhatsApp)]
+    end
+    
+    subgraph Integrations["Integraciones Externas"]
+        L[UChat API]
+        M[ElevenLabs API]
+    end
+    
+    A --> D
+    B --> D
+    B --> G
+    C --> D
+    
+    D --> H
+    D --> I
+    D --> J
+    
+    E --> L
+    E --> K
+    E --> H
+    
+    F --> M
+    F --> L
+    
+    G --> H
+    G --> L
+    G --> M
+    
+    L --> K
+    M --> L
+```
+
 ### Nuevas Tablas en Supabase
 
 **1. `leads` - Tabla principal de leads**
@@ -391,20 +438,17 @@ types/
 
 ### Flujo de Datos Propuesto
 
-```
-Cliente (WhatsApp/Formulario)
-    ↓
-UChat Webhook / API Route
-    ↓
-Sistema CRM (Supabase)
-    ↓
-Automatización (Opcional)
-    ↓
-ElevenLabs (Si requiere voz)
-    ↓
-Respuesta (WhatsApp/Email)
-    ↓
-Panel Admin (Visualización)
+```mermaid
+graph TD
+    A[Cliente WhatsApp/Formulario] --> B[UChat Webhook / API Route]
+    B --> C[Sistema CRM Supabase]
+    C --> D{Automatización?}
+    D -->|Sí| E[ElevenLabs Voz IA]
+    D -->|No| F[Respuesta Directa]
+    E --> F
+    F --> G[WhatsApp/Email]
+    C --> H[Panel Admin Visualización]
+    G --> H
 ```
 
 ## 📝 Plan de Implementación
@@ -413,33 +457,24 @@ Panel Admin (Visualización)
 
 **Tareas:**
 
-1. Crear migraciones SQL para nuevas tablas en Supabase
-
-   - `leads`
-   - `lead_conversations`
-   - `users`
-   - `automation_rules`
-   - `whatsapp_messages`
-
-2. Configurar Row Level Security (RLS) en Supabase
-
-   - Políticas de acceso para usuarios
-   - Permisos por rol (admin, agent)
-
-3. Crear tipos TypeScript en `types/crm.ts`
-
-   - Interfaces para Lead, Conversation, User, etc.
-
-4. Implementar servicios base en `lib/crm/`
-
-   - `leads.ts` - CRUD básico
-   - `conversations.ts` - Gestión de conversaciones
-   - `users.ts` - Gestión de usuarios
-
-5. Crear funciones Supabase en `lib/supabase/crm.ts`
-
-   - Helpers para consultas complejas
-   - Funciones de búsqueda y filtrado
+- [ ] Crear migraciones SQL para nuevas tablas en Supabase
+  - [ ] `leads`
+  - [ ] `lead_conversations`
+  - [ ] `users`
+  - [ ] `automation_rules`
+  - [ ] `whatsapp_messages`
+- [ ] Configurar Row Level Security (RLS) en Supabase
+  - [ ] Políticas de acceso para usuarios
+  - [ ] Permisos por rol (admin, agent)
+- [ ] Crear tipos TypeScript en `types/crm.ts`
+  - [ ] Interfaces para Lead, Conversation, User, etc.
+- [ ] Implementar servicios base en `lib/crm/`
+  - [ ] `leads.ts` - CRUD básico
+  - [ ] `conversations.ts` - Gestión de conversaciones
+  - [ ] `users.ts` - Gestión de usuarios
+- [ ] Crear funciones Supabase en `lib/supabase/crm.ts`
+  - [ ] Helpers para consultas complejas
+  - [ ] Funciones de búsqueda y filtrado
 
 **Archivos a crear:**
 
@@ -855,60 +890,65 @@ CRM_DEFAULT_ASSIGNMENT_ROLE=agent
 
 ### Flujo 1: Lead desde Formulario de Contacto
 
-```
-Usuario llena formulario
-    ↓
-POST /api/leads
-    ↓
-Crear lead en Supabase (status: 'new', source: 'contact_form')
-    ↓
-Ejecutar automatizaciones (nuevo lead)
-    ↓
-Asignar a agente (si regla existe)
-    ↓
-Enviar notificación WhatsApp (si regla existe)
-    ↓
-Registrar en conversaciones
+```mermaid
+sequenceDiagram
+    participant U as Usuario
+    participant F as Formulario
+    participant API as API /api/leads
+    participant DB as Supabase
+    participant A as Automatización
+    participant W as WhatsApp
+    
+    U->>F: Llena formulario
+    F->>API: POST /api/leads
+    API->>DB: Crear lead (status: 'new', source: 'contact_form')
+    DB-->>API: Lead creado
+    API->>A: Ejecutar automatizaciones
+    A->>DB: Asignar a agente (si regla existe)
+    A->>W: Enviar notificación (si regla existe)
+    A->>DB: Registrar en conversaciones
+    API-->>F: Confirmación
+    F-->>U: Mensaje de éxito
 ```
 
 ### Flujo 2: Lead desde WhatsApp (UChat)
 
-```
-Mensaje WhatsApp entrante
-    ↓
-POST /api/whatsapp/webhook
-    ↓
-Buscar/Crear lead por teléfono
-    ↓
-Guardar mensaje en whatsapp_messages
-    ↓
-Guardar en lead_conversations
-    ↓
-Ejecutar automatizaciones
-    ↓
-Generar respuesta (con/sin voz según regla)
-    ↓
-Enviar respuesta vía UChat
-    ↓
-Guardar respuesta en base de datos
+```mermaid
+sequenceDiagram
+    participant C as Cliente
+    participant W as WhatsApp
+    participant U as UChat
+    participant API as Webhook /api/whatsapp/webhook
+    participant DB as Supabase
+    participant A as Automatización
+    participant E as ElevenLabs
+    
+    C->>W: Envía mensaje
+    W->>U: Mensaje entrante
+    U->>API: POST /api/whatsapp/webhook
+    API->>DB: Buscar/Crear lead por teléfono
+    API->>DB: Guardar en whatsapp_messages
+    API->>DB: Guardar en lead_conversations
+    API->>A: Ejecutar automatizaciones
+    A->>E: Generar respuesta voz (si aplica)
+    E-->>A: Audio generado
+    A->>U: Enviar respuesta vía UChat
+    U->>W: Mensaje saliente
+    W-->>C: Recibe respuesta
+    A->>DB: Guardar respuesta en BD
 ```
 
 ### Flujo 3: Chatbot con Voz (ElevenLabs)
 
-```
-Mensaje WhatsApp entrante
-    ↓
-Detectar intención/contexto
-    ↓
-Generar respuesta de texto
-    ↓
-POST /api/elevenlabs/generate
-    ↓
-ElevenLabs: Sintetizar voz
-    ↓
-Enviar audio vía UChat
-    ↓
-Registrar en conversaciones
+```mermaid
+flowchart LR
+    A[Mensaje WhatsApp] --> B[Detectar Intención]
+    B --> C[Generar Respuesta Texto]
+    C --> D[POST /api/elevenlabs/generate]
+    D --> E[ElevenLabs: Sintetizar Voz]
+    E --> F[Audio MP3]
+    F --> G[Enviar vía UChat]
+    G --> H[Registrar en Conversaciones]
 ```
 
 ### Flujo 4: Gestión de Lead en Panel Admin

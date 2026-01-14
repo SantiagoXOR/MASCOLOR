@@ -1276,8 +1276,22 @@
         function setupCheckboxes() {
             const checkboxes = document.querySelectorAll('#docs-content input[type="checkbox"]');
             checkboxes.forEach((checkbox, index) => {
-                const id = `todo-${index}-${Date.now()}`;
-                checkbox.id = id;
+                // Generar ID estable basado en el texto del label o contenido cercano
+                const listItem = checkbox.closest('li');
+                let id;
+                if (listItem) {
+                    const text = listItem.textContent.trim().substring(0, 50).replace(/[^a-zA-Z0-9]/g, '-');
+                    id = `todo-${index}-${text}`;
+                } else {
+                    id = `todo-${index}`;
+                }
+                
+                // Si ya tiene un ID, usarlo
+                if (checkbox.id) {
+                    id = checkbox.id;
+                } else {
+                    checkbox.id = id;
+                }
                 
                 // Restaurar estado guardado
                 const states = getTodoStates();
@@ -1362,6 +1376,9 @@
                     const container = document.getElementById('docs-content');
                     
                     if (container && typeof marked !== 'undefined') {
+                        // Eliminar frontmatter YAML si existe
+                        markdown = markdown.replace(/^---\s*\n[\s\S]*?\n---\s*\n/, '');
+                        
                         // Configurar marked
                         marked.setOptions({
                             breaks: true,
