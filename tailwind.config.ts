@@ -23,6 +23,7 @@ const config: Config = {
         inter: ["var(--font-inter)", "sans-serif"],
         sans: ["var(--font-poppins)", "sans-serif"],
         stolzl: ["stolzl", "sans-serif"],
+        heading: ["var(--font-poppins)", "system-ui", "sans-serif"],
       },
       fontWeight: {
         thin: "100",
@@ -137,8 +138,6 @@ const config: Config = {
           "5": "hsl(var(--chart-5))",
         },
       },
-      fontFamily: {
-        heading: ["var(--font-poppins)", "system-ui", "sans-serif"],
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
