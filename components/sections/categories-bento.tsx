@@ -164,13 +164,6 @@ export function CategoriesBento() {
                         Ver productos
                         <ArrowRight className="h-3.5 w-3.5 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
                       </span>
-
-                      {/* Contador de productos si está disponible */}
-                      {category.product_count && (
-                        <span className="text-xs text-mascolor-gray-500 bg-mascolor-gray-100 px-2 py-1 rounded-full">
-                          {category.product_count} productos
-                        </span>
-                      )}
                     </div>
                   </div>
                 </div>
