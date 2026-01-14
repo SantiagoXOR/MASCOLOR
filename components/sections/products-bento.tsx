@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { BentoGrid, BentoItem, BentoImage } from "@/components/ui/bento";
@@ -39,11 +39,19 @@ export function ProductsBento() {
   // Hooks para datos
   const { categories, loading: loadingCategories } = useCategories();
   const { brands, loading: loadingBrands } = useBrands();
-  const { products, loading: loadingProducts } = useProductFilters({
-    category: activeCategory,
-    brand: "",
-    searchTerm: "",
-  });
+  const {
+    products,
+    loading: loadingProducts,
+    activeCategory: filterCategory,
+    setActiveCategory: setFilterCategory,
+  } = useProductFilters();
+
+  // Sincronizar activeCategory con el filtro
+  useEffect(() => {
+    if (filterCategory !== activeCategory) {
+      setFilterCategory(activeCategory);
+    }
+  }, [activeCategory, filterCategory, setFilterCategory]);
 
   // Solo mostrar en móvil y tablet
   if (!isMobile && !isTablet) {
