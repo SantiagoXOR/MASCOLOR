@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Plan de Implementación CRM + UChat + ElevenLabs | +COLOR</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#8B005D",
+                        "primary-hover": "#6e004a",
+                        secondary: "#6A004F",
+                        "accent-green": "#25D366",
+                        "background-light": "#f8f9fa",
+                        "background-dark": "#121212",
+                        "card-dark": "#1E1E2C",
+                        "card-light": "#ffffff",
+                        "surface-dark": "#23263A",
+                        "surface-light": "#FFFFFF",
+                    },
+                    fontFamily: {
+                        display: ["Montserrat", "sans-serif"],
+                        body: ["Montserrat", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #121212;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8B005D;
+        }
+        .section {
+            scroll-margin-top: 80px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-white transition-colors duration-300">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-4 lg:px-12 flex justify-between items-center bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-sm">
+        <div class="flex items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="h-12 w-auto flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 171.02 27.98" class="h-full w-auto" style="fill: #8B005D;">
+                        <path d="M27.56,10.18h-7.75l.73-7.69c.1-1.12-.72-2.03-1.84-2.03h-4.09c-1.86,0-3.53,1.53-3.71,3.39l-.6,6.33h-6.15c-1.87,0-3.59,1.51-3.84,3.36L.02,15.88c-.14,1.12.65,2.02,1.78,2.02h7.75l-.73,7.69c-.1,1.12.72,2.03,1.84,2.03h4.09c1.86,0,3.53-1.53,3.71-3.39l.6-6.33h6.14c1.89,0,3.61-1.51,3.85-3.35l.3-2.35c.14-1.1-.67-2.02-1.78-2.02Z"/>
+                        <path d="M166.82,19.74c-.21-.4-.63-.95-1.28-1.68-.64-.73-1.14-1.21-1.49-1.42-.53-.33-1.37-.67-2.55-1.01,1.53-.27,2.75-.63,3.66-1.07,1.41-.68,2.57-1.57,3.44-2.66.87-1.09,1.37-2.39,1.51-3.9.15-1.72-.22-3.2-1.13-4.39-.91-1.21-2.17-2.03-3.8-2.48-1.6-.45-3.99-.67-7.12-.67h-16.92l-.46,5.12c-.48-.71-1.06-1.36-1.72-1.95-2.73-2.41-6.82-3.63-12.27-3.63s-9.56,1.23-12.76,3.7c-3.2,2.45-4.99,5.89-5.39,10.31-.24,2.65.1,4.93.99,6.84h-10.15l1.82-20.38h-10.11l-.44,4.97c-.46-.65-.99-1.25-1.61-1.8-2.73-2.41-6.82-3.63-12.27-3.63s-9.56,1.23-12.76,3.7c-.94.72-1.76,1.53-2.46,2.43-.91-1.72-2.15-3.08-3.74-4.06-2.25-1.39-5.42-2.07-9.54-2.07-5.28,0-9.45,1.19-12.55,3.61-1.75,1.36-3.07,3.05-3.97,5.08-1.54,4-1.66,6.8-1.19,9.1.24,1.67.8,3.13,1.63,4.39,1.45,2.16,3.26,3.67,5.44,4.52,2.17.85,5.04,1.28,8.6,1.28,2.93,0,5.38-.35,7.34-1.05,1.95-.71,3.65-1.75,5.04-3.12.58-.57,1.1-1.2,1.57-1.88,1.32,2.09,3.12,3.62,5.45,4.59,2.34.96,5.34,1.45,9.04,1.45s6.7-.56,9.24-1.68c2.1-.94,3.83-2.19,5.2-3.74l-.44,4.96h23.14l.28-3.19c.99.91,2.14,1.65,3.45,2.2,2.34.96,5.35,1.45,9.04,1.45s6.71-.56,9.24-1.68c2.18-.97,3.95-2.27,5.34-3.89l-.47,5.22h10.19l.99-11.01h.9c.92,0,1.73.21,2.43.63.51.32,1.07,1.01,1.66,2.09l4.69,8.29h11.46l-4.2-7.87ZM53.22,16.46c-.6,1.71-1.44,3.02-2.5,3.9-1.08.9-2.58,1.35-4.52,1.35s-3.48-.55-4.49-1.67c-.99-1.12-1.36-3.17-1.09-6.17.22-2.41.83-4.2,1.86-5.33,1.36-1.53,3.18-2.28,5.47-2.28,1.01,0,1.91.17,2.71.51.78.35,1.42.83,1.94,1.48.31.39.58.99.82,1.81l6.48-1.17c-.68,1.53-1.11,3.24-1.28,5.13-.12,1.39-.09,2.67.1,3.85l-5.49-1.4ZM82.45,13.67c-.27,3.03-1.07,5.12-2.36,6.3-1.28,1.16-3.03,1.75-5.2,1.75s-3.74-.6-4.85-1.78c-1.12-1.21-1.55-3.16-1.31-5.89.24-2.76,1.04-4.74,2.39-5.92,1.33-1.19,3.03-1.8,5.06-1.8,2.13,0,3.77.59,4.9,1.76,1.14,1.18,1.59,3.04,1.37,5.58ZM132.37,13.67c-.27,3.03-1.07,5.12-2.36,6.3-1.28,1.16-3.03,1.75-5.2,1.75s-3.74-.6-4.85-1.78c-1.12-1.21-1.55-3.16-1.31-5.89.24-2.76,1.04-4.74,2.39-5.92,1.33-1.19,3.03-1.8,5.06-1.8,2.14,0,3.77.59,4.9,1.76,1.14,1.18,1.6,3.04,1.37,5.58ZM159.85,8.66c-.05.6-.31,1.12-.77,1.58-.47.45-1.05.74-1.73.85-1.35.26-2.26.37-2.72.37h-4.27l.49-5.52h4.47c1.85,0,3.08.23,3.72.71.63.47.9,1.14.82,2.02Z"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col items-start leading-none">
+                    <span class="text-[0.5rem] tracking-[0.2em] text-gray-600 dark:text-gray-400 uppercase">Transformación Digital</span>
+                </div>
+            </div>
+        </div>
+        <div class="hidden lg:flex items-center space-x-6 text-sm font-medium text-gray-800 dark:text-white">
+            <a class="hover:text-primary transition-colors cursor-pointer" onclick="scrollToSection('vision')">Visión</a>
+            <a class="hover:text-primary transition-colors cursor-pointer" onclick="scrollToSection('beneficios')">Beneficios</a>
+            <a class="hover:text-primary transition-colors cursor-pointer" onclick="scrollToSection('solucion')">Solución</a>
+            <a class="hover:text-primary transition-colors cursor-pointer" onclick="scrollToSection('implementacion')">Implementación</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="vision" class="section relative min-h-screen flex flex-col justify-center items-center pt-32 pb-20 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-background-light to-background-light dark:from-primary/5 dark:via-background-dark dark:to-background-dark z-0"></div>
+        <div class="container mx-auto px-4 z-10 relative">
+            <div class="text-center mb-16 max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight tracking-tight text-gray-900 dark:text-white">
+                    Ecosistema Inteligente de<br/>
+                    <span class="text-primary">Gestión de Ventas</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 font-light leading-relaxed">
+                    Automatización completa del proceso comercial desde el primer contacto hasta el cierre de venta, con atención 24/7 y tecnología de voz artificial
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <span class="inline-flex items-center px-6 py-3 rounded-full bg-primary/10 dark:bg-primary/20 text-primary border border-primary/20 text-base font-semibold">
+                        <span class="material-icons text-lg mr-2">storage</span> CRM Completo
+                    </span>
+                    <span class="inline-flex items-center px-6 py-3 rounded-full bg-accent-green/10 dark:bg-accent-green/20 text-accent-green border border-accent-green/20 text-base font-semibold">
+                        <span class="material-icons text-lg mr-2">chat</span> WhatsApp Integrado
+                    </span>
+                    <span class="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/10 dark:bg-purple-500/20 text-purple-500 border border-purple-500/20 text-base font-semibold">
+                        <span class="material-icons text-lg mr-2">record_voice_over</span> Voz Artificial
+                    </span>
+                </div>
+            </div>
+
+            <!-- Visión Estratégica -->
+            <div class="bg-gradient-to-br from-primary/5 to-purple-500/5 dark:from-primary/10 dark:to-purple-500/10 rounded-3xl p-8 md:p-12 border border-primary/20 mb-16 max-w-5xl mx-auto">
+                <div class="text-center mb-8">
+                    <div class="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary/30">
+                        <span class="material-icons-round text-white text-4xl">visibility</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Nuestra Visión</h2>
+                </div>
+                <div class="space-y-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                    <p class="text-center max-w-3xl mx-auto">
+                        Transformar la experiencia de ventas de +COLOR mediante un ecosistema inteligente que capture, gestione y convierta cada oportunidad de contacto en una venta exitosa.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                        <div class="text-center p-6 bg-white/50 dark:bg-gray-800/50 rounded-xl">
+                            <span class="material-icons-round text-primary text-4xl mb-3">access_time</span>
+                            <h3 class="font-bold text-gray-900 dark:text-white mb-2">Atención 24/7</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Nunca perdamos una oportunidad, incluso fuera del horario comercial</p>
+                        </div>
+                        <div class="text-center p-6 bg-white/50 dark:bg-gray-800/50 rounded-xl">
+                            <span class="material-icons-round text-primary text-4xl mb-3">trending_up</span>
+                            <h3 class="font-bold text-gray-900 dark:text-white mb-2">Crecimiento Sostenido</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Aumento significativo en conversión y seguimiento de leads</p>
+                        </div>
+                        <div class="text-center p-6 bg-white/50 dark:bg-gray-800/50 rounded-xl">
+                            <span class="material-icons-round text-primary text-4xl mb-3">smart_toy</span>
+                            <h3 class="font-bold text-gray-900 dark:text-white mb-2">Automatización Inteligente</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Reduce carga operativa y mejora la eficiencia del equipo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Estado Actual vs Objetivo -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
+                <div class="bg-white dark:bg-card-dark rounded-2xl p-8 shadow-xl border-2 border-gray-200 dark:border-gray-700">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="p-4 bg-red-100 dark:bg-red-500/20 rounded-xl">
+                            <span class="material-icons-round text-red-500 text-3xl">error_outline</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Situación Actual</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Desafíos que enfrentamos hoy</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 p-4 bg-red-50 dark:bg-red-500/10 rounded-lg">
+                            <span class="material-icons-round text-red-500 text-xl mt-0.5">close</span>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Pérdida de Oportunidades</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Formularios sin seguimiento, leads que se pierden en el proceso</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3 p-4 bg-red-50 dark:bg-red-500/10 rounded-lg">
+                            <span class="material-icons-round text-red-500 text-xl mt-0.5">close</span>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Atención Limitada</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Solo disponible en horario comercial, sin capacidad de respuesta inmediata</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3 p-4 bg-red-50 dark:bg-red-500/10 rounded-lg">
+                            <span class="material-icons-round text-red-500 text-xl mt-0.5">close</span>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Seguimiento Manual</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Procesos desorganizados, sin visibilidad del pipeline de ventas</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3 p-4 bg-red-50 dark:bg-red-500/10 rounded-lg">
+                            <span class="material-icons-round text-red-500 text-xl mt-0.5">close</span>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Sin Automatización</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Cada contacto requiere intervención manual del equipo</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-primary/10 to-green-500/10 dark:from-primary/20 dark:to-green-500/20 rounded-2xl p-8 shadow-xl border-2 border-primary/30">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="p-4 bg-primary/20 rounded-xl">
+                            <span class="material-icons-round text-primary text-3xl">check_circle</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Visión Transformada</h3>
+                            <p class="text-sm text-primary font-semibold">El futuro que queremos lograr</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 p-4 bg-white/50 dark:bg-gray-800/50 rounded-lg border border-primary/20">
+                            <span class="material-icons-round text-green-500 text-xl mt-0.5">check_circle</span>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Captura Automática 100%</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Cada contacto se registra automáticamente en nuestro sistema CRM</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3 p-4 bg-white/50 dark:bg-gray-800/50 rounded-lg border border-primary/20">
+                            <span class="material-icons-round text-green-500 text-xl mt-0.5">check_circle</span>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Atención Inmediata 24/7</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Asistente virtual que responde en WhatsApp a cualquier hora</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3 p-4 bg-white/50 dark:bg-gray-800/50 rounded-lg border border-primary/20">
+                            <span class="material-icons-round text-green-500 text-xl mt-0.5">check_circle</span>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Pipeline Visible y Organizado</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Dashboard completo con seguimiento de cada lead desde inicio hasta cierre</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3 p-4 bg-white/50 dark:bg-gray-800/50 rounded-lg border border-primary/20">
+                            <span class="material-icons-round text-green-500 text-xl mt-0.5">check_circle</span>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Automatización Inteligente</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Asignación automática, respuestas personalizadas y seguimiento programado</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Objetivos Estratégicos -->
+    <section id="beneficios" class="section bg-white dark:bg-background-dark py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Objetivos Estratégicos</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
+                    Metas claras y medibles para transformar nuestra operación comercial
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
+                <!-- Objetivo 1 -->
+                <div class="bg-gradient-to-br from-blue-500/10 to-blue-600/5 dark:from-blue-500/20 dark:to-blue-600/10 rounded-2xl p-8 border border-blue-500/20 shadow-lg">
+                    <div class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/30">
+                        <span class="material-icons-round text-white text-3xl">people</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Gestión Integral de Leads</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                        Centralizar y organizar todos los contactos comerciales en un único sistema, desde el primer contacto hasta el cierre de venta.
+                    </p>
+                    <ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start gap-2">
+                            <span class="material-icons-round text-blue-500 text-lg mt-0.5">check</span>
+                            <span>Captura automática desde formularios y WhatsApp</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="material-icons-round text-blue-500 text-lg mt-0.5">check</span>
+                            <span>Historial completo de cada interacción</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="material-icons-round text-blue-500 text-lg mt-0.5">check</span>
+                            <span>Pipeline de ventas visible y organizado</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Objetivo 2 -->
+                <div class="bg-gradient-to-br from-accent-green/10 to-green-500/5 dark:from-accent-green/20 dark:to-green-500/10 rounded-2xl p-8 border border-accent-green/20 shadow-lg">
+                    <div class="w-16 h-16 bg-accent-green rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-accent-green/30">
+                        <span class="material-icons-round text-white text-3xl">chat</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Integración WhatsApp API</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                        Conectar con nuestros clientes a través del canal que más utilizan, con respuestas automáticas e inteligentes.
+                    </p>
+                    <ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start gap-2">
+                            <span class="material-icons-round text-accent-green text-lg mt-0.5">check</span>
+                            <span>Recepción y envío de mensajes automatizado</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="material-icons-round text-accent-green text-lg mt-0.5">check</span>
+                            <span>Respuestas inmediatas 24 horas al día</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="material-icons-round text-accent-green text-lg mt-0.5">check</span>
+                            <span>Creación automática de leads desde conversaciones</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Objetivo 3 -->
+                <div class="bg-gradient-to-br from-purple-500/10 to-purple-600/5 dark:from-purple-500/20 dark:to-purple-600/10 rounded-2xl p-8 border border-purple-500/20 shadow-lg">
+                    <div class="w-16 h-16 bg-purple-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-purple-500/30">
+                        <span class="material-icons-round text-white text-3xl">record_voice_over</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Voz Artificial Natural</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                        Respuestas con voz humana artificial que mantiene la identidad de marca y mejora la experiencia del cliente.
+                    </p>
+                    <ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start gap-2">
+                            <span class="material-icons-round text-purple-500 text-lg mt-0.5">check</span>
+                            <span>Síntesis de voz de alta calidad</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="material-icons-round text-purple-500 text-lg mt-0.5">check</span>
+                            <span>Chatbot conversacional inteligente</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="material-icons-round text-purple-500 text-lg mt-0.5">check</span>
+                            <span>Respuestas contextuales y personalizadas</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Objetivo 4 -->
+                <div class="bg-gradient-to-br from-orange-500/10 to-orange-600/5 dark:from-orange-500/20 dark:to-orange-600/10 rounded-2xl p-8 border border-orange-500/20 shadow-lg">
+                    <div class="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-orange-500/30">
+                        <span class="material-icons-round text-white text-3xl">assignment_ind</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Asignación Inteligente</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                        Distribuir automáticamente los leads entre el equipo de ventas, balanceando la carga de trabajo.
+                    </p>
+                    <ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start gap-2">
+                            <span class="material-icons-round text-orange-500 text-lg mt-0.5">check</span>
+                            <span>Asignación automática o manual</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="material-icons-round text-orange-500 text-lg mt-0.5">check</span>
+                            <span>Balanceo equitativo de oportunidades</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="material-icons-round text-orange-500 text-lg mt-0.5">check</span>
+                            <span>Gestión de usuarios y permisos</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Objetivo 5 -->
+                <div class="bg-gradient-to-br from-indigo-500/10 to-indigo-600/5 dark:from-indigo-500/20 dark:to-indigo-600/10 rounded-2xl p-8 border border-indigo-500/20 shadow-lg">
+                    <div class="w-16 h-16 bg-indigo-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-indigo-500/30">
+                        <span class="material-icons-round text-white text-3xl">dashboard</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Panel Administrativo</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                        Dashboard completo para visualizar, gestionar y analizar el rendimiento comercial del equipo.
+                    </p>
+                    <ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start gap-2">
+                            <span class="material-icons-round text-indigo-500 text-lg mt-0.5">check</span>
+                            <span>Vista completa del pipeline de ventas</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="material-icons-round text-indigo-500 text-lg mt-0.5">check</span>
+                            <span>Métricas y reportes de rendimiento</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="material-icons-round text-indigo-500 text-lg mt-0.5">check</span>
+                            <span>Gestión de leads, usuarios y configuraciones</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Objetivo 6 -->
+                <div class="bg-gradient-to-br from-teal-500/10 to-teal-600/5 dark:from-teal-500/20 dark:to-teal-600/10 rounded-2xl p-8 border border-teal-500/20 shadow-lg">
+                    <div class="w-16 h-16 bg-teal-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-teal-500/30">
+                        <span class="material-icons-round text-white text-3xl">settings</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Automatización de Procesos</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                        Reducir la carga operativa mediante reglas automáticas que optimizan cada etapa del proceso comercial.
+                    </p>
+                    <ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start gap-2">
+                            <span class="material-icons-round text-teal-500 text-lg mt-0.5">check</span>
+                            <span>Respuestas automáticas iniciales</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="material-icons-round text-teal-500 text-lg mt-0.5">check</span>
+                            <span>Seguimiento programado de leads</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="material-icons-round text-teal-500 text-lg mt-0.5">check</span>
+                            <span>Notificaciones y alertas inteligentes</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Impacto Esperado -->
+            <div class="bg-gradient-to-br from-primary/10 to-purple-500/10 dark:from-primary/20 dark:to-purple-500/20 rounded-3xl p-10 md:p-16 border-2 border-primary/30 max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Impacto Esperado</h3>
+                    <p class="text-xl text-gray-600 dark:text-gray-400">Resultados medibles que transformarán nuestro negocio</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-6 backdrop-blur-sm">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="material-icons-round text-green-500 text-3xl">trending_up</span>
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white">Aumento en Conversión</h4>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Captura automática y seguimiento sistemático aumentará significativamente la tasa de conversión de leads a ventas.
+                        </p>
+                        <div class="text-3xl font-bold text-green-500">+30-40%</div>
+                    </div>
+                    <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-6 backdrop-blur-sm">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="material-icons-round text-blue-500 text-3xl">access_time</span>
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white">Tiempo de Respuesta</h4>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Respuestas inmediatas 24/7 mejorarán la experiencia del cliente y aumentarán las oportunidades de cierre.
+                        </p>
+                        <div class="text-3xl font-bold text-blue-500">&lt;1 min</div>
+                    </div>
+                    <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-6 backdrop-blur-sm">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="material-icons-round text-purple-500 text-3xl">people</span>
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white">Eficiencia del Equipo</h4>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Automatización reducirá la carga operativa, permitiendo al equipo enfocarse en leads calificados y cierre de ventas.
+                        </p>
+                        <div class="text-3xl font-bold text-purple-500">+50%</div>
+                    </div>
+                    <div class="bg-white/60 dark:bg-gray-800/60 rounded-xl p-6 backdrop-blur-sm">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="material-icons-round text-orange-500 text-3xl">analytics</span>
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white">Visibilidad y Control</h4>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Dashboard completo proporcionará insights en tiempo real sobre el rendimiento comercial y oportunidades.
+                        </p>
+                        <div class="text-3xl font-bold text-orange-500">100%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solución Técnica (Simplificada) -->
+    <section id="solucion" class="section bg-gray-50 dark:bg-background-dark/50 py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 max-w-3xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Nuestra Solución</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
+                    Una plataforma integrada que conecta todos los puntos de contacto con nuestros clientes
+                </p>
+            </div>
+
+            <!-- Flujo Visual -->
+            <div class="max-w-6xl mx-auto mb-16">
+                <div class="bg-white dark:bg-surface-dark rounded-3xl p-8 md:p-12 shadow-xl border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">Flujo del Sistema</h3>
+                    <div class="flex flex-wrap items-center justify-center gap-4 md:gap-8">
+                        <div class="text-center flex-1 min-w-[150px]">
+                            <div class="w-20 h-20 bg-accent-green rounded-2xl flex items-center justify-center mb-4 mx-auto shadow-lg">
+                                <span class="material-icons text-white text-3xl">chat</span>
+                            </div>
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-2">Cliente Contacta</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Via formulario o WhatsApp</p>
+                        </div>
+                        <span class="material-icons text-4xl text-gray-400 hidden md:block">arrow_forward</span>
+                        <div class="text-center flex-1 min-w-[150px]">
+                            <div class="w-20 h-20 bg-blue-500 rounded-2xl flex items-center justify-center mb-4 mx-auto shadow-lg">
+                                <span class="material-icons text-white text-3xl">cloud_sync</span>
+                            </div>
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-2">Sistema Registra</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Lead creado automáticamente</p>
+                        </div>
+                        <span class="material-icons text-4xl text-gray-400 hidden md:block">arrow_forward</span>
+                        <div class="text-center flex-1 min-w-[150px]">
+                            <div class="w-20 h-20 bg-purple-500 rounded-2xl flex items-center justify-center mb-4 mx-auto shadow-lg">
+                                <span class="material-icons text-white text-3xl">smart_toy</span>
+                            </div>
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-2">IA Responde</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Respuesta automática inteligente</p>
+                        </div>
+                        <span class="material-icons text-4xl text-gray-400 hidden md:block">arrow_forward</span>
+                        <div class="text-center flex-1 min-w-[150px]">
+                            <div class="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mb-4 mx-auto shadow-lg">
+                                <span class="material-icons text-white text-3xl">assignment</span>
+                            </div>
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-2">Equipo Gestiona</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Seguimiento en panel admin</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Componentes Principales -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
+                <div class="bg-white dark:bg-surface-dark rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-icons-round text-primary text-2xl">storage</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Base de Datos CRM</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Sistema centralizado que almacena y organiza todos los leads, conversaciones y datos comerciales
+                    </p>
+                </div>
+                <div class="bg-white dark:bg-surface-dark rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div class="w-14 h-14 bg-accent-green/10 rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-icons-round text-accent-green text-2xl">chat</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Integración WhatsApp (UChat)</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Conexión directa con WhatsApp Business API para comunicación bidireccional automatizada
+                    </p>
+                </div>
+                <div class="bg-white dark:bg-surface-dark rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div class="w-14 h-14 bg-purple-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-icons-round text-purple-500 text-2xl">record_voice_over</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Motor de Voz IA (ElevenLabs)</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Tecnología de síntesis de voz avanzada para respuestas naturales y personalizadas
+                    </p>
+                </div>
+            </div>
+
+            <!-- Detalles de Integraciones -->
+            <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- UChat -->
+                <div class="bg-gradient-to-br from-accent-green/10 to-green-500/5 dark:from-accent-green/20 dark:to-green-500/10 rounded-2xl p-8 border-2 border-accent-green/30 shadow-xl">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-accent-green rounded-2xl flex items-center justify-center shadow-lg">
+                            <span class="material-icons-round text-white text-3xl">chat</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">UChat - WhatsApp Business API</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Comunicación automatizada 24/7</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-white/50 dark:bg-gray-800/50 rounded-xl p-4">
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+                                <span class="material-icons-round text-accent-green text-xl">check_circle</span>
+                                Capacidades Principales
+                            </h4>
+                            <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-accent-green text-lg mt-0.5 flex-shrink-0">check</span>
+                                    <span>Recepción y envío de mensajes automáticos en tiempo real</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-accent-green text-lg mt-0.5 flex-shrink-0">check</span>
+                                    <span>Soporte completo para multimedia (texto, imágenes, audio, videos, documentos)</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-accent-green text-lg mt-0.5 flex-shrink-0">check</span>
+                                    <span>Webhooks para eventos y notificaciones de estado de mensajes</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-accent-green text-lg mt-0.5 flex-shrink-0">check</span>
+                                    <span>Gestión de plantillas de mensajes aprobadas por WhatsApp</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-accent-green text-lg mt-0.5 flex-shrink-0">check</span>
+                                    <span>Ventana de 24 horas para respuestas gratuitas y plantillas para fuera de ventana</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-white/50 dark:bg-gray-800/50 rounded-xl p-4">
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                                <span class="material-icons-round text-accent-green text-xl">auto_awesome</span>
+                                Alcances en el CRM
+                            </h4>
+                            <ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-accent-green text-lg mt-0.5 flex-shrink-0">check_circle</span>
+                                    <span><strong>Captura Automática:</strong> Cada mensaje entrante se registra automáticamente y crea/actualiza el lead en el sistema</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-accent-green text-lg mt-0.5 flex-shrink-0">check_circle</span>
+                                    <span><strong>Control de Conversación:</strong> Los agentes pueden tomar control de la conversación y pausar la automatización cuando sea necesario</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-accent-green text-lg mt-0.5 flex-shrink-0">check_circle</span>
+                                    <span><strong>Notificaciones en Tiempo Real:</strong> Alertas instantáneas cuando un lead requiere atención humana o cuando la automatización se pausa</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-accent-green text-lg mt-0.5 flex-shrink-0">check_circle</span>
+                                    <span><strong>Estado de Mensajes:</strong> Seguimiento en tiempo real del estado de cada mensaje (enviado, entregado, leído, fallido)</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-accent-green text-lg mt-0.5 flex-shrink-0">check_circle</span>
+                                    <span><strong>Soporte Multimedia:</strong> Envío y recepción de imágenes, videos, documentos y audio para enriquecer las conversaciones</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-accent-green text-lg mt-0.5 flex-shrink-0">check_circle</span>
+                                    <span><strong>Plantillas de Mensajes:</strong> Mensajes aprobados por WhatsApp para comunicación fuera de la ventana de 24 horas</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-accent-green text-lg mt-0.5 flex-shrink-0">check_circle</span>
+                                    <span><strong>Historial Completo:</strong> Todas las conversaciones se guardan automáticamente para mantener contexto completo</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-accent-green text-lg mt-0.5 flex-shrink-0">check_circle</span>
+                                    <span><strong>Seguimiento Automatizado:</strong> Mensajes de seguimiento programados según el estado del lead en el pipeline</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-accent-green text-lg mt-0.5 flex-shrink-0">check_circle</span>
+                                    <span><strong>Confirmaciones de Entrega:</strong> Notificaciones automáticas cuando el cliente recibe y lee los mensajes</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-accent-green text-lg mt-0.5 flex-shrink-0">check_circle</span>
+                                    <span><strong>Mensajes Masivos:</strong> Capacidad de enviar mensajes masivos con plantillas aprobadas para campañas de seguimiento</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ElevenLabs -->
+                <div class="bg-gradient-to-br from-purple-500/10 to-pink-500/5 dark:from-purple-500/20 dark:to-pink-500/10 rounded-2xl p-8 border-2 border-purple-500/30 shadow-xl">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-purple-500 rounded-2xl flex items-center justify-center shadow-lg">
+                            <span class="material-icons-round text-white text-3xl">record_voice_over</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">ElevenLabs - Voz Artificial</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Respuestas con voz natural</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-white/50 dark:bg-gray-800/50 rounded-xl p-4">
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+                                <span class="material-icons-round text-purple-500 text-xl">check_circle</span>
+                                Capacidades Principales
+                            </h4>
+                            <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-purple-500 text-lg mt-0.5 flex-shrink-0">check</span>
+                                    <span>Generación de voz natural y realista desde texto (Text-to-Speech)</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-purple-500 text-lg mt-0.5 flex-shrink-0">check</span>
+                                    <span>Más de 70 idiomas disponibles con voces nativas</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-purple-500 text-lg mt-0.5 flex-shrink-0">check</span>
+                                    <span>Voces personalizables con control de entonación, velocidad y emociones</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-purple-500 text-lg mt-0.5 flex-shrink-0">check</span>
+                                    <span>Conversational AI con memoria y contexto para respuestas inteligentes</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-purple-500 text-lg mt-0.5 flex-shrink-0">check</span>
+                                    <span>Optimización automática de calidad de audio y reducción de ruido</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-white/50 dark:bg-gray-800/50 rounded-xl p-4">
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                                <span class="material-icons-round text-purple-500 text-xl">auto_awesome</span>
+                                Alcances en el CRM
+                            </h4>
+                            <ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-purple-500 text-lg mt-0.5 flex-shrink-0">check_circle</span>
+                                    <span><strong>Mensajes de Bienvenida:</strong> Saludos personalizados con voz natural cuando llega un nuevo lead</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-purple-500 text-lg mt-0.5 flex-shrink-0">check_circle</span>
+                                    <span><strong>Mayor Engagement:</strong> Respuestas de voz aumentan la atención y conexión con el cliente</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-purple-500 text-lg mt-0.5 flex-shrink-0">check_circle</span>
+                                    <span><strong>Chatbot Conversacional:</strong> Asistente virtual con memoria y contexto que responde con voz natural</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-purple-500 text-lg mt-0.5 flex-shrink-0">check_circle</span>
+                                    <span><strong>Información de Productos:</strong> Explicaciones detalladas de productos en formato audio para mejor comprensión</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-purple-500 text-lg mt-0.5 flex-shrink-0">check_circle</span>
+                                    <span><strong>Soporte Automatizado:</strong> Respuestas en voz para consultas comunes y soporte técnico</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-purple-500 text-lg mt-0.5 flex-shrink-0">check_circle</span>
+                                    <span><strong>Cierre de Venta:</strong> Mensajes de voz para seguimiento de propuestas y cierre de ventas</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-purple-500 text-lg mt-0.5 flex-shrink-0">check_circle</span>
+                                    <span><strong>Notificaciones Importantes:</strong> Recordatorios y actualizaciones críticas como mensajes de voz</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-purple-500 text-lg mt-0.5 flex-shrink-0">check_circle</span>
+                                    <span><strong>Control de Voz:</strong> Ajuste de entonación, velocidad y emociones para personalizar el mensaje</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-purple-500 text-lg mt-0.5 flex-shrink-0">check_circle</span>
+                                    <span><strong>Multilingüe:</strong> Atención a clientes en más de 70 idiomas con voces nativas</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-icons-round text-purple-500 text-lg mt-0.5 flex-shrink-0">check_circle</span>
+                                    <span><strong>Personalización Avanzada:</strong> Voces personalizadas según tipo de mensaje, segmento de cliente o marca</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plan de Implementación (Simplificado) -->
+    <section id="implementacion" class="section bg-white dark:bg-background-dark py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 max-w-3xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Plan de Implementación</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+                    8 fases estructuradas para implementación completa y exitosa
+                </p>
+                <div class="inline-flex items-center gap-3 px-6 py-3 bg-primary/10 dark:bg-primary/20 rounded-full border border-primary/30">
+                    <span class="material-icons-round text-primary text-2xl">calendar_today</span>
+                    <span class="text-lg font-bold text-primary">Cronograma: 1 Mes (4 Semanas)</span>
+                </div>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-6">
+                <div class="bg-gradient-to-r from-primary/10 to-purple-500/10 dark:from-primary/20 dark:to-purple-500/20 rounded-xl p-6 border-l-4 border-primary">
+                    <div class="flex items-center gap-4 mb-3">
+                        <span class="px-4 py-2 bg-primary text-white rounded-full text-sm font-bold">Fase 1</span>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">Fundación del Sistema</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400">Creación de la base de datos y estructura base del CRM</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-accent-green/10 to-green-500/10 dark:from-accent-green/20 dark:to-green-500/20 rounded-xl p-6 border-l-4 border-accent-green">
+                    <div class="flex items-center gap-4 mb-3">
+                        <span class="px-4 py-2 bg-accent-green text-white rounded-full text-sm font-bold">Fase 2</span>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">Integración WhatsApp</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400">Conexión con UChat para recepción y envío de mensajes</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-purple-500/10 to-pink-500/10 dark:from-purple-500/20 dark:to-pink-500/20 rounded-xl p-6 border-l-4 border-purple-500">
+                    <div class="flex items-center gap-4 mb-3">
+                        <span class="px-4 py-2 bg-purple-500 text-white rounded-full text-sm font-bold">Fase 3</span>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">Integración de Voz IA</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400">Implementación de ElevenLabs para síntesis de voz</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-orange-500/10 to-red-500/10 dark:from-orange-500/20 dark:to-red-500/20 rounded-xl p-6 border-l-4 border-orange-500">
+                    <div class="flex items-center gap-4 mb-3">
+                        <span class="px-4 py-2 bg-orange-500 text-white rounded-full text-sm font-bold">Fase 4</span>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">Automatizaciones</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400">Sistema de reglas automáticas para optimizar procesos</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 dark:from-blue-500/20 dark:to-cyan-500/20 rounded-xl p-6 border-l-4 border-blue-500">
+                    <div class="flex items-center gap-4 mb-3">
+                        <span class="px-4 py-2 bg-blue-500 text-white rounded-full text-sm font-bold">Fase 5</span>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">Actualización Formularios</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400">Integración del formulario de contacto con el CRM</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-indigo-500/10 to-blue-500/10 dark:from-indigo-500/20 dark:to-blue-500/20 rounded-xl p-6 border-l-4 border-indigo-500">
+                    <div class="flex items-center gap-4 mb-3">
+                        <span class="px-4 py-2 bg-indigo-500 text-white rounded-full text-sm font-bold">Fase 6</span>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">Panel Administrativo</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400">Dashboard completo para gestión y visualización</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-teal-500/10 to-green-500/10 dark:from-teal-500/20 dark:to-green-500/20 rounded-xl p-6 border-l-4 border-teal-500">
+                    <div class="flex items-center gap-4 mb-3">
+                        <span class="px-4 py-2 bg-teal-500 text-white rounded-full text-sm font-bold">Fase 7</span>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">Optimización y Herramientas</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400">Componentes y utilidades para mejorar la experiencia</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-pink-500/10 to-purple-500/10 dark:from-pink-500/20 dark:to-purple-500/20 rounded-xl p-6 border-l-4 border-pink-500">
+                    <div class="flex items-center gap-4 mb-3">
+                        <span class="px-4 py-2 bg-pink-500 text-white rounded-full text-sm font-bold">Fase 8</span>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">Integración Final y Lanzamiento</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400">Testing completo, documentación y puesta en producción</p>
+                </div>
+            </div>
+
+            <!-- Timeline Visual -->
+            <div class="mt-16 max-w-6xl mx-auto">
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-surface-dark dark:to-background-dark rounded-2xl p-8 md:p-12 border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">Cronograma de 1 Mes (4 Semanas)</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="text-center bg-white/60 dark:bg-gray-800/60 rounded-xl p-6 border border-primary/20">
+                            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                <span class="text-white font-bold text-xl">1</span>
+                            </div>
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-3 text-lg">Semana 1</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3 font-semibold">Fundación del Sistema</p>
+                            <ul class="text-xs text-gray-600 dark:text-gray-400 space-y-1 text-left">
+                                <li>• Base de datos CRM</li>
+                                <li>• Estructura base</li>
+                                <li>• Configuración inicial</li>
+                            </ul>
+                        </div>
+                        <div class="text-center bg-white/60 dark:bg-gray-800/60 rounded-xl p-6 border border-accent-green/20">
+                            <div class="w-16 h-16 bg-accent-green rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                <span class="text-white font-bold text-xl">2</span>
+                            </div>
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-3 text-lg">Semana 2</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3 font-semibold">Integraciones Externas</p>
+                            <ul class="text-xs text-gray-600 dark:text-gray-400 space-y-1 text-left">
+                                <li>• UChat (WhatsApp API)</li>
+                                <li>• ElevenLabs (Voz IA)</li>
+                                <li>• Webhooks y configuración</li>
+                            </ul>
+                        </div>
+                        <div class="text-center bg-white/60 dark:bg-gray-800/60 rounded-xl p-6 border border-purple-500/20">
+                            <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                <span class="text-white font-bold text-xl">3</span>
+                            </div>
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-3 text-lg">Semana 3</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3 font-semibold">Automatización y Admin</p>
+                            <ul class="text-xs text-gray-600 dark:text-gray-400 space-y-1 text-left">
+                                <li>• Sistema de automatización</li>
+                                <li>• Panel administrativo</li>
+                                <li>• Formularios integrados</li>
+                            </ul>
+                        </div>
+                        <div class="text-center bg-white/60 dark:bg-gray-800/60 rounded-xl p-6 border border-orange-500/20">
+                            <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                <span class="material-icons text-white text-2xl">rocket_launch</span>
+                            </div>
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-3 text-lg">Semana 4</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3 font-semibold">Finalización y Lanzamiento</p>
+                            <ul class="text-xs text-gray-600 dark:text-gray-400 space-y-1 text-left">
+                                <li>• Panel admin completo</li>
+                                <li>• Testing exhaustivo</li>
+                                <li>• Lanzamiento en producción</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-8 text-center">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 dark:bg-primary/20 rounded-full">
+                            <span class="material-icons-round text-primary">schedule</span>
+                            <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">Implementación completa en 1 mes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Próximos Pasos -->
+    <section class="section bg-gradient-to-br from-primary/5 to-purple-500/5 dark:from-primary/10 dark:to-purple-500/10 py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Próximos Pasos</h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-400">Acciones inmediatas para comenzar la transformación</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white dark:bg-surface-dark rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
+                                <span class="text-white font-bold text-xl">1</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Aprobar el Plan</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Revisión y validación de la estrategia propuesta con el equipo</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-surface-dark rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent-green rounded-xl flex items-center justify-center flex-shrink-0">
+                                <span class="text-white font-bold text-xl">2</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Obtener Credenciales</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Gestionar acceso a UChat API y ElevenLabs API</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-surface-dark rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <span class="text-white font-bold text-xl">3</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Iniciar Desarrollo</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Comenzar con la Fase 1: Fundación del Sistema</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-surface-dark rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <span class="text-white font-bold text-xl">4</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Seguimiento Continuo</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Reuniones periódicas para revisar avances y ajustes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12 border-t border-white/10">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center items-center mb-8">
+                <div class="flex flex-col items-center leading-none opacity-80 hover:opacity-100 transition-opacity">
+                    <div class="h-16 w-auto mb-2 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 171.02 27.98" class="h-full w-auto" style="fill: white;">
+                            <path d="M27.56,10.18h-7.75l.73-7.69c.1-1.12-.72-2.03-1.84-2.03h-4.09c-1.86,0-3.53,1.53-3.71,3.39l-.6,6.33h-6.15c-1.87,0-3.59,1.51-3.84,3.36L.02,15.88c-.14,1.12.65,2.02,1.78,2.02h7.75l-.73,7.69c-.1,1.12.72,2.03,1.84,2.03h4.09c1.86,0,3.53-1.53,3.71-3.39l.6-6.33h6.14c1.89,0,3.61-1.51,3.85-3.35l.3-2.35c.14-1.1-.67-2.02-1.78-2.02Z"/>
+                            <path d="M166.82,19.74c-.21-.4-.63-.95-1.28-1.68-.64-.73-1.14-1.21-1.49-1.42-.53-.33-1.37-.67-2.55-1.01,1.53-.27,2.75-.63,3.66-1.07,1.41-.68,2.57-1.57,3.44-2.66.87-1.09,1.37-2.39,1.51-3.9.15-1.72-.22-3.2-1.13-4.39-.91-1.21-2.17-2.03-3.8-2.48-1.6-.45-3.99-.67-7.12-.67h-16.92l-.46,5.12c-.48-.71-1.06-1.36-1.72-1.95-2.73-2.41-6.82-3.63-12.27-3.63s-9.56,1.23-12.76,3.7c-3.2,2.45-4.99,5.89-5.39,10.31-.24,2.65.1,4.93.99,6.84h-10.15l1.82-20.38h-10.11l-.44,4.97c-.46-.65-.99-1.25-1.61-1.8-2.73-2.41-6.82-3.63-12.27-3.63s-9.56,1.23-12.76,3.7c-.94.72-1.76,1.53-2.46,2.43-.91-1.72-2.15-3.08-3.74-4.06-2.25-1.39-5.42-2.07-9.54-2.07-5.28,0-9.45,1.19-12.55,3.61-1.75,1.36-3.07,3.05-3.97,5.08-1.54,4-1.66,6.8-1.19,9.1.24,1.67.8,3.13,1.63,4.39,1.45,2.16,3.26,3.67,5.44,4.52,2.17.85,5.04,1.28,8.6,1.28,2.93,0,5.38-.35,7.34-1.05,1.95-.71,3.65-1.75,5.04-3.12.58-.57,1.1-1.2,1.57-1.88,1.32,2.09,3.12,3.62,5.45,4.59,2.34.96,5.34,1.45,9.04,1.45s6.7-.56,9.24-1.68c2.1-.94,3.83-2.19,5.2-3.74l-.44,4.96h23.14l.28-3.19c.99.91,2.14,1.65,3.45,2.2,2.34.96,5.35,1.45,9.04,1.45s6.71-.56,9.24-1.68c2.18-.97,3.95-2.27,5.34-3.89l-.47,5.22h10.19l.99-11.01h.9c.92,0,1.73.21,2.43.63.51.32,1.07,1.01,1.66,2.09l4.69,8.29h11.46l-4.2-7.87ZM53.22,16.46c-.6,1.71-1.44,3.02-2.5,3.9-1.08.9-2.58,1.35-4.52,1.35s-3.48-.55-4.49-1.67c-.99-1.12-1.36-3.17-1.09-6.17.22-2.41.83-4.2,1.86-5.33,1.36-1.53,3.18-2.28,5.47-2.28,1.01,0,1.91.17,2.71.51.78.35,1.42.83,1.94,1.48.31.39.58.99.82,1.81l6.48-1.17c-.68,1.53-1.11,3.24-1.28,5.13-.12,1.39-.09,2.67.1,3.85l-5.49-1.4ZM82.45,13.67c-.27,3.03-1.07,5.12-2.36,6.3-1.28,1.16-3.03,1.75-5.2,1.75s-3.74-.6-4.85-1.78c-1.12-1.21-1.55-3.16-1.31-5.89.24-2.76,1.04-4.74,2.39-5.92,1.33-1.19,3.03-1.8,5.06-1.8,2.13,0,3.77.59,4.9,1.76,1.14,1.18,1.59,3.04,1.37,5.58ZM132.37,13.67c-.27,3.03-1.07,5.12-2.36,6.3-1.28,1.16-3.03,1.75-5.2,1.75s-3.74-.6-4.85-1.78c-1.12-1.21-1.55-3.16-1.31-5.89.24-2.76,1.04-4.74,2.39-5.92,1.33-1.19,3.03-1.8,5.06-1.8,2.14,0,3.77.59,4.9,1.76,1.14,1.18,1.6,3.04,1.37,5.58ZM159.85,8.66c-.05.6-.31,1.12-.77,1.58-.47.45-1.05.74-1.73.85-1.35.26-2.26.37-2.72.37h-4.27l.49-5.52h4.47c1.85,0,3.08.23,3.72.71.63.47.9,1.14.82,2.02Z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <p class="text-xs opacity-50">© 2026 +COLOR. Transformación Digital - CRM + UChat + ElevenLabs</p>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    </script>
+</body>
+</html>
