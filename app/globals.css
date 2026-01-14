@@ -75,10 +75,10 @@
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 328 100% 39%; /* Cardinal Pink 900 - #870064 */
-    --primary-foreground: 210 40% 98%;
-    --secondary: 328 100% 39%; /* Cambiado a color primario - #870064 */
-    --secondary-foreground: 210 40% 98%;
+    --primary: 320 100% 27%; /* Morado oscuro de marca - #8B005D */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 320 100% 27%; /* Morado oscuro de marca - #8B005D */
+    --secondary-foreground: 0 0% 100%;
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
