@@ -11,7 +11,6 @@ import {
   LogOut,
   ChevronLeft,
   ChevronRight,
-  Paintbrush,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -38,28 +37,41 @@ export function AppSidebar() {
       initial={false}
       animate={{ width: collapsed ? 72 : 256 }}
       transition={{ duration: 0.2, ease: "easeInOut" }}
-      className="fixed left-0 top-0 z-40 flex h-screen flex-col bg-sidebar text-sidebar-foreground"
+      className="fixed left-0 top-0 z-40 flex h-screen flex-col bg-primary text-white"
     >
       {/* Logo */}
-      <div className="flex h-16 items-center justify-between border-b border-sidebar-border px-4">
+      <div className="flex h-16 items-center justify-between border-b border-primary/20 px-4">
         <AnimatePresence mode="wait">
           {!collapsed && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="flex items-center gap-2"
+              className="flex items-center gap-3"
             >
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-sidebar-primary">
-                <Paintbrush className="h-5 w-5 text-sidebar-primary-foreground" />
+              <div className="h-8 w-auto">
+                <svg
+                  viewBox="0 0 171.02 27.98"
+                  className="h-full w-auto text-white"
+                  fill="currentColor"
+                >
+                  <path d="M27.56,10.18h-7.75l.73-7.69c.1-1.12-.72-2.03-1.84-2.03h-4.09c-1.86,0-3.53,1.53-3.71,3.39l-.6,6.33h-6.15c-1.87,0-3.59,1.51-3.84,3.36L.02,15.88c-.14,1.12.65,2.02,1.78,2.02h7.75l-.73,7.69c-.1,1.12.72,2.03,1.84,2.03h4.09c1.86,0,3.53-1.53,3.71-3.39l.6-6.33h6.14c1.89,0,3.61-1.51,3.85-3.35l.3-2.35c.14-1.1-.67-2.02-1.78-2.02Z"/>
+                  <path d="M166.82,19.74c-.21-.4-.63-.95-1.28-1.68-.64-.73-1.14-1.21-1.49-1.42-.53-.33-1.37-.67-2.55-1.01,1.53-.27,2.75-.63,3.66-1.07,1.41-.68,2.57-1.57,3.44-2.66.87-1.09,1.37-2.39,1.51-3.9.15-1.72-.22-3.2-1.13-4.39-.91-1.21-2.17-2.03-3.8-2.48-1.6-.45-3.99-.67-7.12-.67h-16.92l-.46,5.12c-.48-.71-1.06-1.36-1.72-1.95-2.73-2.41-6.82-3.63-12.27-3.63s-9.56,1.23-12.76,3.7c-3.2,2.45-4.99,5.89-5.39,10.31-.24,2.65.1,4.93.99,6.84h-10.15l1.82-20.38h-10.11l-.44,4.97c-.46-.65-.99-1.25-1.61-1.8-2.73-2.41-6.82-3.63-12.27-3.63s-9.56,1.23-12.76,3.7c-.94.72-1.76,1.53-2.46,2.43-.91-1.72-2.15-3.08-3.74-4.06-2.25-1.39-5.42-2.07-9.54-2.07-5.28,0-9.45,1.19-12.55,3.61-1.75,1.36-3.07,3.05-3.97,5.08-1.54,4-1.66,6.8-1.19,9.1.24,1.67.8,3.13,1.63,4.39,1.45,2.16,3.26,3.67,5.44,4.52,2.17.85,5.04,1.28,8.6,1.28,2.93,0,5.38-.35,7.34-1.05,1.95-.71,3.65-1.75,5.04-3.12.58-.57,1.1-1.2,1.57-1.88,1.32,2.09,3.12,3.62,5.45,4.59,2.34.96,5.34,1.45,9.04,1.45s6.7-.56,9.24-1.68c2.1-.94,3.83-2.19,5.2-3.74l-.44,4.96h23.14l.28-3.19c.99.91,2.14,1.65,3.45,2.2,2.34.96,5.35,1.45,9.04,1.45s6.71-.56,9.24-1.68c2.18-.97,3.95-2.27,5.34-3.89l-.47,5.22h10.19l.99-11.01h.9c.92,0,1.73.21,2.43.63.51.32,1.07,1.01,1.66,2.09l4.69,8.29h11.46l-4.2-7.87ZM53.22,16.46c-.6,1.71-1.44,3.02-2.5,3.9-1.08.9-2.58,1.35-4.52,1.35s-3.48-.55-4.49-1.67c-.99-1.12-1.36-3.17-1.09-6.17.22-2.41.83-4.2,1.86-5.33,1.36-1.53,3.18-2.28,5.47-2.28,1.01,0,1.91.17,2.71.51.78.35,1.42.83,1.94,1.48.31.39.58.99.82,1.81l6.48-1.17c-.68,1.53-1.11,3.24-1.28,5.13-.12,1.39-.09,2.67.1,3.85l-5.49-1.4ZM82.45,13.67c-.27,3.03-1.07,5.12-2.36,6.3-1.28,1.16-3.03,1.75-5.2,1.75s-3.74-.6-4.85-1.78c-1.12-1.21-1.55-3.16-1.31-5.89.24-2.76,1.04-4.74,2.39-5.92,1.33-1.19,3.03-1.8,5.06-1.8,2.13,0,3.77.59,4.9,1.76,1.14,1.18,1.59,3.04,1.37,5.58ZM132.37,13.67c-.27,3.03-1.07,5.12-2.36,6.3-1.28,1.16-3.03,1.75-5.2,1.75s-3.74-.6-4.85-1.78c-1.12-1.21-1.55-3.16-1.31-5.89.24-2.76,1.04-4.74,2.39-5.92,1.33-1.19,3.03-1.8,5.06-1.8,2.14,0,3.77.59,4.9,1.76,1.14,1.18,1.6,3.04,1.37,5.58ZM159.85,8.66c-.05.6-.31,1.12-.77,1.58-.47.45-1.05.74-1.73.85-1.35.26-2.26.37-2.72.37h-4.27l.49-5.52h4.47c1.85,0,3.08.23,3.72.71.63.47.9,1.14.82,2.02Z"/>
+                </svg>
               </div>
-              <span className="font-heading text-lg font-bold">+COLOR</span>
             </motion.div>
           )}
         </AnimatePresence>
         {collapsed && (
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-sidebar-primary mx-auto">
-            <Paintbrush className="h-5 w-5 text-sidebar-primary-foreground" />
+          <div className="h-8 w-auto mx-auto">
+            <svg
+              viewBox="0 0 171.02 27.98"
+              className="h-full w-auto text-white"
+              fill="currentColor"
+            >
+              <path d="M27.56,10.18h-7.75l.73-7.69c.1-1.12-.72-2.03-1.84-2.03h-4.09c-1.86,0-3.53,1.53-3.71,3.39l-.6,6.33h-6.15c-1.87,0-3.59,1.51-3.84,3.36L.02,15.88c-.14,1.12.65,2.02,1.78,2.02h7.75l-.73,7.69c-.1,1.12.72,2.03,1.84,2.03h4.09c1.86,0,3.53-1.53,3.71-3.39l.6-6.33h6.14c1.89,0,3.61-1.51,3.85-3.35l.3-2.35c.14-1.1-.67-2.02-1.78-2.02Z"/>
+              <path d="M166.82,19.74c-.21-.4-.63-.95-1.28-1.68-.64-.73-1.14-1.21-1.49-1.42-.53-.33-1.37-.67-2.55-1.01,1.53-.27,2.75-.63,3.66-1.07,1.41-.68,2.57-1.57,3.44-2.66.87-1.09,1.37-2.39,1.51-3.9.15-1.72-.22-3.2-1.13-4.39-.91-1.21-2.17-2.03-3.8-2.48-1.6-.45-3.99-.67-7.12-.67h-16.92l-.46,5.12c-.48-.71-1.06-1.36-1.72-1.95-2.73-2.41-6.82-3.63-12.27-3.63s-9.56,1.23-12.76,3.7c-3.2,2.45-4.99,5.89-5.39,10.31-.24,2.65.1,4.93.99,6.84h-10.15l1.82-20.38h-10.11l-.44,4.97c-.46-.65-.99-1.25-1.61-1.8-2.73-2.41-6.82-3.63-12.27-3.63s-9.56,1.23-12.76,3.7c-.94.72-1.76,1.53-2.46,2.43-.91-1.72-2.15-3.08-3.74-4.06-2.25-1.39-5.42-2.07-9.54-2.07-5.28,0-9.45,1.19-12.55,3.61-1.75,1.36-3.07,3.05-3.97,5.08-1.54,4-1.66,6.8-1.19,9.1.24,1.67.8,3.13,1.63,4.39,1.45,2.16,3.26,3.67,5.44,4.52,2.17.85,5.04,1.28,8.6,1.28,2.93,0,5.38-.35,7.34-1.05,1.95-.71,3.65-1.75,5.04-3.12.58-.57,1.1-1.2,1.57-1.88,1.32,2.09,3.12,3.62,5.45,4.59,2.34.96,5.34,1.45,9.04,1.45s6.7-.56,9.24-1.68c2.1-.94,3.83-2.19,5.2-3.74l-.44,4.96h23.14l.28-3.19c.99.91,2.14,1.65,3.45,2.2,2.34.96,5.35,1.45,9.04,1.45s6.71-.56,9.24-1.68c2.18-.97,3.95-2.27,5.34-3.89l-.47,5.22h10.19l.99-11.01h.9c.92,0,1.73.21,2.43.63.51.32,1.07,1.01,1.66,2.09l4.69,8.29h11.46l-4.2-7.87ZM53.22,16.46c-.6,1.71-1.44,3.02-2.5,3.9-1.08.9-2.58,1.35-4.52,1.35s-3.48-.55-4.49-1.67c-.99-1.12-1.36-3.17-1.09-6.17.22-2.41.83-4.2,1.86-5.33,1.36-1.53,3.18-2.28,5.47-2.28,1.01,0,1.91.17,2.71.51.78.35,1.42.83,1.94,1.48.31.39.58.99.82,1.81l6.48-1.17c-.68,1.53-1.11,3.24-1.28,5.13-.12,1.39-.09,2.67.1,3.85l-5.49-1.4ZM82.45,13.67c-.27,3.03-1.07,5.12-2.36,6.3-1.28,1.16-3.03,1.75-5.2,1.75s-3.74-.6-4.85-1.78c-1.12-1.21-1.55-3.16-1.31-5.89.24-2.76,1.04-4.74,2.39-5.92,1.33-1.19,3.03-1.8,5.06-1.8,2.13,0,3.77.59,4.9,1.76,1.14,1.18,1.59,3.04,1.37,5.58ZM132.37,13.67c-.27,3.03-1.07,5.12-2.36,6.3-1.28,1.16-3.03,1.75-5.2,1.75s-3.74-.6-4.85-1.78c-1.12-1.21-1.55-3.16-1.31-5.89.24-2.76,1.04-4.74,2.39-5.92,1.33-1.19,3.03-1.8,5.06-1.8,2.14,0,3.77.59,4.9,1.76,1.14,1.18,1.6,3.04,1.37,5.58ZM159.85,8.66c-.05.6-.31,1.12-.77,1.58-.47.45-1.05.74-1.73.85-1.35.26-2.26.37-2.72.37h-4.27l.49-5.52h4.47c1.85,0,3.08.23,3.72.71.63.47.9,1.14.82,2.02Z"/>
+            </svg>
           </div>
         )}
       </div>
@@ -76,8 +88,8 @@ export function AppSidebar() {
               className={cn(
                 "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
                 isActive
-                  ? "bg-sidebar-accent text-sidebar-accent-foreground"
-                  : "text-sidebar-foreground/80 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground"
+                  ? "bg-white/20 text-white"
+                  : "text-white/80 hover:bg-white/10 hover:text-white"
               )}
             >
               <Icon className="h-5 w-5 shrink-0" />
@@ -112,12 +124,12 @@ export function AppSidebar() {
       </nav>
 
       {/* Collapse Toggle */}
-      <div className="border-t border-sidebar-border p-3">
+      <div className="border-t border-primary/20 p-3">
         <Button
           variant="ghost"
           size="sm"
           onClick={() => setCollapsed(!collapsed)}
-          className="w-full justify-center text-sidebar-foreground/80 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground"
+          className="w-full justify-center text-white/80 hover:bg-white/10 hover:text-white"
         >
           {collapsed ? (
             <ChevronRight className="h-5 w-5" />
@@ -131,14 +143,14 @@ export function AppSidebar() {
       </div>
 
       {/* Logout */}
-      <div className="border-t border-sidebar-border p-3">
+      <div className="border-t border-primary/20 p-3">
         {collapsed ? (
           <Tooltip delayDuration={0}>
             <TooltipTrigger asChild>
               <Button
                 variant="ghost"
                 size="sm"
-                className="w-full justify-center text-sidebar-foreground/80 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground"
+                className="w-full justify-center text-white/80 hover:bg-white/10 hover:text-white"
               >
                 <LogOut className="h-5 w-5" />
               </Button>
@@ -149,7 +161,7 @@ export function AppSidebar() {
           <Button
             variant="ghost"
             size="sm"
-            className="w-full justify-start gap-3 text-sidebar-foreground/80 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground"
+            className="w-full justify-start gap-3 text-white/80 hover:bg-white/10 hover:text-white"
           >
             <LogOut className="h-5 w-5" />
             <span>Salir</span>
