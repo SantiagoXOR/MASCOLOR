@@ -126,10 +126,10 @@ export function CategoriesBento() {
                   onClick={() => handleCategoryClick(category)}
                 >
                   {/* Imagen de fondo si está disponible */}
-                  {category.image_url && (
+                  {category.image && (
                     <div className="absolute inset-0 z-0">
                       <BentoImage
-                        src={category.image_url}
+                        src={category.image}
                         alt={category.name}
                         fill
                         className="object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-300"
